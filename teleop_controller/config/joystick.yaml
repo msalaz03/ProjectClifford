@@ -1,0 +1,7 @@
+joy_node:
+  ros__parameters:
+    device_id: 0 #adjust according to controllers id.
+    deadzone: 0.05 
+    autorepeat_rate: 20.0 
+
+  
