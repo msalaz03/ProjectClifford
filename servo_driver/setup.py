@@ -20,8 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            #'servo_pca9685 = scripts.pca9685_test:main',
-            'robot_state_pub = scripts.cliffordtransforms:main',
+            'servo_pca9685 = pca9685_nodes.pca9685_test:main',
+            #'robot_state_pub = scripts.cliffordtransforms:main',
         ],
     },
 )
