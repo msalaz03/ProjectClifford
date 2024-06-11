@@ -1,5 +1,6 @@
 from setuptools import find_packages, setup
 
+
 package_name = 'jointstatepub'
 
 setup(
@@ -20,7 +21,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'transforms = scripts.transforms:main',
+            'transforms = rviz_nodes.transforms:main',
         ],
     },
 )
+
+
