@@ -1,1 +1,0 @@
-from spot_micro_kinematics_python.spot_micro_stick_figure import SpotMicroStickFigure
