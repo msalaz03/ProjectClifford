@@ -22,6 +22,8 @@ class LegJointPublisher(Node):
         # Scale linear.x to fit within the range of -1.57 to 1.57
         #scaled_x = max(min(msg.linear.x, 1.0), -1.0) * 1.57
         scaled_x = max(min(msg.linear.x, 0.2), -0.2) * 0.8  # Adjust the scaling factor as per your requirement
+        
+        #what want to do with this.
 
         self.current_position += scaled_x
     

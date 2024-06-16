@@ -17,7 +17,7 @@ def generate_launch_description():
     default_rviz_config_path = os.path.join(pkg_share, 'rviz', 'rviz_basic_settings.rviz')
 
     #Set the path to find Joy Params
-    teleop_controller_pkg = FindPackageShare(package='teleop_controller')
+    teleop_controller_pkg = FindPackageShare(package='teleop_controller').find('teleop_controller')
     joy_params = os.path.join(teleop_controller_pkg, 'config', 'joystick.yaml')
 
     ########### YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##############
