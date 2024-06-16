@@ -34,6 +34,11 @@ def generate_launch_description():
 
     )
 
+    joint_states_node = Node(
+        package='teleop_controller',
+        executable='CliffordTF',
+    )
+
     return LaunchDescription(
         [
             DeclareLaunchArgument(
@@ -42,7 +47,7 @@ def generate_launch_description():
                 description='use sim time if true'
             ),
             joy_node,
-            CliffordJoy_teleop
-
+            CliffordJoy_teleop,
+            joint_states_node
         ]
     )
