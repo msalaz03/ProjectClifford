@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-
 import time
 import board
 from adafruit_pca9685 import PCA9685
 from adafruit_motor import servo
+#import RPi.GPIO as GPIO
 
 #Create the I2C bus interface.
 i2c = board.I2C()
@@ -34,7 +33,7 @@ def test_servos():
     for i in range (180):
         servo0.angle = i
         time.sleep(0.03)
-    
+
     for i in range (180):
         servo0.angle = 180 - i
         time.sleep(0.03)
@@ -45,4 +44,3 @@ def main(args = None):
 
 if __name__ == '__main__':
     main()
-
