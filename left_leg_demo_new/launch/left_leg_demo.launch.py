@@ -9,16 +9,12 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     # Set the path to this package.
-    pkg_share = FindPackageShare(package='left_leg_demo').find('left_leg_demo')
+    pkg_share = FindPackageShare(package='left_leg_demo_new').find('left_leg_demo_new')
     # Set the path to the URDF file
     default_urdf_model_path = os.path.join(pkg_share, 'urdf/left_leg_demo.urdf')
 
     # Set the path to the RViz configuration settings
     default_rviz_config_path = os.path.join(pkg_share, 'rviz', 'rviz_basic_settings.rviz')
-
-    #Set the path to find Joy Params
-    teleop_controller_pkg = FindPackageShare(package='teleop_controller').find('teleop_controller')
-    joy_params = os.path.join(teleop_controller_pkg, 'config', 'joystick.yaml')
 
     ########### YOU DO NOT NEED TO CHANGE ANYTHING BELOW THIS LINE ##############
     # Launch configuration variables specific to simulation
@@ -59,31 +55,22 @@ def generate_launch_description():
         name='use_sim_time',
         default_value='True',
         description='Use simulation (Gazebo) clock if true')
-    
-    #Subscribe to Joy node in order to update visuals
-    joy_node = Node(
-        package='joy',
-        executable='joy_node',
-        parameters=[
-            joy_params,
-            {'use_sim_time':use_sim_time}
-            ]
 
-    )
+    # Specify the actions
 
-    CliffordJoy_teleop = Node(
-        package='teleop_controller',
-        executable='CliffordJoy',
-        parameters=[
-            {'use_sim_time':use_sim_time}
-        ]
-    )
+    # Publish the joint state values for the non-fixed joints in the URDF file.
+    start_joint_state_publisher_cmd = Node(
+        condition=UnlessCondition(gui),
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher')
 
-    #Subscribe to Joint node in order to get custom visuals based on Joy
-    joint_states_node = Node(
-        package='teleop_controller',
-        executable='CliffordTF',
-    )
+    # A GUI to manipulate the joint state values
+    start_joint_state_publisher_gui_node = Node(
+        condition=IfCondition(gui),
+        package='joint_state_publisher_gui',
+        executable='joint_state_publisher_gui',
+        name='joint_state_publisher_gui')
 
     # Subscribe to the joint states of the robot, and publish the 3D pose of each link.
     start_robot_state_publisher_cmd = Node(
@@ -116,12 +103,10 @@ def generate_launch_description():
     ld.add_action(declare_use_rviz_cmd)
     ld.add_action(declare_use_sim_time_cmd)
 
+    # Add any actions
+    ld.add_action(start_joint_state_publisher_cmd)
+    ld.add_action(start_joint_state_publisher_gui_node)
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(start_rviz_cmd)
 
-    #Our added actions
-    ld.add_action(joint_states_node)
-    ld.add_action(joy_node)
-    ld.add_action(CliffordJoy_teleop)
-    
     return ld

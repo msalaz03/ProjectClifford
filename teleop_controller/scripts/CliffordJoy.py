@@ -23,6 +23,12 @@ class CliffordJoystickControl(Node):
         self.declare_parameter('turn', 1.0)
         self.turn = self.get_parameter('turn').value
 
+        self.declare_paramter('pitch_speed', 0.1)
+        self.pitch = self.get_parameter('pitch_speed').value
+
+        self.declare_paramter('roll_speed', 0.1)
+        self.roll = self.get_parameter('roll_speed').value
+
     """
     Table of index number of /joy.buttons:
 
@@ -76,11 +82,11 @@ class CliffordJoystickControl(Node):
     def joystick_callback(self, data):
         twist = Twist()
 
-        #self.get_logger().info(f'LSSTICK: {data.axes[1]}')
+        #self.get_logger().info(fs'LSSTICK: {data.axes[1]}')
         twist.linear.x = data.axes[1] * self.speed          #left stick up/down
-        twist.linear.y = data.axes[4] * self.speed          #right stick up/down
-        twist.linear.z = 0.0
-        twist.angular.x = 0.0
+        twist.linear.z = data.axes[4] * self.speed          #right stick up/down
+        twist.linear.y = 0.0
+        twist.angular.x = data.buttons[4] * self.pitch # this might be roll or pitch idk rn lol.
         twist.angular.y = 0.0
         twist.angular.z = 0.0
 
