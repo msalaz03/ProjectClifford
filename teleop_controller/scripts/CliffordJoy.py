@@ -23,10 +23,10 @@ class CliffordJoystickControl(Node):
         self.declare_parameter('turn', 1.0)
         self.turn = self.get_parameter('turn').value
 
-        self.declare_paramter('pitch_speed', 0.1)
+        self.declare_parameter('pitch_speed', 0.1)
         self.pitch = self.get_parameter('pitch_speed').value
 
-        self.declare_paramter('roll_speed', 0.1)
+        self.declare_parameter('roll_speed', 0.1)
         self.roll = self.get_parameter('roll_speed').value
 
     """
