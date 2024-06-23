@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+    Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+    For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+ name="Clifford_Sim_Model">
+
+ <!-- New link with no visual information -->
+  <link name="ref_link">  
+  </link>
+
+  <!-- New joint that defines rotation and positioning -->
+  <joint name="ref_joint" type="fixed"> 
+    <parent link="ref_link"/>
+    <child link="base_link_chassis"/>
+    <!-- Define rotation and positioning here -->
+    <origin  rpy="1.57075 0 0" xyz="0 0 0.2"/>
+  </joint>
+
+ <link
+   name="base_link_chassis">
+   <inertial>
+     <origin
+       xyz="-0.00013721 -0.14572 -0.0079137"
+       rpy="0 0 0" />
+     <mass
+       value="0.2007" />
+     <inertia
+       ixx="0.000165"
+       ixy="-5.8297E-11"
+       ixz="-4.3849E-12"
+       iyy="0.00020904"
+       iyz="8.0309E-07"
+       izz="0.00019045" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/base_link_chassis.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/base_link_chassis.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <link
+   name="base_link_cover">
+   <inertial>
+     <origin
+       xyz="-0.09357 0.056878 0.032799"
+       rpy="0 0 0" />
+     <mass
+       value="0.19276" />
+     <inertia
+       ixx="0.0003261"
+       ixy="-3.5297E-07"
+       ixz="1.3201E-05"
+       iyy="0.00040218"
+       iyz="5.2351E-07"
+       izz="0.00059517" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/base_link_cover.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.75294 0 0 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/base_link_cover.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="base_joint_cover"
+   type="fixed">
+   <origin
+     xyz="0.056865 0.038681 -0.049081"
+     rpy="1.5708 -1.5708 0" />
+   <parent
+     link="base_link_chassis" />
+   <child
+     link="base_link_cover" />
+   <axis
+     xyz="0 0 0" />
+ </joint>
+ <link
+   name="front_left_shoulder-link">
+   <inertial>
+     <origin
+       xyz="0.010166 -0.0052586 0.027632"
+       rpy="0 0 0" />
+     <mass
+       value="0.060451" />
+     <inertia
+       ixx="1.1321E-05"
+       ixy="5.0733E-08"
+       ixz="-1.2881E-08"
+       iyy="1.9727E-05"
+       iyz="-4.6406E-07"
+       izz="1.5056E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_left_shoulder-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_left_shoulder-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="front_left_shoulder-joint"
+   type="revolute">
+   <origin
+     xyz="0.038858 0.012792 -0.01944"
+     rpy="3.1416 0 -1.5708" />
+   <parent
+     link="base_link_chassis" />
+   <child
+     link="front_left_shoulder-link" />
+   <axis
+     xyz="0 0 -1" />
+   <limit
+     lower="-0.7854"
+     upper="0.7854"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="front_left_arm-link">
+   <inertial>
+     <origin
+       xyz="-0.0015824 0.032303 0.037666"
+       rpy="0 0 0" />
+     <mass
+       value="0.11486" />
+     <inertia
+       ixx="0.00010977"
+       ixy="7.3672E-07"
+       ixz="-1.6714E-06"
+       iyy="0.00010318"
+       iyz="-6.5622E-07"
+       izz="1.9622E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_left_arm-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.75294 0 0 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_left_arm-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="front_left_arm-joint"
+   type="revolute">
+   <origin
+     xyz="0.01075 -0.02312 0.02855"
+     rpy="0 -0.73304 3.1416" />
+   <parent
+     link="front_left_shoulder-link" />
+   <child
+     link="front_left_arm-link" />
+   <axis
+     xyz="0 -1 0" />
+   <limit
+     lower="-1.57"
+     upper="1.57"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="front_left_wrist-link">
+   <inertial>
+     <origin
+       xyz="0.034329 -0.00062696 -0.027738"
+       rpy="0 0 0" />
+     <mass
+       value="0.066564" />
+     <inertia
+       ixx="1.0483E-05"
+       ixy="-3.7201E-06"
+       ixz="-3.2253E-06"
+       iyy="7.3831E-05"
+       iyz="-2.9585E-07"
+       izz="7.1037E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_left_wrist-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_left_wrist-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="front_left_wrist-joint"
+   type="revolute">
+   <origin
+     xyz="-0.013829 0.00725 0.10612"
+     rpy="-1.5708 0.05236 3.1416" />
+   <parent
+     link="front_left_arm-link" />
+   <child
+     link="front_left_wrist-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="0.785"
+     upper="-1.57"
+     effort="200"
+     velocity="3" />
+ </joint>
+ <link
+   name="front_right_shoulder-link">
+   <inertial>
+     <origin
+       xyz="0.010166 0.0052586 0.027632"
+       rpy="0 0 0" />
+     <mass
+       value="0.060451" />
+     <inertia
+       ixx="1.1321E-05"
+       ixy="-5.0733E-08"
+       ixz="-1.2881E-08"
+       iyy="1.9727E-05"
+       iyz="4.6406E-07"
+       izz="1.5056E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_right_shoulder-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_right_shoulder-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="front_right_shoulder-joint"
+   type="revolute">
+   <origin
+     xyz="-0.039143 0.012792 -0.01944"
+     rpy="3.1416 0 -1.5708" />
+   <parent
+     link="base_link_chassis" />
+   <child
+     link="front_right_shoulder-link" />
+   <axis
+     xyz="0 0 -1" />
+   <limit
+     lower="-0.7854"
+     upper="0.7854"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="front_right_arm-link">
+   <inertial>
+     <origin
+       xyz="0.037666 -0.0015824 -0.03221"
+       rpy="0 0 0" />
+     <mass
+       value="0.11486" />
+     <inertia
+       ixx="1.9622E-05"
+       ixy="-1.6714E-06"
+       ixz="6.5622E-07"
+       iyy="0.00010977"
+       iyz="-7.3672E-07"
+       izz="0.00010318" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_right_arm-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.75294 0 0 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_right_arm-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="front_right_arm-joint"
+   type="revolute">
+   <origin
+     xyz="0.01075 0.02312 0.02855"
+     rpy="1.5708 -0.83776 0" />
+   <parent
+     link="front_right_shoulder-link" />
+   <child
+     link="front_right_arm-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="-1.57"
+     upper="1.57"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="front_right_wrist-link">
+   <inertial>
+     <origin
+       xyz="0.034302 0.00061771 -0.02774"
+       rpy="0 0 0" />
+     <mass
+       value="0.066564" />
+     <inertia
+       ixx="1.0483E-05"
+       ixy="3.7201E-06"
+       ixz="-3.2253E-06"
+       iyy="7.3831E-05"
+       iyz="2.9585E-07"
+       izz="7.1037E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_right_wrist-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/front_right_wrist-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="front_right_wrist-joint"
+   type="revolute">
+   <origin
+     xyz="0.10612 -0.013829 -0.00725"
+     rpy="0 0 -1.6232" />
+   <parent
+     link="front_right_arm-link" />
+   <child
+     link="front_right_wrist-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="-0.785"
+     upper="1.57"
+     effort="200"
+     velocity="3" />
+ </joint>
+ <link
+   name="rear_left_shoulder-link">
+   <inertial>
+     <origin
+       xyz="0.010166 -0.0052586 0.026693"
+       rpy="0 0 0" />
+     <mass
+       value="0.060451" />
+     <inertia
+       ixx="1.1321E-05"
+       ixy="5.0733E-08"
+       ixz="1.2881E-08"
+       iyy="1.9727E-05"
+       iyz="4.6406E-07"
+       izz="1.5056E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_left_shoulder-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_left_shoulder-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="rear_left_shoulder-joint"
+   type="revolute">
+   <origin
+     xyz="0.038862 0.012792 -0.23441"
+     rpy="3.1416 0 -1.5708" />
+   <parent
+     link="base_link_chassis" />
+   <child
+     link="rear_left_shoulder-link" />
+   <axis
+     xyz="0 0 -1" />
+   <limit
+     lower="-0.7854"
+     upper="0.7854"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="rear_left_arm-link">
+   <inertial>
+     <origin
+       xyz="0.037666 0.0015824 -0.032303"
+       rpy="0 0 0" />
+     <mass
+       value="0.11486" />
+     <inertia
+       ixx="1.9622E-05"
+       ixy="1.6714E-06"
+       ixz="6.5622E-07"
+       iyy="0.00010977"
+       iyz="7.3672E-07"
+       izz="0.00010318" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_left_arm-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.75294 0 0 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_left_arm-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="rear_left_arm-joint"
+   type="revolute">
+   <origin
+     xyz="0.01075 -0.02312 0.025775"
+     rpy="-1.5708 -0.7854 0" />
+   <parent
+     link="rear_left_shoulder-link" />
+   <child
+     link="rear_left_arm-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="-1.57"
+     upper="1.57"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="rear_left_wrist-link">
+   <inertial>
+     <origin
+       xyz="0.034325 -0.00062523 -0.027736"
+       rpy="0 0 0" />
+     <mass
+       value="0.066564" />
+     <inertia
+       ixx="1.0483E-05"
+       ixy="-3.7201E-06"
+       ixz="-3.2253E-06"
+       iyy="7.3831E-05"
+       iyz="-2.9585E-07"
+       izz="7.1037E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_left_wrist-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_left_wrist-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="rear_left_wrist-joint"
+   type="revolute">
+   <origin
+     xyz="0.10612 0.013829 -0.00725"
+     rpy="0 0 1.5708" />
+   <parent
+     link="rear_left_arm-link" />
+   <child
+     link="rear_left_wrist-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="0.785"
+     upper="-1.57"
+     effort="200"
+     velocity="3" />
+ </joint>
+ <link
+   name="rear_right_shoulder-link">
+   <inertial>
+     <origin
+       xyz="0.010166 0.0052586 0.026693"
+       rpy="0 0 0" />
+     <mass
+       value="0.060451" />
+     <inertia
+       ixx="1.1321E-05"
+       ixy="-5.0733E-08"
+       ixz="1.2881E-08"
+       iyy="1.9727E-05"
+       iyz="-4.6406E-07"
+       izz="1.5056E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_right_shoulder-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_right_shoulder-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="rear_right_shoulder-joint"
+   type="revolute">
+   <origin
+     xyz="-0.039139 0.012792 -0.23441"
+     rpy="3.1416 0 -1.5708" />
+   <parent
+     link="base_link_chassis" />
+   <child
+     link="rear_right_shoulder-link" />
+   <axis
+     xyz="0 0 -1" />
+   <limit
+     lower="-0.7854"
+     upper="0.7854"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="rear_right_arm-link">
+   <inertial>
+     <origin
+       xyz="0.037666 -0.0015824 -0.03221"
+       rpy="0 0 0" />
+     <mass
+       value="0.11486" />
+     <inertia
+       ixx="1.9622E-05"
+       ixy="-1.6714E-06"
+       ixz="6.5622E-07"
+       iyy="0.00010977"
+       iyz="-7.3672E-07"
+       izz="0.00010318" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_right_arm-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.75294 0 0 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_right_arm-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="rear_right_arm-joint"
+   type="revolute">
+   <origin
+     xyz="0.01075 0.02312 0.025775"
+     rpy="1.5708 -0.7854 0" />
+   <parent
+     link="rear_right_shoulder-link" />
+   <child
+     link="rear_right_arm-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="-1.57"
+     upper="1.57"
+     effort="300"
+     velocity="3" />
+ </joint>
+ <link
+   name="rear_right_wrist-link">
+   <inertial>
+     <origin
+       xyz="0.034328 0.00062643 -0.027737"
+       rpy="0 0 0" />
+     <mass
+       value="0.066564" />
+     <inertia
+       ixx="1.0483E-05"
+       ixy="3.7201E-06"
+       ixz="-3.2253E-06"
+       iyy="7.3831E-05"
+       iyz="2.9585E-07"
+       izz="7.1037E-05" />
+   </inertial>
+   <visual>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_right_wrist-link.STL" />
+     </geometry>
+     <material
+       name="">
+       <color
+         rgba="0.25098 0.25098 0.25098 1" />
+     </material>
+   </visual>
+   <collision>
+     <origin
+       xyz="0 0 0"
+       rpy="0 0 0" />
+     <geometry>
+       <mesh
+         filename="package://clifford_sim_1/meshes/rear_right_wrist-link.STL" />
+     </geometry>
+   </collision>
+ </link>
+ <joint
+   name="rear_right_wrist-joint"
+   type="revolute">
+   <origin
+     xyz="0.10612 -0.013829 -0.00725"
+     rpy="0 0 -1.5708" />
+   <parent
+     link="rear_right_arm-link" />
+   <child
+     link="rear_right_wrist-link" />
+   <axis
+     xyz="0 0 1" />
+   <limit
+     lower="-0.785"
+     upper="1.57"
+     effort="200"
+     velocity="3" />
+ </joint>
+</robot>

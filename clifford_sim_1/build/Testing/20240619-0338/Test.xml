@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240619-0338-Experimental"
+	Name="Cam-Vivobook"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="Cam-Vivobook"
+	OSRelease="6.5.0-41-generic"
+	OSVersion="#41~22.04.2-Ubuntu SMP PREEMPT_DYNAMIC Mon Jun  3 11:32:55 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="25"
+	ModelID="80"
+	ProcessorCacheSize="512"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="15381"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2588.71"
+	>
+	<Testing>
+		<StartDateTime>Jun 18 23:38 EDT</StartDateTime>
+		<StartTestTime>1718768328</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jun 18 23:38 EDT</EndDateTime>
+		<EndTestTime>1718768328</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
