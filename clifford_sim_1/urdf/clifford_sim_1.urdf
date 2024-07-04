@@ -5,7 +5,7 @@
 <robot
  name="Clifford_Sim_Model">
 
- <!-- New link with no visual information -->
+ <!-- New link with no visual information! -->
   <link name="ref_link">  
   </link>
 
