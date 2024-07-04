@@ -60,7 +60,7 @@ class LegJointPublisher(Node):
           
         #Square button condition
         elif data.buttons[3] == 1:
-            self.get_logger().info('BUTTON FEATURE 3')
+            self.get_logger().info('BUTTON FEATURE 4')
 
 
     def cmd_vel_callback(self,msg):
