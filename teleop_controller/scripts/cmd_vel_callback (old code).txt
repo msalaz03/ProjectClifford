@@ -1,0 +1,114 @@
+        # walk_speed = max(min(msg.linear.x,0.5),-0.5) * 0.8 #define our walking speed lowkey unnecessary math
+        # walk_speed = msg.linear.x * 1.0 #cmd_vel speed * scaling factor.
+        # self.get_logger().info('cmd_vel topic callback')
+
+
+        # if (self.gait_walk_index == 0):
+        #     #WALKING GAIT POS 1
+        #     self.get_logger().info('gait_walk_index hit 1')
+        #     new_z = self.current_coords[2] - walk_speed
+
+        #     if (self.current_coords[2] > self.coordinates[self.target_index][2]): #POTENTIAL ERROR OVER CALCULATING???
+        #         self.current_coords = [self.current_coords[0],self.current_coords[1],
+        #                                new_z]
+        #         theta_joint_1,theta_joint_2 = self.solve_ik(self.current_coords)
+        #         self.current_position_joint_1 = theta_joint_1
+        #         self.current_position_joint_2 = theta_joint_2
+
+        #         self.get_logger().info('increased to new z')
+
+        #     else:
+        #         self.get_logger().info('else condition hit.')
+        #         self.gait_walk_index = self.gait_walk_index + 1
+        #         self.target_index = self.gait_walk_index + 1
+                
+
+        # elif(self.gait_walk_index == 1):
+        #     #WALKING GAIT POS 2
+        #     self.get_logger().info('gait_walk_index hit 2')
+        #     new_x = self.current_coords[0] + walk_speed
+
+        #     # if(new_x < self.coordinates[self.gait_walk_index][0]):
+        #     #     self.get_logger().info('TRANSITION BACK: 1->0.')
+        #     #     self.target_index = 1
+        #     #     self.gait_walk_index = 0
+
+        #     if (self.current_coords[0] < self.coordinates[self.target_index][0]): #POTENTIAL ERROR OVER CALCULATING???
+        #         self.current_coords = [new_x,self.current_coords[1],
+        #                                self.current_coords[2]]
+        #         theta_joint_1,theta_joint_2 = self.solve_ik(self.current_coords)
+        #         self.current_position_joint_1 = theta_joint_1
+        #         self.current_position_joint_2 = theta_joint_2
+
+        #         self.get_logger().info('increased to new x')
+        #     else:
+        #         self.get_logger().info('else condition hit.')
+        #         self.gait_walk_index = self.gait_walk_index + 1
+        #         self.target_index = self.gait_walk_index + 1
+
+        # elif(self.gait_walk_index == 2):
+        #      #WALKING GAIT POS 3
+        #     self.get_logger().info('gait_walk_index hit 3')
+        #     new_z = self.current_coords[2] + walk_speed
+
+        #     if (self.current_coords[2] < self.coordinates[self.target_index][2]): #POTENTIAL ERROR OVER CALCULATING???
+        #         self.current_coords = [self.current_coords[0],self.current_coords[1],
+        #                                new_z]
+        #         theta_joint_1,theta_joint_2 = self.solve_ik(self.current_coords)
+        #         self.current_position_joint_1 = theta_joint_1
+        #         self.current_position_joint_2 = theta_joint_2
+
+        #         self.get_logger().info('increased to new z')
+        #     else:
+        #         self.get_logger().info('else condition hit.')
+        #         self.gait_walk_index = self.gait_walk_index + 1
+        #         self.target_index = self.gait_walk_index + 1
+
+        # elif(self.gait_walk_index == 3):
+        #      #WALKING GAIT POS 4
+        #     self.get_logger().info('gait_walk_index hit 4')
+        #     new_x = self.current_coords[0] - walk_speed
+
+        #     if (self.current_coords[0] > self.coordinates[0][0]): #POTENTIAL ERROR OVER CALCULATING???
+        #         self.current_coords = [new_x,self.current_coords[1],
+        #                                self.current_coords[2]]
+        #         theta_joint_1,theta_joint_2 = self.solve_ik(self.current_coords)
+        #         self.current_position_joint_1 = theta_joint_1
+        #         self.current_position_joint_2 = theta_joint_2
+
+        #         self.get_logger().info('increased to new x')
+        #     else:
+        #         self.get_logger().info('else condition hit.')
+        #         self.gait_walk_index = 0
+        #         self.target_index = self.gait_walk_index + 1
+
+        # else:
+        #     self.get_logger().info("you fucked up.")
+
+
+
+        b_len = math.sqrt( pow(x_cord,2) + pow(z_cord,2) )
+            #angle of joint_1 ik calculation
+            # angle_B = math.acos( ( pow(self.joint_1_len,2) + pow(self.desired_height,2) - pow(self.joint_2_len,2) ) 
+            #                     / (2 * self.joint_1_len * self.desired_height) )
+
+            # angle_C = math.acos( ( pow(self.joint_1_len,2) + pow(self.joint_2_len,2) - pow(self.desired_height,2) ) 
+            #                     / (2 * self.joint_1_len * self.joint_2_len) )
+            # beta_1 = math.atan(z_cord/x_cord)
+            # beta_2 = math.acos( ( pow(self.joint_1_len,2) + pow(b_len,2) - pow(self.joint_2_len,2) ) 
+            #                     / (2 * self.joint_1_len * b_len) )
+
+            # beta_3 = math.acos( ( pow(self.joint_1_len,2) + pow(self.joint_2_len,2) - pow(b_len,2) ) 
+            #                     / (2 * self.joint_1_len * self.joint_2_len) )
+
+            # self.get_logger().info(f"beta_1:{beta_1}")
+            # self.get_logger().info(f"beta_2:{beta_2}")
+            # self.get_logger().info(f"beta_3:{beta_3}")
+
+            # b_prime = (math.pi  * 2) - beta_1
+            # theta_2 = b_prime - beta_2
+            # theta_2 = theta_2 - math.pi
+            # theta_2 = (math.pi/2) - theta_2
+
+            # theta_3 = math.pi - beta_3
+            # theta_3 = (math.pi/2) - theta_3
