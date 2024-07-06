@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import JointState
@@ -15,8 +14,8 @@ import math as math
 class CliffordJointStatePublisher(Node):
 
     def __init__(self):
-        super().__init__('leg_mover') 
-        self.get_logger().info('Leg Joint Publisher is online.')
+        super().__init__('Clifford') 
+        self.get_logger().info('Clifford Joint Publisher is online.')
         self.joint_state_pub = self.create_publisher(JointState, 'joint_states', 10) #create publisher for 'joint_states'
         self.timer = self.create_timer(0.1, self.publish_joint_states) #look into
         self.cmd_vel_sub = self.create_subscription(Twist,'cmd_vel', self.cmd_vel_callback,10) #create instance of subscribing to cmd_vel/ topic
@@ -26,6 +25,20 @@ class CliffordJointStatePublisher(Node):
         self.current_position_right_shoulder = 0.0
         self.current_position_right_arm = 0.7103
         self.current_position_right_wrist = -0.0866
+        #self.current_position_right_arm = 0.0
+        #self.current_position_right_wrist = 0.0
+
+        self.current_position_front_left_shoulder = 0.0
+        self.current_position_front_left_arm = -0.7103
+        self.current_position_front_left_wrist = -0.0866
+
+        self.current_position_rear_left_shoulder = 0.0
+        self.current_position_rear_left_arm = -0.7103
+        self.current_position_rear_left_wrist = -0.0866
+
+        self.current_position_rear_right_shoulder = 0.0
+        self.current_position_rear_right_arm = 0.7103
+        self.current_position_rear_right_wrist = -0.0866
 
         #DEFINED LENGTHS OF JOINTS
         self.right_shoulder_len = None
@@ -39,6 +52,8 @@ class CliffordJointStatePublisher(Node):
             [80.9,0.0,80.0],
             [80.9,0.0,157.3]
         ]
+
+
         self.gait_walk_index = 0 #this is an index for coordinate system to know what position we are.
         self.target_index = self.gait_walk_index + 1 #this will be where our leg should be ended up.
         self.current_coords = self.coordinates[self.gait_walk_index] #this is a variable to keep track of where we are.
@@ -55,7 +70,7 @@ class CliffordJointStatePublisher(Node):
         #Circle button condition
         elif data.buttons[1] == 1:
             self.get_logger().info('BUTTON FEATURE 2')
-            
+
         #X button condition
         elif data.buttons[0] == 1:
             self.get_logger().info('BUTTON FEATURE 3')
@@ -82,6 +97,16 @@ class CliffordJointStatePublisher(Node):
                 theta_right_arm, theta_right_wrist = self.solve_ik(self.current_coords)
                 self.current_position_right_arm = theta_right_arm
                 self.current_position_right_wrist = theta_right_wrist
+
+                self.current_position_rear_right_arm = theta_right_arm
+                self.current_position_rear_right_wrist = theta_right_wrist
+
+                self.current_position_front_left_arm = -theta_right_arm
+                self.current_position_front_left_wrist = -theta_right_wrist
+
+                self.current_position_rear_left_arm = -theta_right_arm
+                self.current_position_rear_left_wrist = -theta_right_wrist
+                
                 self.get_logger().info('updated z coordinate')
             else:
                 self.get_logger().info('Transitioning gait index')
@@ -101,6 +126,16 @@ class CliffordJointStatePublisher(Node):
                 self.current_position_right_arm = theta_right_arm
                 self.current_position_right_wrist = theta_right_wrist
 
+                #OTHER LEGS
+                self.current_position_rear_right_arm = theta_right_arm
+                self.current_position_rear_right_wrist = theta_right_wrist
+
+                self.current_position_front_left_arm = -theta_right_arm
+                self.current_position_front_left_wrist = -theta_right_wrist
+
+                self.current_position_rear_left_arm = -theta_right_arm
+                self.current_position_rear_left_wrist = -theta_right_wrist
+
                 self.get_logger().info('updated x coordinate')
             else:
                 self.get_logger().info('Transitioning gait index')
@@ -118,6 +153,17 @@ class CliffordJointStatePublisher(Node):
                 theta_right_arm, theta_right_wrist = self.solve_ik(self.current_coords)
                 self.current_position_right_arm = theta_right_arm
                 self.current_position_right_wrist = theta_right_wrist
+
+                #OTHER LEGS
+                self.current_position_rear_right_arm = theta_right_arm
+                self.current_position_rear_right_wrist = theta_right_wrist
+
+                self.current_position_front_left_arm = -theta_right_arm
+                self.current_position_front_left_wrist = -theta_right_wrist
+
+                self.current_position_rear_left_arm = -theta_right_arm
+                self.current_position_rear_left_wrist = -theta_right_wrist
+
 
                 self.get_logger().info('updated z coordinate')
             else:
@@ -137,6 +183,17 @@ class CliffordJointStatePublisher(Node):
                 self.current_position_right_arm = theta_right_arm
                 self.current_position_right_wrist = theta_right_wrist
 
+                #OTHER LEGS
+                self.current_position_rear_right_arm = theta_right_arm
+                self.current_position_rear_right_wrist = theta_right_wrist
+
+                self.current_position_front_left_arm = -theta_right_arm
+                self.current_position_front_left_wrist = -theta_right_wrist
+
+                self.current_position_rear_left_arm = -theta_right_arm
+                self.current_position_rear_left_wrist = -theta_right_wrist
+
+
                 self.get_logger().info('updated x coordinate')
             else:
                 self.get_logger().info('Transitioning gait index')
@@ -152,9 +209,18 @@ class CliffordJointStatePublisher(Node):
     def publish_joint_states(self):
         joint_state_msg = JointState()
         joint_state_msg.header.stamp = self.get_clock().now().to_msg()
-        joint_state_msg.name = ['front_right_shoulder-joint', 'front_right_arm-joint','front_right_wrist-joint']  # Replace with the names of your joints
-        joint_state_msg.position = [self.current_position_right_shoulder,self.current_position_right_arm, self.current_position_right_wrist] #self.current_position_y]
+        joint_state_msg.name = ['front_right_shoulder-joint', 'front_right_arm-joint','front_right_wrist-joint',
+                                'front_left_shoulder-joint', 'front_left_arm-joint','front_left_wrist-joint',
+                                'rear_left_shoulder-joint', 'rear_left_arm-joint', 'rear_left_wrist-joint',
+                                'rear_right_shoulder-joint', 'rear_right_arm-joint', 'rear_right_wrist-joint']
+        
+        joint_state_msg.position = [self.current_position_right_shoulder,self.current_position_right_arm, self.current_position_right_wrist, 
+                                    self.current_position_front_left_shoulder, self.current_position_front_left_arm, self.current_position_front_left_wrist,           
+                                    self.current_position_rear_left_shoulder, self.current_position_rear_left_arm, self.current_position_rear_left_wrist,
+                                    self.current_position_rear_right_shoulder, self.current_position_rear_right_arm, self.current_position_rear_right_wrist] #self.current_position_y]
+        
         self.joint_state_pub.publish(joint_state_msg)
+
 
     def reset_walk_gait(self):
         self.gait_walk_index = 0 #reinit
@@ -169,7 +235,6 @@ class CliffordJointStatePublisher(Node):
         # These kinematics calculations will try to be as descripitional as possible but please refer
         # to sheet of calculations by Cameron Bauman. 
         #UNIT: RADIANS
-        
         x_cord = cords[0] #x cord value
         y_cord = cords[1] #y cord value not really relevant rn.
         z_cord = cords[2] #z cord value
