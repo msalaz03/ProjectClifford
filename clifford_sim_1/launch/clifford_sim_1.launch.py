@@ -58,7 +58,7 @@ def generate_launch_description():
 
     # Specify the actions
 
-    # Publish the joint state values for the non-fixed joints in the URDF file.
+    #Publish the joint state values for the non-fixed joints in the URDF file.
     # start_joint_state_publisher_cmd = Node(
     #     condition=UnlessCondition(gui),
     #     package='joint_state_publisher',
@@ -104,8 +104,8 @@ def generate_launch_description():
     ld.add_action(declare_use_sim_time_cmd)
 
     # Add any actions
-    # ld.add_action(start_joint_state_publisher_cmd)
-    # ld.add_action(start_joint_state_publisher_gui_node)
+    #ld.add_action(start_joint_state_publisher_cmd)
+    #ld.add_action(start_joint_state_publisher_gui_node)
     ld.add_action(start_robot_state_publisher_cmd)
     ld.add_action(start_rviz_cmd)
 
