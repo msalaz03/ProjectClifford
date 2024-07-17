@@ -18,7 +18,7 @@ class CliffordJointStatePublisher(Node):
         super().__init__('Clifford') 
         self.get_logger().info('Clifford Joint Publisher is online.')
         self.joint_state_pub = self.create_publisher(JointState, 'joint_states', 10) #create publisher for 'joint_states'
-        self.timer = self.create_timer(0.1, self.publish_joint_states) #look into
+        self.timer = self.create_timer(0.05, self.publish_joint_states) #look into
         self.cmd_vel_sub = self.create_subscription(Twist,'cmd_vel', self.cmd_vel_callback,10) #create instance of subscribing to cmd_vel/ topic
         self.joy_sub = self.create_subscription(Joy,'joy', self.general_joy_callback,10) #create susbcription for ps4-controller 'joy'
 
@@ -162,10 +162,10 @@ class CliffordJointStatePublisher(Node):
     def cmd_vel_callback(self,msg):
         self.get_logger().info('cmd_vel topic callback final gait')
         
-
+        speed_factor = 6.0
         #80.9 -> 36.1
         #lets get set1 to begin walking first.
-        walk_speed = abs(msg.linear.x) * 7.0
+        walk_speed = abs(msg.linear.x) * 17.5
         forward = msg.linear.x >= 0
 
         
@@ -182,7 +182,7 @@ class CliffordJointStatePublisher(Node):
             if self.set1_walk_index == 0:
                 self.get_logger().info('SET1 INDEX = 0')
                 set1_new_z = self.current_coords_set1[2] - walk_speed if forward else self.current_coords_set1[2] + walk_speed
-                set2_new_x = self.current_coords_set2[0] - (walk_speed / 6) if forward else self.current_coords_set2[0] + walk_speed
+                set2_new_x = self.current_coords_set2[0] - (walk_speed / speed_factor) if forward else self.current_coords_set2[0] + walk_speed
 
                 self.get_logger().info(f'SET2 NEWX: {set2_new_x}')
                 self.get_logger().info(f'SET1 coordinate z {set1_new_z}')
@@ -214,7 +214,7 @@ class CliffordJointStatePublisher(Node):
                 #TO DO FINISH CASE 2
                 self.get_logger().info('SET1 INDEX = 1')
                 set1_new_x = self.current_coords_set1[0] + walk_speed if forward else self.current_coords_set1[0] - walk_speed
-                set2_new_x = self.current_coords_set2[0] - (walk_speed / 6) if forward else self.current_coords_set2[0] + walk_speed
+                set2_new_x = self.current_coords_set2[0] - (walk_speed / speed_factor) if forward else self.current_coords_set2[0] + walk_speed
 
                 #self.get_logger().info(f'SET2 NEWX: {set1_new_z}')
 
@@ -239,7 +239,7 @@ class CliffordJointStatePublisher(Node):
                 #TO DO FINISH CASE 2
                 self.get_logger().info('SET1 INDEX = 2')
                 set1_new_z = self.current_coords_set1[2] + walk_speed if forward else self.current_coords_set1[2] + walk_speed
-                set2_new_x = self.current_coords_set2[0] - (walk_speed / 6) if forward else self.current_coords_set2[0] + walk_speed
+                set2_new_x = self.current_coords_set2[0] - (walk_speed / speed_factor) if forward else self.current_coords_set2[0] + walk_speed
 
                 self.get_logger().info(f'SET2 NEWX: {set2_new_x}')
                 #self.get_logger().info(f'SET1 coordinate z {set1_new_z}')
@@ -271,7 +271,7 @@ class CliffordJointStatePublisher(Node):
                 if self.set2_walk_index == 1:
                     self.get_logger().info('SET2 INDEX = 0')
                     set2_new_z = self.current_coords_set2[2] - walk_speed if forward else self.current_coords_set2[2] + walk_speed
-                    set1_new_x = self.current_coords_set1[0] - (walk_speed / 6) if forward else self.current_coords_set1[0] + walk_speed
+                    set1_new_x = self.current_coords_set1[0] - (walk_speed / speed_factor) if forward else self.current_coords_set1[0] + walk_speed
 
                     if forward and self.current_coords_set2[2] >= self.coordinates_set2[self.target_index_set2][2]:
                         
@@ -297,7 +297,7 @@ class CliffordJointStatePublisher(Node):
                     #0.5->36.1
 
                     set2_new_x = self.current_coords_set2[0] + walk_speed if forward else self.current_coords_set2[0] - walk_speed
-                    set1_new_x = self.current_coords_set1[0] - (walk_speed / 6) if forward else self.current_coords_set1[0] + walk_speed
+                    set1_new_x = self.current_coords_set1[0] - (walk_speed / speed_factor) if forward else self.current_coords_set1[0] + walk_speed
 
                     self.get_logger().info(f'SELF COORDINATES SET2 {self.coordinates_set2[self.target_index_set2]}')
                     if forward and self.current_coords_set2[0] <= self.coordinates_set2[self.target_index_set2][0]:
@@ -317,7 +317,7 @@ class CliffordJointStatePublisher(Node):
                     #80 -> 157.3
 
                     set2_new_z = self.current_coords_set2[2] + walk_speed if forward else self.current_coords_set2[2] - walk_speed
-                    set1_new_x = self.current_coords_set1[0] - (walk_speed / 6) if forward else self.current_coords_set1[0] + walk_speed
+                    set1_new_x = self.current_coords_set1[0] - (walk_speed / speed_factor) if forward else self.current_coords_set1[0] + walk_speed
 
                     self.get_logger().info(f'COORDINATES 2 CURRENT: {self.current_coords_set2}')
                     self.get_logger().info(f'COORDINATES 2 CONDITION {self.coordinates_set2[self.target_index_set2][2]}')
