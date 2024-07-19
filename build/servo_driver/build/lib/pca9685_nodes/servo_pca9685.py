@@ -64,7 +64,7 @@ class ServoDriver(Node):
         self.ref_coords= [130.43, 0.0, 107.0]
         
 
-        self.ref_coords_test =  [130.43,0.0, 87.0]
+        self.ref_coords_test =  [150.43,0.0, 107.0]
 
 
 
@@ -88,13 +88,13 @@ class ServoDriver(Node):
 
 
             #HARD CODED VALUE TO ADJUST LEFT WRISTS (RIGHT NOT APPLICABLE)
-           # theta_3 = 90 - (theta_3 - 90)
+            theta_3 = 90 - (theta_3 - 90)
 
             self.get_logger().info(f'THETA_2: {theta_2}')
             self.get_logger().info(f'THETA_3: {theta_3}')
 
-            self.servo0.angle = theta_2
-            self.servo1.angle = theta_3
+            #self.servo0.angle = theta_2
+            #self.servo1.angle = theta_3
 
           
         # Square button condition
@@ -147,8 +147,18 @@ class ServoDriver(Node):
                                     / (2 * self.universal_arm_len * self.universal_wrist_len) )
             
             #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = beta_2 + beta_1
-            theta_3 = beta_3
+            b_prime = (math.pi  * 2) - beta_1
+            theta_2 = b_prime - beta_2
+            theta_2 = theta_2 - math.pi
+
+            #theta_2 = (math.pi * 2 ) - (beta_1 + beta_2)
+
+
+            #THIS VALUE IS HARD CODED
+            #theta_2 = (math.pi/4) - theta_2  #Final value of right_arm 
+
+            #self.get_logger().info(f'BETA_3: {beta_3}')
+            theta_3 = math.pi - beta_3
 
             #FINAL VALUE FOR RVIZ
             #theta_3 = (math.pi/2) - theta_3 #Final value of right_wrist
@@ -156,8 +166,6 @@ class ServoDriver(Node):
 
             theta_2 = theta_2 * (180/math.pi)
             theta_3 = theta_3 * (180/math.pi)
-
-            
 
             self.get_logger().info(f"THETA_3 before math corrects: {theta_3}")
             
