@@ -1,0 +1,178 @@
+[0.442s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'servo_driver']
+[0.442s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['servo_driver'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb717bd00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb72f8970>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb72f8970>>)
+[1.452s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.452s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.452s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.452s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.453s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.453s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.453s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/mcc/Desktop/project_clifford_ws/ProjectClifford'
+[1.453s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.454s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.455s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.503s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.504s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.505s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.506s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extensions ['ignore', 'ignore_ament_install']
+[1.506s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extension 'ignore'
+[1.506s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extension 'ignore_ament_install'
+[1.507s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extensions ['colcon_pkg']
+[1.507s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extension 'colcon_pkg'
+[1.507s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extensions ['colcon_meta']
+[1.507s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extension 'colcon_meta'
+[1.507s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extensions ['ros']
+[1.507s] Level 1:colcon.colcon_core.package_identification:_identify(clifford-ik) by extension 'ros'
+[1.516s] DEBUG:colcon.colcon_core.package_identification:Package 'clifford-ik' with type 'ros.ament_python' and name 'clifford-ik'
+[1.516s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extensions ['ignore', 'ignore_ament_install']
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extension 'ignore'
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extension 'ignore_ament_install'
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extensions ['colcon_pkg']
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extension 'colcon_pkg'
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extensions ['colcon_meta']
+[1.517s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extension 'colcon_meta'
+[1.518s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extensions ['ros']
+[1.518s] Level 1:colcon.colcon_core.package_identification:_identify(clifford_sim_1) by extension 'ros'
+[1.520s] DEBUG:colcon.colcon_core.package_identification:Package 'clifford_sim_1' with type 'ros.ament_cmake' and name 'clifford_sim_1'
+[1.521s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.521s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.521s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.522s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extensions ['ignore', 'ignore_ament_install']
+[1.522s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extension 'ignore'
+[1.522s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extension 'ignore_ament_install'
+[1.522s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extensions ['colcon_pkg']
+[1.522s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extension 'colcon_pkg'
+[1.523s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extensions ['colcon_meta']
+[1.523s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extension 'colcon_meta'
+[1.523s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extensions ['ros']
+[1.523s] Level 1:colcon.colcon_core.package_identification:_identify(jointstatepub) by extension 'ros'
+[1.525s] DEBUG:colcon.colcon_core.package_identification:Package 'jointstatepub' with type 'ros.ament_python' and name 'jointstatepub'
+[1.526s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extensions ['ignore', 'ignore_ament_install']
+[1.527s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extension 'ignore'
+[1.527s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extension 'ignore_ament_install'
+[1.528s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extensions ['colcon_pkg']
+[1.528s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extension 'colcon_pkg'
+[1.529s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extensions ['colcon_meta']
+[1.529s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extension 'colcon_meta'
+[1.530s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extensions ['ros']
+[1.530s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo) by extension 'ros'
+[1.533s] DEBUG:colcon.colcon_core.package_identification:Package 'left_leg_demo' with type 'ros.ament_cmake' and name 'left_leg_demo'
+[1.534s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extensions ['ignore', 'ignore_ament_install']
+[1.535s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extension 'ignore'
+[1.535s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extension 'ignore_ament_install'
+[1.536s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extensions ['colcon_pkg']
+[1.536s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extension 'colcon_pkg'
+[1.536s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extensions ['colcon_meta']
+[1.536s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extension 'colcon_meta'
+[1.536s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extensions ['ros']
+[1.537s] Level 1:colcon.colcon_core.package_identification:_identify(left_leg_demo_new) by extension 'ros'
+[1.539s] DEBUG:colcon.colcon_core.package_identification:Package 'left_leg_demo_new' with type 'ros.ament_cmake' and name 'left_leg_demo_new'
+[1.540s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.540s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.540s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.541s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extensions ['ignore', 'ignore_ament_install']
+[1.541s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extension 'ignore'
+[1.541s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extension 'ignore_ament_install'
+[1.541s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extensions ['colcon_pkg']
+[1.541s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extension 'colcon_pkg'
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extensions ['colcon_meta']
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extension 'colcon_meta'
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extensions ['ros']
+[1.542s] Level 1:colcon.colcon_core.package_identification:_identify(servo_driver) by extension 'ros'
+[1.545s] DEBUG:colcon.colcon_core.package_identification:Package 'servo_driver' with type 'ros.ament_python' and name 'servo_driver'
+[1.546s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extensions ['ignore', 'ignore_ament_install']
+[1.546s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extension 'ignore'
+[1.546s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extension 'ignore_ament_install'
+[1.547s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extensions ['colcon_pkg']
+[1.547s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extension 'colcon_pkg'
+[1.548s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extensions ['colcon_meta']
+[1.548s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extension 'colcon_meta'
+[1.548s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extensions ['ros']
+[1.548s] Level 1:colcon.colcon_core.package_identification:_identify(teleop_controller) by extension 'ros'
+[1.551s] DEBUG:colcon.colcon_core.package_identification:Package 'teleop_controller' with type 'ros.ament_python' and name 'teleop_controller'
+[1.552s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.552s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.552s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.553s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.553s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.644s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'clifford-ik' in 'clifford-ik'
+[1.644s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'clifford_sim_1' in 'clifford_sim_1'
+[1.645s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'jointstatepub' in 'jointstatepub'
+[1.645s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'left_leg_demo' in 'left_leg_demo'
+[1.645s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'left_leg_demo_new' in 'left_leg_demo_new'
+[1.645s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'teleop_controller' in 'teleop_controller'
+[1.647s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.648s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.667s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 277 installed packages in /opt/ros/humble
+[1.674s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.197s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'cmake_args' from command line to 'None'
+[2.197s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'cmake_target' from command line to 'None'
+[2.198s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.198s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[2.198s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'cmake_clean_first' from command line to 'False'
+[2.199s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'cmake_force_configure' from command line to 'False'
+[2.199s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'ament_cmake_args' from command line to 'None'
+[2.200s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[2.200s] Level 5:colcon.colcon_core.verb:set package 'servo_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.200s] DEBUG:colcon.colcon_core.verb:Building package 'servo_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver', 'merge_install': False, 'path': '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/servo_driver', 'symlink_install': False, 'test_result_base': None}
+[2.202s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.209s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.211s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/servo_driver' with build type 'ament_python'
+[2.213s] Level 1:colcon.colcon_core.shell:create_environment_hook('servo_driver', 'ament_prefix_path')
+[2.241s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/hook/ament_prefix_path.ps1'
+[2.253s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/hook/ament_prefix_path.dsv'
+[2.257s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/hook/ament_prefix_path.sh'
+[2.264s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.265s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.296s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/servo_driver'
+[4.298s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.299s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.370s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/servo_driver': PYTHONPATH=/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/servo_driver build --build-base /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build install --record /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/install.log --single-version-externally-managed install_data
+[8.608s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/servo_driver' returned '0': PYTHONPATH=/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/servo_driver build --build-base /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build install --record /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/install.log --single-version-externally-managed install_data
+[8.630s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver' for CMake module files
+[8.633s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver' for CMake config files
+[8.639s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib'
+[8.640s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/bin'
+[8.641s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/pkgconfig/servo_driver.pc'
+[8.644s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages'
+[8.645s] Level 1:colcon.colcon_core.shell:create_environment_hook('servo_driver', 'pythonpath')
+[8.648s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/hook/pythonpath.ps1'
+[8.652s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/hook/pythonpath.dsv'
+[8.656s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/hook/pythonpath.sh'
+[8.662s] Level 1:colcon.colcon_core.environment:checking '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/bin'
+[8.663s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(servo_driver)
+[8.666s] INFO:colcon.colcon_core.shell:Creating package script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/package.ps1'
+[8.676s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/package.dsv'
+[8.682s] INFO:colcon.colcon_core.shell:Creating package script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/package.sh'
+[8.688s] INFO:colcon.colcon_core.shell:Creating package script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/package.bash'
+[8.692s] INFO:colcon.colcon_core.shell:Creating package script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/package.zsh'
+[8.697s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/colcon-core/packages/servo_driver)
+[8.699s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[8.703s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[8.703s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[8.704s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[8.754s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.755s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.756s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.848s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.849s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/local_setup.ps1'
+[8.853s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/_local_setup_util_ps1.py'
+[8.859s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/setup.ps1'
+[8.866s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/local_setup.sh'
+[8.875s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/_local_setup_util_sh.py'
+[8.881s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/setup.sh'
+[8.886s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/local_setup.bash'
+[8.889s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/setup.bash'
+[8.893s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/local_setup.zsh'
+[8.897s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/setup.zsh'

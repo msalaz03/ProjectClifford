@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'CliffordJoy = scripts.CliffordJoy:main',
             'CliffordTF = scripts.clifford_tf:main',
+            'CliffordTF_fullmodel = scripts.clifford_tf_full:main',
         ],
     },
 )

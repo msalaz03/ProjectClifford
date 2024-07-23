@@ -1,0 +1,123 @@
+[0.000000] (-) TimerEvent: {}
+[0.004884] (-) JobUnselected: {'identifier': 'clifford-ik'}
+[0.005511] (-) JobUnselected: {'identifier': 'clifford_sim_1'}
+[0.006034] (-) JobUnselected: {'identifier': 'jointstatepub'}
+[0.007446] (-) JobUnselected: {'identifier': 'left_leg_demo'}
+[0.008142] (-) JobUnselected: {'identifier': 'left_leg_demo_new'}
+[0.008862] (-) JobUnselected: {'identifier': 'teleop_controller'}
+[0.009504] (servo_driver) JobQueued: {'identifier': 'servo_driver', 'dependencies': OrderedDict()}
+[0.009886] (servo_driver) JobStarted: {'identifier': 'servo_driver'}
+[0.102406] (-) TimerEvent: {}
+[0.203691] (-) TimerEvent: {}
+[0.304890] (-) TimerEvent: {}
+[0.406272] (-) TimerEvent: {}
+[0.507609] (-) TimerEvent: {}
+[0.609828] (-) TimerEvent: {}
+[0.710524] (-) TimerEvent: {}
+[0.811342] (-) TimerEvent: {}
+[0.912231] (-) TimerEvent: {}
+[1.013588] (-) TimerEvent: {}
+[1.114614] (-) TimerEvent: {}
+[1.215247] (-) TimerEvent: {}
+[1.315927] (-) TimerEvent: {}
+[1.416568] (-) TimerEvent: {}
+[1.517165] (-) TimerEvent: {}
+[1.617928] (-) TimerEvent: {}
+[1.718569] (-) TimerEvent: {}
+[1.819223] (-) TimerEvent: {}
+[1.919882] (-) TimerEvent: {}
+[2.020849] (-) TimerEvent: {}
+[2.123290] (-) TimerEvent: {}
+[2.226176] (-) TimerEvent: {}
+[2.326831] (-) TimerEvent: {}
+[2.427477] (-) TimerEvent: {}
+[2.528179] (-) TimerEvent: {}
+[2.628912] (-) TimerEvent: {}
+[2.729558] (-) TimerEvent: {}
+[2.830208] (-) TimerEvent: {}
+[2.930829] (-) TimerEvent: {}
+[3.031439] (-) TimerEvent: {}
+[3.132051] (-) TimerEvent: {}
+[3.232683] (-) TimerEvent: {}
+[3.333320] (-) TimerEvent: {}
+[3.433968] (-) TimerEvent: {}
+[3.534760] (-) TimerEvent: {}
+[3.635444] (-) TimerEvent: {}
+[3.736167] (-) TimerEvent: {}
+[3.836938] (-) TimerEvent: {}
+[3.937855] (-) TimerEvent: {}
+[4.039221] (-) TimerEvent: {}
+[4.140228] (-) TimerEvent: {}
+[4.143007] (servo_driver) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/servo_driver', 'build', '--build-base', '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build', 'install', '--record', '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/servo_driver', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'en_CA:en', 'USER': 'mcc', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/mcc', 'CHROME_DESKTOP': 'code-url-handler.desktop', 'TERM_PROGRAM_VERSION': '1.91.1', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '1567', 'SYSTEMD_EXEC_PID': '1738', 'IM_CONFIG_CHECK_ENV': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '2794', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'mcc', 'JOURNAL_STREAM': '8:25399', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'mcc', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/mcc/.local/bin:/opt/ros/humble/bin:/home/mcc/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/mcc-desktop:@/tmp/.ICE-unix/1709,unix/mcc-desktop:/tmp/.ICE-unix/1709', 'INVOCATION_ID': '8aeec61154354c779845e75424724738', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.BBUVQ2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-1ae9efcf5d.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'Unity', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GJS_DEBUG_OUTPUT': 'stderr', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[4.240420] (-) TimerEvent: {}
+[4.341251] (-) TimerEvent: {}
+[4.441884] (-) TimerEvent: {}
+[4.542602] (-) TimerEvent: {}
+[4.643573] (-) TimerEvent: {}
+[4.744429] (-) TimerEvent: {}
+[4.845163] (-) TimerEvent: {}
+[4.946112] (-) TimerEvent: {}
+[5.046935] (-) TimerEvent: {}
+[5.147557] (-) TimerEvent: {}
+[5.248190] (-) TimerEvent: {}
+[5.348817] (-) TimerEvent: {}
+[5.449498] (-) TimerEvent: {}
+[5.550268] (-) TimerEvent: {}
+[5.650926] (-) TimerEvent: {}
+[5.751609] (-) TimerEvent: {}
+[5.852448] (-) TimerEvent: {}
+[5.873370] (servo_driver) StdoutLine: {'line': b'running egg_info\n'}
+[5.877784] (servo_driver) StdoutLine: {'line': b'creating ../build/servo_driver/servo_driver.egg-info\n'}
+[5.878856] (servo_driver) StdoutLine: {'line': b'writing ../build/servo_driver/servo_driver.egg-info/PKG-INFO\n'}
+[5.880591] (servo_driver) StdoutLine: {'line': b'writing dependency_links to ../build/servo_driver/servo_driver.egg-info/dependency_links.txt\n'}
+[5.881903] (servo_driver) StdoutLine: {'line': b'writing entry points to ../build/servo_driver/servo_driver.egg-info/entry_points.txt\n'}
+[5.883269] (servo_driver) StdoutLine: {'line': b'writing requirements to ../build/servo_driver/servo_driver.egg-info/requires.txt\n'}
+[5.885115] (servo_driver) StdoutLine: {'line': b'writing top-level names to ../build/servo_driver/servo_driver.egg-info/top_level.txt\n'}
+[5.886109] (servo_driver) StdoutLine: {'line': b"writing manifest file '../build/servo_driver/servo_driver.egg-info/SOURCES.txt'\n"}
+[5.896311] (servo_driver) StdoutLine: {'line': b"reading manifest file '../build/servo_driver/servo_driver.egg-info/SOURCES.txt'\n"}
+[5.897920] (servo_driver) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[5.901552] (servo_driver) StdoutLine: {'line': b"writing manifest file '../build/servo_driver/servo_driver.egg-info/SOURCES.txt'\n"}
+[5.902482] (servo_driver) StdoutLine: {'line': b'running build\n'}
+[5.903097] (servo_driver) StdoutLine: {'line': b'running build_py\n'}
+[5.905936] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build\n'}
+[5.906854] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib\n'}
+[5.907567] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes\n'}
+[5.908195] (servo_driver) StdoutLine: {'line': b'copying pca9685_nodes/pca9685_test.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes\n'}
+[5.908772] (servo_driver) StdoutLine: {'line': b'copying pca9685_nodes/helloworld.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes\n'}
+[5.912079] (servo_driver) StdoutLine: {'line': b'copying pca9685_nodes/servo_pca9685.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes\n'}
+[5.913884] (servo_driver) StdoutLine: {'line': b'copying pca9685_nodes/__init__.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes\n'}
+[5.916820] (servo_driver) StdoutLine: {'line': b'running install\n'}
+[5.918543] (servo_driver) StdoutLine: {'line': b'running install_lib\n'}
+[5.927299] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes\n'}
+[5.928831] (servo_driver) StdoutLine: {'line': b'copying /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes/pca9685_test.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes\n'}
+[5.931567] (servo_driver) StdoutLine: {'line': b'copying /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes/helloworld.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes\n'}
+[5.935298] (servo_driver) StdoutLine: {'line': b'copying /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes/servo_pca9685.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes\n'}
+[5.936743] (servo_driver) StdoutLine: {'line': b'copying /home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/build/lib/pca9685_nodes/__init__.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes\n'}
+[5.940827] (servo_driver) StdoutLine: {'line': b'byte-compiling /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes/pca9685_test.py to pca9685_test.cpython-310.pyc\n'}
+[5.943145] (servo_driver) StdoutLine: {'line': b'byte-compiling /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes/helloworld.py to helloworld.cpython-310.pyc\n'}
+[5.945209] (servo_driver) StdoutLine: {'line': b'byte-compiling /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes/servo_pca9685.py to servo_pca9685.cpython-310.pyc\n'}
+[5.950973] (servo_driver) StdoutLine: {'line': b'byte-compiling /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/pca9685_nodes/__init__.py to __init__.cpython-310.pyc\n'}
+[5.952591] (servo_driver) StdoutLine: {'line': b'running install_data\n'}
+[5.953693] (-) TimerEvent: {}
+[5.954771] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/ament_index\n'}
+[5.955403] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/ament_index/resource_index\n'}
+[5.956407] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/ament_index/resource_index/packages\n'}
+[5.957544] (servo_driver) StdoutLine: {'line': b'copying resource/servo_driver -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/ament_index/resource_index/packages\n'}
+[5.958391] (servo_driver) StdoutLine: {'line': b'copying package.xml -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver\n'}
+[5.959080] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/launch\n'}
+[5.964169] (servo_driver) StdoutLine: {'line': b'copying launch/joy_servos.launch.py -> /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/launch\n'}
+[5.965256] (servo_driver) StdoutLine: {'line': b'creating /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/share/servo_driver/config\n'}
+[5.965945] (servo_driver) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.973047] (servo_driver) StdoutLine: {'line': b'Copying ../build/servo_driver/servo_driver.egg-info to /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/python3.10/site-packages/servo_driver-0.0.0-py3.10.egg-info\n'}
+[5.989150] (servo_driver) StdoutLine: {'line': b'running install_scripts\n'}
+[6.053957] (-) TimerEvent: {}
+[6.145917] (servo_driver) StdoutLine: {'line': b'Installing helloworld script to /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/servo_driver\n'}
+[6.147936] (servo_driver) StdoutLine: {'line': b'Installing servo_pca9685 script to /home/mcc/Desktop/project_clifford_ws/ProjectClifford/install/servo_driver/lib/servo_driver\n'}
+[6.154511] (servo_driver) StdoutLine: {'line': b"writing list of installed files to '/home/mcc/Desktop/project_clifford_ws/ProjectClifford/build/servo_driver/install.log'\n"}
+[6.156266] (-) TimerEvent: {}
+[6.258259] (-) TimerEvent: {}
+[6.360034] (-) TimerEvent: {}
+[6.395282] (servo_driver) CommandEnded: {'returncode': 0}
+[6.461476] (-) TimerEvent: {}
+[6.489938] (servo_driver) JobEnded: {'identifier': 'servo_driver', 'rc': 0}
+[6.494169] (-) EventReactorShutdown: {}

@@ -1,0 +1,4 @@
+source;share/clifford_sim_1/local_setup.bash
+source;share/clifford_sim_1/local_setup.dsv
+source;share/clifford_sim_1/local_setup.sh
+source;share/clifford_sim_1/local_setup.zsh

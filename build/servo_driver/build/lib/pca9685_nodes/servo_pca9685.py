@@ -50,24 +50,21 @@ class ServoDriver(Node):
         #INIT CORRESPONDING CHANNELS
         self.servo0 = servo.Servo(pca.channels[0])
         self.servo1 = servo.Servo(pca.channels[1])
-        self.servo2 = servo.Servo(pca.channels[2])
 
         #INIT PULSE PARAMETERS
         self.servo0.set_pulse_width_range( 600,2400 )
         self.servo1.set_pulse_width_range( 600,2400 )
-        self.servo2.set_pulse_width_range( 600,2400 )
 
         #INIT SERVO RELATIVE COODS + MISC
         self.universal_shoulder_len = 58.17
         self.universal_arm_len = 107.00
         self.universal_wrist_len = 130.43
 
-        #self.test_coords =  [130.43,58.17,107.0]
-        self.ref_coords= [130.43, 80.17, 107.0]
+        #self.test_coords =  [36.1,0.0,157.3]
+        self.ref_coords= [130.43, 0.0, 107.0]
         
 
-       # self.ref_coords_test =  [170.43,0.0, 107.0]
-        
+        self.ref_coords_test =  [150.43,0.0, 107.0]
 
 
 
@@ -87,16 +84,17 @@ class ServoDriver(Node):
         #Triangle button condition
         elif data.buttons[2] == 1:
             self.get_logger().info("Triangle Pressed...")
-            theta_1,theta_2,theta_3 = self.solve_pitch(self.ref_coords)
-            #theta_2, theta_3 = self.solve_ik_right(self.ref_coords_test)
-            self.get_logger().info(f'THETA_1: {theta_1}')
+            theta_2, theta_3 = self.solve_ik(self.ref_coords_test)
+
+
+            #HARD CODED VALUE TO ADJUST LEFT WRISTS (RIGHT NOT APPLICABLE)
+            theta_3 = 90 - (theta_3 - 90)
+
             self.get_logger().info(f'THETA_2: {theta_2}')
             self.get_logger().info(f'THETA_3: {theta_3}')
 
-
-            self.servo0.angle = theta_1
-            self.servo1.angle = theta_2
-            self.servo2.angle = theta_3
+            #self.servo0.angle = theta_2
+            #self.servo1.angle = theta_3
 
           
         # Square button condition
@@ -124,7 +122,7 @@ class ServoDriver(Node):
     
     #DEFINE NEW FUNC RESET SERVOS
 
-    def solve_ik_right(self,cords):
+    def solve_ik(self,cords):
             # These kinematics calculations will try to be as descripitional as possible but please refer
             # to sheet of calculations by Cameron Bauman. 
             #UNIT: RADIANS & mm
@@ -148,12 +146,18 @@ class ServoDriver(Node):
             beta_3 = math.acos( ( pow(self.universal_arm_len,2) + pow(self.universal_wrist_len,2) - pow(b_len,2) ) 
                                     / (2 * self.universal_arm_len * self.universal_wrist_len) )
             
-            self.get_logger().info(f'beta_1: {beta_1}')
-            self.get_logger().info(f'beta_2: {beta_2}')
-            self.get_logger().info(f'beta_3: {beta_3}')
-
             #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = math.pi - (beta_2 + beta_1)
+            b_prime = (math.pi  * 2) - beta_1
+            theta_2 = b_prime - beta_2
+            theta_2 = theta_2 - math.pi
+
+            #theta_2 = (math.pi * 2 ) - (beta_1 + beta_2)
+
+
+            #THIS VALUE IS HARD CODED
+            #theta_2 = (math.pi/4) - theta_2  #Final value of right_arm 
+
+            #self.get_logger().info(f'BETA_3: {beta_3}')
             theta_3 = math.pi - beta_3
 
             #FINAL VALUE FOR RVIZ
@@ -163,75 +167,13 @@ class ServoDriver(Node):
             theta_2 = theta_2 * (180/math.pi)
             theta_3 = theta_3 * (180/math.pi)
 
-            
-
             self.get_logger().info(f"THETA_3 before math corrects: {theta_3}")
             
             return [theta_2,theta_3]
 
-
-    def solve_ik_left(self,cords):
-            # These kinematics calculations will try to be as descripitional as possible but please refer
-            # to sheet of calculations by Cameron Bauman. 
-            #UNIT: RADIANS & mm
-            x_cord = cords[0] #x cord value
-            y_cord = cords[1] #y cord value not really relevant rn.
-            z_cord = cords[2] #z cord value
-
-            #Find length B using Pythagorean's Theorem
-            b_len = math.sqrt( pow(x_cord,2) + pow(z_cord,2) ) 
-            
-            # Angle of B
-            beta_1 = math.atan(z_cord/x_cord)
-            
-            #Calculations for 'right_arm' and 'right_wrist' applied through cosine law.
-
-            #This is the angle of which right_arm is set. This is necessary for calculating how the long will be SET
-            beta_2 = math.acos( ( pow(self.universal_arm_len,2) + pow(b_len,2) - pow(self.universal_wrist_len,2) ) 
-                                    / (2 * self.universal_arm_len * b_len) )
-
-            #This is the angle of which right_wrist is set.
-            beta_3 = math.acos( ( pow(self.universal_arm_len,2) + pow(self.universal_wrist_len,2) - pow(b_len,2) ) 
-                                    / (2 * self.universal_arm_len * self.universal_wrist_len) )
-            
-            #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = beta_2 + beta_1
-            theta_3 = beta_3
-
-            theta_2 = theta_2 * (180/math.pi)
-            theta_3 = theta_3 * (180/math.pi)
-
-            self.get_logger().info(f"THETA_3 before math corrects: {theta_3}")
-            
-            return [theta_2,theta_3]
-
-    def solve_pitch(self, coords):
-        self.get_logger().info(f"SOLVE FOR PITCH")
-
-        C_value = math.sqrt( ( math.pow(coords[2],2) ) + math.pow(coords[1],2) )
-        D_value = math.sqrt( math.pow(C_value,2) - math.pow(self.universal_shoulder_len,2) )
-        self.get_logger().info(f"D VALUE: {D_value}")
-            
-
-        alpha = math.atan( coords[1] / coords[2] )
-        beta = math.atan( D_value / self.universal_shoulder_len )
-            
-        self.get_logger().info(f"ALPHA VALUE: {alpha}")
-        self.get_logger().info(f"BETA VALUE: {beta}")
-
-        omega = alpha + beta
-        theta_1 = math.pi - omega
-        self.get_logger().info(f"OMEGA VALUE: {omega}")
+    
 
 
-        #define right shoulder = omega
-        coords[2] = D_value #update only the z value
-
-        theta_2,theta_3 = self.solve_ik_left(coords) #returned values of just z updated   
-        theta_1 = theta_1 * (180/math.pi)
-
-        return [theta_1,theta_2,theta_3]
- 
 
 
 def main(args=None):
