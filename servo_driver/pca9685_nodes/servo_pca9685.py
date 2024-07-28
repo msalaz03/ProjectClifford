@@ -38,13 +38,12 @@ class ServoDriver(Node):
 
         #INIT OUR HARDWARE
         i2c = board.I2C() # Init the I2C bus interface
-        pca = PCA9685(i2c) # Create an instance of PCA9685
+        pca = PCA9685(i2c, address=0x40) # Create an instance of PCA9685
         pca.frequency = 60 # Set the PWM frequency to 60Hz
-        
-        #INIT SERVO DUTY
-        for i in range (12):
-            pca.channels[i].duty_cycle = 0x7FFF #50% Duty Cycle
 
+        
+       
+        
         #INIT CORRESPONDING CHANNELS
         self.front_left_shoulder = servo.Servo(pca.channels[12])
         self.front_left_arm = servo.Servo(pca.channels[13])
@@ -62,8 +61,6 @@ class ServoDriver(Node):
         self.back_right_arm = servo.Servo(pca.channels[1])
         self.back_right_wrist = servo.Servo(pca.channels[2])
 
-
-
         #INIT PULSE PARAMETERS
         self.front_left_shoulder.set_pulse_width_range( 600,2400 )
         self.front_left_arm.set_pulse_width_range( 600,2400 )
@@ -80,6 +77,23 @@ class ServoDriver(Node):
         self.back_right_shoulder.set_pulse_width_range( 600,2400 )
         self.back_right_arm.set_pulse_width_range( 600,2400 )
         self.back_right_wrist.set_pulse_width_range( 600,2400 )
+
+        #INIT SERVO DUTY
+        pca.channels[0].duty_cycle = 0x7FFF #50% Duty Cycle
+        pca.channels[1].duty_cycle = 0x7FFF 
+        pca.channels[2].duty_cycle = 0x7FFF 
+
+        pca.channels[4].duty_cycle = 0x7FFF 
+        pca.channels[5].duty_cycle = 0x7FFF 
+        pca.channels[6].duty_cycle = 0x7FFF 
+         
+        pca.channels[8].duty_cycle = 0x7FFF 
+        pca.channels[9].duty_cycle = 0x7FFF 
+        pca.channels[10].duty_cycle = 0x7FFF 
+        
+        pca.channels[12].duty_cycle = 0x7FFF 
+        pca.channels[13].duty_cycle = 0x7FFF 
+        pca.channels[14].duty_cycle = 0x7FFF 
         
         #INIT SERVO RELATIVE COODS + MISC
         self.universal_shoulder_len = 58.17
@@ -88,22 +102,40 @@ class ServoDriver(Node):
 
 
         #INIT OUR SERVOS TO CORRECT POSITIONS
-        #self.init_servos()
+        self.init_servos()
 
         #INIT OUR SERVO COORDINATE SYSTEM (TO DO)
-        self.coordinates_front_left = [130.43,58.17,107.0]
+        self.coordinates_front_left = [
+            [23.43,58.17,172.0],
+            [23.43,58.17,122.0],
+            [73.43,58.17,122.0],
+            [73.43,58.17,172.0]
+        ]
+        
         self.coordinates_front_right = [
             [59.43,58.17,150.0],
             [59.53,58.17,100.0],
-            [109.53,58.17,100.0],
+            [109.43,58.17,100.0],
             [109.43,58.17,150.0],
-            ]
-        self.coordinates_back_left = [130.43,58.17,107.0]
-        self.coordinates_back_right = [50.2,58.17,154]
+        ]
+
+        self.coordinates_back_left = [
+            [15.43,58.17,172.0],
+            [15.43,58.17,122.0],
+            [65.43,58.17,122.0],
+            [65.43,58.17,172.0]
+        ]
+
+        self.coordinates_back_right = [
+            [52.43,58.17,154.0],
+            [52.43,58.17,104.0],
+            [102.43,58.17,104.0],
+            [102.43,58.17,154.0]
+        ]
 
         #FLAGS FOR CLIFFORD DIFFERENT MODES DIFFERENT MODES
         self.idle_mode = 0
-        self.walk_mode = 1
+        self.walk_mode = 0
 
         #DEFINE INDEXS AND TRACKING VARIABLES FOR WALK GAIT
         self.set1_walk_index = 0
@@ -116,29 +148,41 @@ class ServoDriver(Node):
         self.gait_walk_index = 0
         self.target_index = 1
         self.current_coords = [59.43,58.17,150.0]
+        
+        #HARD VARIABLES FOR FIXING OFFSET OF LEFT.
+        self.front_left_hard_arm = 10
+        self.front_left_hand_wrist = 17
+
+        self.back_left_hard_arm = 5
+        self.back_left_hard_wrist = 17
  
 
     def clifford_joystick_callback(self, data):
-        #self.get_logger().info('Clifford Joystick Callback')
-
+        self.get_logger().info('Clifford Joystick Callback')
+        sleep(0.05)
+        #self.get_logger().info(f'SERVO SHOULDER ANGLE: {self.back_left_shoulder.angle}')
+        self.get_logger().info(f'SERVO ARM ANGLE: {self.back_left_arm.angle}')
+        self.get_logger().info(f'SERVO WRIST ANGLE: {self.back_left_wrist.angle}')
         # X button condition
         if data.buttons[0] == 1:
             self.get_logger().info('X Pressed...')
             #self.walk_mode = 1
             #self.idle_mode = 0
-          #  sleep(2)
-            # self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right([59.43,58.17,150.0])
-            # self.get_logger().info(f'arm angle: {self.front_right_arm.angle}')
-            # self.get_logger().info(f'wrist angle: {self.front_right_wrist.angle}')
-            self.init_servos()
+            #sleep(2)
+            self.back_left_shoulder.angle = 100
+            self.back_left_arm.angle = 140
+            self.back_left_wrist.angle = 110
+            #self.init_servos()
 
         # Circle button condition
         elif data.buttons[1] == 1:
             self.get_logger().info("Circle Pressed...")
-           # sleep(2)
-            # self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right([59.43,58.17,100.0])
-            # self.get_logger().info(f'arm angle: {self.front_right_arm.angle}')
-            # self.get_logger().info(f'wrist angle: {self.front_right_wrist.angle}')
+            #sleep(2
+            self.back_left_arm_theta, self.back_left_wrist_theta = self.solve_ik_left([25.43,58.17,172.0])
+            self.back_left_arm.angle = self.back_left_arm_theta + 5
+            self.back_left_wrist.angle = self.back_left_wrist_theta + 17
+            self.get_logger().info(f'arm angle: {self.back_left_arm.angle}')
+            self.get_logger().info(f'wrist angle: {self.back_left_wrist.angle}')
 
         #Triangle button condition
         elif data.buttons[2] == 1:
@@ -156,7 +200,8 @@ class ServoDriver(Node):
             # self.get_logger().info(f'wrist angle: {self.front_right_wrist.angle}')
 
         if self.walk_mode:
-            
+            sleep(0.05)
+
             walk_speed = abs(data.axes[1]) * self.speed_param # define our walking speed
             forward = data.axes[1] >= 0 # Determine direction of movement
             self.get_logger().info(f'walk_speed: {walk_speed}')
