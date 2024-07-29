@@ -109,7 +109,7 @@ class CliffordJointStatePublisher(Node):
             C_value = math.sqrt( ( math.pow(test_cords[2],2) ) + math.pow(test_cords[0],2) )
             #smaller the x the further away
             #smaller z the lower it was.
-            test_cords = [186.0 - HARD_X, 21.05, HARD_Z - 120] #adjusted coordinates
+            test_cords = [186.0 - HARD_X, 21.05, HARD_Z - 40.5] #adjusted coordinates
 
             self.get_logger().info(f'X VALUE {test_cords[0]}')
             self.get_logger().info(f'Z VALUE {test_cords[2]}')
@@ -138,7 +138,7 @@ class CliffordJointStatePublisher(Node):
 
 
             #TO DO LOok into signs.
-            self.current_position_right_arm = theta_1 #update joint_states for arm
+            self.current_position_right_arm = -theta_1 #update joint_states for arm
             self.current_position_right_wrist = theta_2 #update joint_States for wrist.
 
             #we need a coordinate system
