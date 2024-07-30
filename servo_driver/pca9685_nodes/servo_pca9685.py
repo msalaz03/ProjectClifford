@@ -102,43 +102,83 @@ class ServoDriver(Node):
 
 
         #INIT OUR SERVOS TO CORRECT POSITIONS
-        self.init_servos()
+        #self.init_servos()
+        self.front_left_shoulder.angle = 100
+        self.front_left_arm.angle = 145
+        self.front_left_wrist.angle = 105
+
+        self.back_right_shoulder.angle = 105
+        self.back_right_arm.angle = 55
+        self.back_right_wrist.angle = 95
+
+        self.back_left_shoulder.angle = 100
+        self.back_left_arm.angle = 77 + 45
+        self.back_left_wrist.angle = 107
+
+        self.front_right_shoulder.angle = 110
+        self.front_right_arm.angle = 58
+        self.front_right_wrist.angle = 95
+
+        
 
         #INIT OUR SERVO COORDINATE SYSTEM (TO DO)
         self.coordinates_front_left = [
             [23.43,58.17,172.0],
-            [23.43,58.17,122.0],
-            [73.43,58.17,122.0],
-            [73.43,58.17,172.0]
+            [23.43,58.17,147.0],
+            [48.43,58.17,147.0],
+            [48.43,58.17,172.0]
         ]
-    
+        
         self.coordinates_front_right = [
             [59.43,58.17,150.0],
-            [59.53,58.17,100.0],
-            [109.43,58.17,100.0],
-            [109.43,58.17,150.0],
+            [59.53,58.17,125.0],
+            [84.43,58.17,125.0],
+            [84.43,58.17,150.0],
         ]
 
         self.coordinates_back_left = [
             [15.43,58.17,172.0],
-            [15.43,58.17,122.0],
-            [65.43,58.17,122.0],
-            [65.43,58.17,172.0]
+            [15.43,58.17,147.0],
+            [40.43,58.17,147.0],
+            [40.43,58.17,172.0]
         ]
 
         self.coordinates_back_right = [
             [52.43,58.17,154.0],
-            [52.43,58.17,104.0],
-            [102.43,58.17,104.0],
-            [102.43,58.17,154.0]
+            [52.43,58.17,129.0],
+            [77.43,58.17,129.0],
+            [77.43,58.17,154.0]
         ]
 
+        #FLAGS FOR CLIFFORD DIFFERENT MODES DIFFERENT MODES
+        self.idle_mode = 0
+        self.walk_mode = 1
+       
+        #TESTING VARIABLES FOR SINGLE LEG MOTION (07/24/24) / FRONT RIGHT
+        self.speed_param = 4.0
+        self.gait_walk_index = 0
+        self.target_index = 1
+        
+        #GAIT VARIABLES
+        self.set1_walk_index = 0
+        self.set2_walk_index = 0
+        self.set1_target_index = 1
+        self.set2_target_index = 1
+
+        self.set1_current_coords = [59.43,58.17,150.0]
+        self.set2_current_coords = [59.43,58.17,150.0]
+
+
+        self.front_left_current_coords = [23.48,58.17,172.0]
+        self.front_right_current_coords = [59.43,58.17,150.0]
+        self.back_left_current_coords = [15.43,58.17,172.0]
+        self.back_right_current_coords = [52.43,58.17,154.0]
 
         self.set1_coordinates = [
             [59.43,58.17,150.0],
-            [59.53,58.17,100.0],
-            [109.43,58.17,100.0],
-            [109.43,58.17,150.0],
+            [59.53,58.17,125.0],
+            [84.43,58.17,125.0],
+            [84.43,58.17,150.0],
         ]
 
         self.set2_coordinates = [
@@ -147,65 +187,41 @@ class ServoDriver(Node):
             [73.43,58.17,122.0],
             [73.43,58.17,172.0]
         ]
-
-        #FLAGS FOR CLIFFORD DIFFERENT MODES DIFFERENT MODES
-        self.idle_mode = 0
-        self.walk_mode = 0
-
-        #DEFINE INDEXS AND TRACKING VARIABLES FOR WALK GAIT
-        self.set1_walk_index = 0
-        self.set2_walk_index = 0
-        self.set1_target_index = 1
-        self.set2_target_index = 1
-       
-        #TESTING VARIABLES FOR SINGLE LEG MOTION (07/24/24) / FRONT RIGHT
-        self.speed_param = 2.0
-        self.gait_walk_index = 0
-        self.target_index = 1
-        self.current_coords = [59.43,58.17,150.0]
-
-        self.set1_current_coords = [59.43, 58.17, 150.0]
-        self.set2_current_coords = [59.43,58.17,150.0]
-
-        self.front_left_current_coords =  [23.43,58.17,172.0]
-        self.front_right_current_coords = [59.43,58.17,150.0]
-        self.back_left_current_coords = [15.43,58.17,172.0]
-        self.back_right_current_coords = [102.43,58.17,154.0]
         
         #HARD VARIABLES FOR FIXING OFFSET OF LEFT.
         self.front_left_hard_arm = 10
         self.front_left_hard_wrist = 17
 
-        self.back_left_hard_arm = 5
+        self.back_left_hard_arm = -13
         self.back_left_hard_wrist = 17
  
 
     def clifford_joystick_callback(self, data):
-        self.get_logger().info('Clifford Joystick Callback')
-        sleep(0.05)
-        #self.get_logger().info(f'SERVO SHOULDER ANGLE: {self.back_left_shoulder.angle}')
-        self.get_logger().info(f'SERVO ARM ANGLE: {self.back_left_arm.angle}')
-        self.get_logger().info(f'SERVO WRIST ANGLE: {self.back_left_wrist.angle}')
+        #self.get_logger().info('Clifford Joystick Callback')
+
         # X button condition
         if data.buttons[0] == 1:
             self.get_logger().info('X Pressed...')
             #self.walk_mode = 1
             #self.idle_mode = 0
             #sleep(2)
-            self.back_left_shoulder.angle = 100
-            self.back_left_arm.angle = 140
-            self.back_left_wrist.angle = 110
+            self.back_right_shoulder.angle = 105
+            self.back_right_arm.angle = 90
+            self.back_right_wrist.angle = 90
+
+            self.back_left_arm.angle = 90
+            self.back_left_wrist.angle = 90
             #self.init_servos()
 
         # Circle button condition
         elif data.buttons[1] == 1:
             self.get_logger().info("Circle Pressed...")
-            #sleep(2
-            self.back_left_arm_theta, self.back_left_wrist_theta = self.solve_ik_left([25.43,58.17,172.0])
-            self.back_left_arm.angle = self.back_left_arm_theta + 5
-            self.back_left_wrist.angle = self.back_left_wrist_theta + 17
-            self.get_logger().info(f'arm angle: {self.back_left_arm.angle}')
-            self.get_logger().info(f'wrist angle: {self.back_left_wrist.angle}')
+            # #sleep(2
+            # self.back_left_arm_theta, self.back_left_wrist_theta = self.solve_ik_left([25.43,58.17,172.0])
+            # self.back_left_arm.angle = self.back_left_arm_theta + 5
+            # self.back_left_wrist.angle = self.back_left_wrist_theta + 17
+            # self.get_logger().info(f'arm angle: {self.back_left_arm.angle}')
+            # self.get_logger().info(f'wrist angle: {self.back_left_wrist.angle}')
 
         #Triangle button condition
         elif data.buttons[2] == 1:
@@ -222,74 +238,75 @@ class ServoDriver(Node):
             # self.get_logger().info(f'arm angle: {self.front_right_arm.angle}')
             # self.get_logger().info(f'wrist angle: {self.front_right_wrist.angle}')
 
-        if self.walk_mode:
-            sleep(0.05)
+        if self.walk_mode == 1:     
+            self.get_logger().info('Clifford Command Vel Topic')
+            speed_factor = 1.0
+            walk_speed = abs(data.axes[1] * self.speed_param) * 1.0
+            forward = data.axes[1] >= 0
 
-            walk_speed = abs(data.axes[1]) * self.speed_param # define our walking speed
-            forward = data.axes[1] >= 0 # Determine direction of movement
-            self.get_logger().info(f'walk_speed: {walk_speed}')
-            if self.gait_walk_index == 0:
-                #WALKING GAIT POS 1
-                new_z = self.current_coords[2] - walk_speed if forward else self.current_coords[2] + walk_speed
 
-                if (forward and self.current_coords[2] >= self.coordinates_front_right[self.target_index][2]) or \
-                (not forward and self.current_coords[2] <= self.coordinates_front_right[3][2]):
-                    self.current_coords[2] = new_z
-                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)
-                else:
-                    self.get_logger().info('Transitioning gait index')
-                    #CONDITIONS TO SWITCH OUR INDEXS AND TARGETS
-                    self.gait_walk_index = 1 if forward else 3
-                    self.target_index = 2 if forward else 0
 
-            elif self.gait_walk_index == 1:
-                # WALKING GAIT POS 2
-                new_x = self.current_coords[0] + walk_speed if forward else self.current_coords[0] - walk_speed
 
-                if (forward and self.current_coords[0] < self.coordinates_front_right[self.target_index][0]) or \
-                (not forward and self.current_coords[0] > self.coordinates_front_right[0][0]):
-                    self.current_coords[0] = new_x
-                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)    
-                else:
-                    self.get_logger().info('Transitioning gait index')
-                    self.gait_walk_index = 2 if forward else 0
-                    self.target_index = 3 if forward else 1
-                    
-            elif self.gait_walk_index == 2:
-                # WALKING GAIT POS 3
-                new_z = self.current_coords[2] + walk_speed if forward else self.current_coords[2] - walk_speed
+            if self.set1_walk_index == 0 or self.set1_walk_index == 1 or self.set1_walk_index == 2:
+            
+                if self.set1_walk_index == 0:
+                    #SET 1 COORDINATES
+                    self.front_right_current_coords[2] = self.front_right_current_coords[2] - walk_speed if forward else self.front_right_current_coords[2] + walk_speed
+                    self.back_left_current_coords[2] = self.back_left_current_coords[2] - walk_speed if forward else self.back_left_current_coords[2] + walk_speed
+                
+                    #TO DO debatabling we wanna go backwards here.
+                    #SET 2 COORDINATES
+                    self.front_left_current_coords[0] = self.front_left_current_coords[0] + (walk_speed/speed_factor) if forward else self.front_left_current_coords[0] - (walk_speed/speed_factor)
+                    self.back_right_current_coords[0] = self.back_right_current_coords[0] + (walk_speed/speed_factor) if forward else self.back_right_current_coords[0] - (walk_speed/speed_factor)
 
-                if (forward and self.current_coords[2] < self.coordinates_front_right[self.target_index][2]) or \
-                (not forward and self.current_coords[2] > self.coordinates_front_right[1][2]):
-                    self.current_coords[2] = new_z
-                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)
-                else:
-                    self.get_logger().info('Transitioning gait index')
-                    self.gait_walk_index = 3 if forward else 1
-                    self.target_index = 0 if forward else 2
 
-            elif self.gait_walk_index == 3:
-                # WALKING GAIT POS 4
-                new_x = self.current_coords[0] - walk_speed if forward else self.current_coords[0] + walk_speed
+                    #set1_coordinates and set2 are just variables to keep the code less confusing but really they are front_right/front_left
+                    if forward and self.front_right_current_coords[2] >= self.set1_coordinates[self.set1_target_index][2] or \
+                        (not forward and self.front_right_current_coords[2] <= self.set1_coordinates[3][2]):
+                        
+                        
+                        #GET ALL SET1 INFO
+            
+                        #fix value being calculated may have to change to individual
+                        self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
+                        self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
+                        self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
 
-                if (forward and self.current_coords[0] > self.coordinates_front_right[0][0]) or \
-                (not forward and self.current_coords[0] < self.coordinates_front_right[2][0]):
-                    self.current_coords[0] = new_x
-                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)
-                  
+                        #self.get_logger().info(f'FRONT RIGHT COORDS: {self.front_right_current_coords}')
+                        #self.get_logger().info(f'BACK LEFT COORDS: {self.back_left_current_coords}')
 
-                    self.get_logger().info('updated x coordinate')
-                else:
-                    self.get_logger().info('Transitioning gait index')
-                    self.gait_walk_index = 0 if forward else 2
-                    self.target_index = 1 if forward else 3
+                        #ALL COORDINATES CALCULATED TO SET1 ARE BASED OFF FRONT_LEFT
 
-            else:
-                self.get_logger().info("unexpected condition hit.")
+                        #HANDLE OTHER DIRECTION LATER.
+                        # self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
+                        # self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
+                        # self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
+
+                        #self.get_logger().info(f'FRONT LEFT COORDS: {self.front_left_current_coords}')
+                        self.get_logger().info(f'BACK RIGHT COORDS: {self.back_right_current_coords}')
+
+
+                    else:
+                        #ENTERING THIS CONDITION
+                        self.get_logger().info('ELSE HIT')
+                        self.set1_walk_index = 1 if forward else 3
+                        self.set1_target_index = 2 if forward else 0
+                
+                
+
+
+
+
+    
 
     def cmd_vel_callback1(self, msg):
         
         #QUESTIONABLE SETUP FOR CHOOSING WHETHER TO LISTEN TO CMD_VEL TOPIC
+        if not self.walk_mode:
+            return 
+
         self.get_logger().info('Clifford Command Vel Topic')
         speed_factor = 1.0
         walk_speed = abs(msg.linear.x) * 1.0
@@ -298,44 +315,39 @@ class ServoDriver(Node):
 
         if self.set1_walk_index == 0 or self.set1_walk_index == 1 or self.set1_walk_index == 2:
             self.get_logger().info('SET1_WALK_INDEX: 0-2')
+            #set1_new_z = self.current_coords_set1[2] - walk_speed if forward else self.current_coords_set1[2] + walk_speed
+                
 
             if self.set1_walk_index == 0:
                 self.get_logger().info('SET1 INDEX = 0')
+                set1_new_z = self.current_coords_set1[2] - walk_speed if forward else self.current_coords_set1[2] + walk_speed
+                set2_new_x = self.current_coords_set2[0] - (walk_speed / speed_factor) if forward else self.current_coords_set2[0] + walk_speed
 
-                #SET 1 COORDINATES
-                self.front_right_current_coords = self.front_right_current_coords[2] - walk_speed if forward else self.front_right_current_coords[2] + walk_speed
-                self.back_left_current_coords = self.back_left_current_coords[2] - walk_speed if forward else self.back_left_current_coords[2] + walk_speed
-                
-
-                #TO DO debatabling we wanna go backwards here.
-                #SET 2 COORDINATES
-                self.front_left_current_coords = self.front_left_current_coords[0] + (walk_speed/speed_factor) if forward else self.front_left_current_coords - (walk_speed/speed_factor)
-                self.back_right_current_coords = self.back_right_current_coords[0] + (walk_speed/speed_factor) if forward else self.front_left_current_coords - (walk_speed/speed_factor)
-
-                #set1_coordinates and set2 are just variables to keep the code less confusing but really they are front_right/front_left
-                if forward and self.set1_current_coords[2] >= self.set1_coordinates[self.set1_target_index][2] or \
-                    (not forward and self.set1_current_coords[2] <= self.set1_coordinates[3][2]):
+                self.get_logger().info(f'SET2 NEWX: {set2_new_x}')
+                self.get_logger().info(f'SET1 coordinate z {set1_new_z}')
+                if forward and self.current_coords_set1[2] >= self.coordinates_front_right_set1[self.target_index_set1][2]:
                     
+                   
                     self.get_logger().info('UPDATING COORDINATES SET1 AS MAIN')
                     #GET ALL SET1 INFO
+                    #self.current_coords_set1 = [self.current_coords_set1[0], self.current_coords_set1[1],set1_new_z]
+                    self.current_coords_set1[2] = set1_new_z
+                    self.current_position_right_arm, self.current_position_right_wrist = self.solve_ik(self.current_coords_set1)
+                    self.current_position_rear_left_arm, self.current_position_rear_left_wrist = -self.current_position_right_arm, -self.current_position_right_wrist
+
+                    #GET ALL SET2 INFO
+                    self.get_logger().info(f'CURRENT COORDS FOR SET2: {self.current_coords_set2}')
+                    self.current_coords_set2[0] = set2_new_x
         
-                    #fix value being calculated may have to change to individual
-                    self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
-                    rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
-                    self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
-                    self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
-                    
-                    #ALL COORDINATES CALCULATED TO SET1 ARE BASED OFF FRONT_LEFT
-                    self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
-                    front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
-                    self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
-                    self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
+                    self.current_position_rear_right_arm, self.current_position_rear_right_wrist = self.solve_ik(self.current_coords_set2)
+                    self.current_position_front_left_arm, self.current_position_front_left_wrist = -self.current_position_rear_right_arm, -self.current_position_rear_right_wrist
 
                 else:
                     #ENTERING THIS CONDITION
                     self.get_logger().info('ELSE HIT')
-                    self.set1_walk_index = 1 if forward else 0
-                    self.target_index_set1 = 2 if forward else 1
+                    self.get_logger().info(f'PIECE OF SHIT FAILING CONDITION {self.coordinates_set1[self.target_index_set1][2]:}')
+                    self.set1_walk_index = 1
+                    self.target_index_set1 = 2
             
             
     def zero_servos(self):

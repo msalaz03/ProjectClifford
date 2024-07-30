@@ -1,0 +1,64 @@
+
+            walk_speed = abs(data.axes[1]) * self.speed_param # define our walking speed
+            forward = data.axes[1] >= 0 # Determine direction of movement
+            self.get_logger().info(f'walk_speed: {walk_speed}')
+            if self.gait_walk_index == 0:
+                #WALKING GAIT POS 1
+                new_z = self.current_coords[2] - walk_speed if forward else self.current_coords[2] + walk_speed
+
+                if (forward and self.current_coords[2] >= self.coordinates_front_right[self.target_index][2]) or \
+                (not forward and self.current_coords[2] <= self.coordinates_front_right[3][2]):
+                    self.current_coords[2] = new_z
+                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)
+                else:
+                    self.get_logger().info('Transitioning gait index')
+                    #CONDITIONS TO SWITCH OUR INDEXS AND TARGETS
+                    self.gait_walk_index = 1 if forward else 3
+                    self.target_index = 2 if forward else 0
+
+            elif self.gait_walk_index == 1:
+                # WALKING GAIT POS 2
+                new_x = self.current_coords[0] + walk_speed if forward else self.current_coords[0] - walk_speed
+
+                if (forward and self.current_coords[0] < self.coordinates_front_right[self.target_index][0]) or \
+                (not forward and self.current_coords[0] > self.coordinates_front_right[0][0]):
+                    self.current_coords[0] = new_x
+                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)    
+                else:
+                    self.get_logger().info('Transitioning gait index')
+                    self.gait_walk_index = 2 if forward else 0
+                    self.target_index = 3 if forward else 1
+                    
+            elif self.gait_walk_index == 2:
+                # WALKING GAIT POS 3
+                new_z = self.current_coords[2] + walk_speed if forward else self.current_coords[2] - walk_speed
+
+                if (forward and self.current_coords[2] < self.coordinates_front_right[self.target_index][2]) or \
+                (not forward and self.current_coords[2] > self.coordinates_front_right[1][2]):
+                    self.current_coords[2] = new_z
+                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)
+                else:
+                    self.get_logger().info('Transitioning gait index')
+                    self.gait_walk_index = 3 if forward else 1
+                    self.target_index = 0 if forward else 2
+
+            elif self.gait_walk_index == 3:
+                # WALKING GAIT POS 4
+                new_x = self.current_coords[0] - walk_speed if forward else self.current_coords[0] + walk_speed
+
+                if (forward and self.current_coords[0] > self.coordinates_front_right[0][0]) or \
+                (not forward and self.current_coords[0] < self.coordinates_front_right[2][0]):
+                    self.current_coords[0] = new_x
+                    self.front_right_arm.angle,self.front_right_wrist.angle = self.solve_ik_right(self.current_coords)
+                  
+
+                    self.get_logger().info('updated x coordinate')
+                else:
+                    self.get_logger().info('Transitioning gait index')
+                    self.gait_walk_index = 0 if forward else 2
+                    self.target_index = 1 if forward else 3
+
+            else:
+                self.get_logger().info("unexpected condition hit.")
+
+                
