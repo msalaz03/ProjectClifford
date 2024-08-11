@@ -24,7 +24,7 @@ def generate_launch_description():
 
     servo_node = Node(
         package='servo_driver',
-        executable='servo_pca9685',
+        executable='servo2_pca9685',
     )
 
 

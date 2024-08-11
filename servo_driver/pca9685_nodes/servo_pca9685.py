@@ -104,15 +104,15 @@ class ServoDriver(Node):
         #INIT OUR SERVOS TO CORRECT POSITIONS
         #self.init_servos()
         self.front_left_shoulder.angle = 87
-        self.front_left_arm.angle = 85+45
+        self.front_left_arm.angle = 85+45 + 5 + 5
         self.front_left_wrist.angle = 107
 
         self.back_right_shoulder.angle = 105
-        self.back_right_arm.angle = 55
-        self.back_right_wrist.angle = 95
+        self.back_right_arm.angle = 90 + 10
+        self.back_right_wrist.angle = 90 + 5
 
         self.back_left_shoulder.angle = 100
-        self.back_left_arm.angle = 77 + 45
+        self.back_left_arm.angle = 77 + 45 + 5
         self.back_left_wrist.angle = 107
 
         self.front_right_shoulder.angle = 100
@@ -123,31 +123,31 @@ class ServoDriver(Node):
 
         #INIT OUR SERVO COORDINATE SYSTEM (TO DO)
         self.coordinates_front_left = [
-            [13.43,58.17,172.0],
-            [3.43,58.17,172.0],
-            [3.43,58.17,162.0],
-            [13.43,58.17,162.0]
+            [53.43,58.17,172.0],
+            [23.43,58.17,172.0],
+            [23.43,58.17,142.0],
+            [53.43,58.17,142.0]
         ]
         
         self.coordinates_front_right = [
-            [49.43,58.17,150.0],
-            [49.53,58.17,140.0],
-            [59.43,58.17,140.0],
-            [59.43,58.17,150.0]
+            [59.43,58.17,170.0],
+            [59.53,58.17,140.0],
+            [89.43,58.17,140.0],
+            [89.43,58.17,170.0]
         ]
 
         self.coordinates_back_left = [
-            [15.43,58.17,172.0],
-            [15.43,58.17,162.0],
-            [25.43,58.17,162.0],
-            [25.43,58.17,172.0]
+            [35.43,58.17,182.0],
+            [35.43,58.17,152.0],
+            [65.43,58.17,152.0],
+            [65.43,58.17,182.0]
         ]
 
         self.coordinates_back_right = [
-            [52.43,58.17,154.0],
-            [42.43,58.17,154.0],
-            [42.43,58.17,144.0],
-            [52.43,58.17,144.0]
+            [42.43,58.17,174.0],
+            [12.43,58.17,174.0],
+            [12.43,58.17,144.0],
+            [42.43,58.17,144.0]
         ]
 
         
@@ -156,10 +156,12 @@ class ServoDriver(Node):
         self.walk_mode = 1
        
         #TESTING VARIABLES FOR SINGLE LEG MOTION (07/24/24) / FRONT RIGHT
-        self.speed_param = 4.0
+        self.speed_param = 6.5
         self.gait_walk_index = 0
         self.target_index = 1
         
+        self.back_left_prevent_err =5.43
+
         #GAIT VARIABLES
         self.set1_walk_index = 0
         self.set2_walk_index = 0
@@ -180,11 +182,16 @@ class ServoDriver(Node):
         self.set2_coordinates = self.coordinates_front_left
         
         #HARD VARIABLES FOR FIXING OFFSET OF LEFT.
-        self.front_left_hard_arm = -5
+        self.front_left_hard_arm = -5 + 5 + 9
         self.front_left_hard_wrist = 17
 
-        self.back_left_hard_arm = -13
-        self.back_left_hard_wrist = 17
+        self.back_left_hard_arm = -13 + 5 + 5 + 10
+        self.back_left_hard_wrist = 17 
+
+        self.back_right_hard_arm = -15#-15#-5 - 10
+        self.back_right_hard_wrist =5#5 - 9# - 5 - 10
+
+        self.front_right_hard_arm = -5
  
 
     def clifford_joystick_callback(self, data):
@@ -200,10 +207,10 @@ class ServoDriver(Node):
         if data.buttons[0] == 1:
             self.get_logger().info('X Pressed...')
             #[15.43,58.17,172.0],
-            self.back_left_arm_angle, self.back_left_wrist_angle = self.solve_ik_left( [15.43 - 10.0,58.17,176.0 + 3.5])
-            self.back_left_arm.angle =  self.back_left_arm_angle + self.back_left_hard_arm
-            self.back_left_wrist.angle = self.back_left_wrist_angle + self.back_left_hard_wrist
-            self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right([37.43 - 10.0,58.17,154.0 + 3.5])
+            #self.back_left_arm_angle, self.back_left_wrist_angle = self.solve_ik_left( [15.43 - 10.0,58.17,176.0 + 3.5])
+            #self.back_left_arm.angle =  self.back_left_arm_angle + self.back_left_hard_arm
+            #self.back_left_wrist.angle = self.back_left_wrist_angle + self.back_left_hard_wrist
+            #self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right([37.43 - 10.0,58.17,154.0 + 3.5])
             #self.walk_mode = 1
             #self.idle_mode = 0
             #sleep(2)
@@ -223,6 +230,7 @@ class ServoDriver(Node):
         #Triangle button condition
         elif data.buttons[2] == 1:
             self.get_logger().info("Triangle Pressed...")
+            #self.reset_walk()
             #sleep(2)
             # self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right([109.43,58.17,100.0])
             # self.get_logger().info(f'arm angle: {self.front_right_arm.angle}')
@@ -255,8 +263,7 @@ class ServoDriver(Node):
                     #SET 2 COORDINATES
                     self.front_left_current_coords[0] = self.front_left_current_coords[0] - (walk_speed/speed_factor) if forward else self.front_left_current_coords[0] + (walk_speed/speed_factor)
                     self.back_right_current_coords[0] = self.back_right_current_coords[0] - (walk_speed/speed_factor) if forward else self.back_right_current_coords[0] + (walk_speed/speed_factor)
-
-                    
+                   
 
                     #set1_coordinates and set2 are just variables to keep the code less confusing but really they are front_right/front_left
                     if forward and self.front_right_current_coords[2] >= self.set1_coordinates[self.set1_target_index][2] or \
@@ -266,7 +273,9 @@ class ServoDriver(Node):
                         #GET ALL SET1 INFO
             
                         #fix value being calculated may have to change to individual
-                        self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        front_right_arm_angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        self.front_right_arm.angle = front_right_arm_angle + self.front_right_hard_arm
+                       
                         rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
                         self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
                         self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
@@ -276,7 +285,12 @@ class ServoDriver(Node):
                         #ALL COORDINATES CALCULATED TO SET1 ARE BASED OFF FRONT_LEFT
 
                         #HANDLE OTHER DIRECTION LATER.
-                        self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # back_right_arm_angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        back_right_arm_angle, back_right_wrist_angle = self.solve_ik_right(self.back_right_current_coords)
+                        self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        self.back_right_wrist.angle = back_right_wrist_angle + self.back_right_hard_wrist 
+
                         front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
                         self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
                         self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
@@ -315,7 +329,7 @@ class ServoDriver(Node):
                     self.front_left_current_coords[0] = self.front_left_current_coords[0] - (walk_speed/speed_factor) if forward else self.front_left_current_coords[0] + (walk_speed/speed_factor)
                     self.back_right_current_coords[0] = self.back_right_current_coords[0] - (walk_speed/speed_factor) if forward else self.back_right_current_coords[0] + (walk_speed/speed_factor)
 
-
+    
                     #set1_coordinates and set2 are just variables to keep the code less confusing but really they are front_right/front_left
                     if forward and self.front_right_current_coords[0] <= self.set1_coordinates[self.set1_target_index][0] or \
                         (not forward and self.front_right_current_coords[0] >= self.set1_coordinates[1][0]):
@@ -324,7 +338,11 @@ class ServoDriver(Node):
                         #GET ALL SET1 INFO
             
                         #fix value being calculated may have to change to individual
-                        self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        #self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        front_right_arm_angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        self.front_right_arm.angle = front_right_arm_angle + self.front_right_hard_arm
+                       
+                        
                         rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
                         self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
                         self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
@@ -335,7 +353,14 @@ class ServoDriver(Node):
                         #ALL COORDINATES CALCULATED TO SET1 ARE BASED OFF FRONT_LEFT
 
                         #HANDLE OTHER DIRECTION LATER.
-                        self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        #self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # back_right_arm_angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        back_right_arm_angle, back_right_wrist_angle = self.solve_ik_right(self.back_right_current_coords)
+                        self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        self.back_right_wrist.angle = back_right_wrist_angle + self.back_right_hard_wrist 
+                        
+                        
                         front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
                         self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
                         self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
@@ -378,7 +403,11 @@ class ServoDriver(Node):
                         #GET ALL SET1 INFO
             
                         #fix value being calculated may have to change to individual
-                        self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        #self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        front_right_arm_angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        self.front_right_arm.angle = front_right_arm_angle + self.front_right_hard_arm
+                       
+                        
                         rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
                         self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
                         self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
@@ -389,7 +418,13 @@ class ServoDriver(Node):
                         #ALL COORDINATES CALCULATED TO SET1 ARE BASED OFF FRONT_LEFT
 
                         #HANDLE OTHER DIRECTION LATER.
-                        self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        #self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # back_right_arm_angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        back_right_arm_angle, back_right_wrist_angle = self.solve_ik_right(self.back_right_current_coords)
+                        self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        self.back_right_wrist.angle = back_right_wrist_angle + self.back_right_hard_wrist 
+
                         front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
                         self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
                         self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
@@ -404,8 +439,10 @@ class ServoDriver(Node):
                         self.set1_walk_index = 3 if forward else 1
                         self.set1_target_index = 0 if forward else 2
 
-                        if self.front_left_current_coords[0] <= 0:
+                        if self.front_left_current_coords[0] - walk_speed <= 0:
                             self.front_left_current_coords[0] = self.coordinates_front_left[1][0]
+                            #sleep(0.02)
+                            self.get_logger().info(f"HELLOOOOOO {self.coordinates_front_left[1][0]}")
 
                         # self.front_right_current_coords = self.set1_coordinates[self.set1_walk_index]
                         # self.back_left_current_coords = self.coordinates_back_left[self.set1_walk_index]
@@ -442,7 +479,13 @@ class ServoDriver(Node):
                         (not forward and self.front_left_current_coords[2] <= self.set2_coordinates[1][2]):
                     
                         #GET ALL SET2 INFO
-                        self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                       # self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # back_right_arm_angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        back_right_arm_angle, back_right_wrist_angle = self.solve_ik_right(self.back_right_current_coords)
+                        self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        self.back_right_wrist.angle = back_right_wrist_angle + self.back_right_hard_wrist 
+                        
                         front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
                         self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
                         self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
@@ -452,7 +495,11 @@ class ServoDriver(Node):
                         #fix value being calculated may have to change to individual
                         #self.get_logger().info(f'FRONT RIGHT COORDS: {self.front_right_current_coords}')
                         #self.get_logger().info(f'BACK LEFT COORDS: {self.back_left_current_coords}')
-                        self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        #self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        front_right_arm_angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        self.front_right_arm.angle = front_right_arm_angle + self.front_right_hard_arm
+                       
+                        
                         rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
                         self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
                         self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
@@ -477,6 +524,10 @@ class ServoDriver(Node):
 
                         if self.front_left_current_coords[0] + walk_speed <= 0:
                             self.front_left_current_coords[0] = self.coordinates_front_left[1][0]
+
+                        self.get_logger().info(f"FAILED HERE {self.back_left_current_coords[0]}")
+                        # if self.back_left_current_coords[0] + walk_speed <= 0: 
+                        #     self.back_left_current_coords[0] = self.coordinates_back_left[1][0]
 
                         if not forward:
                             self.set1_walk_index = 2 
@@ -505,7 +556,14 @@ class ServoDriver(Node):
                         (not forward and self.front_left_current_coords[0] >= self.set2_coordinates[2][0]):
                         
                         #GET ALL SET2 INFO
-                        self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        #self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # back_right_arm_angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                        # self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        back_right_arm_angle, back_right_wrist_angle = self.solve_ik_right(self.back_right_current_coords)
+                        self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                        self.back_right_wrist.angle = back_right_wrist_angle + self.back_right_hard_wrist 
+                        
+                        
                         front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
                         self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
                         self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
@@ -513,7 +571,11 @@ class ServoDriver(Node):
                         #fix value being calculated may have to change to individual
                         #self.get_logger().info(f'FRONT RIGHT COORDS: {self.front_right_current_coords}')
                         #self.get_logger().info(f'BACK LEFT COORDS: {self.back_left_current_coords}')
-                        self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        #self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        front_right_arm_angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                        self.front_right_arm.angle = front_right_arm_angle + self.front_right_hard_arm
+                       
+                        
                         rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
                         self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
                         self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
@@ -552,10 +614,16 @@ class ServoDriver(Node):
                         #self.coordinates_front_left[0][2]
                         #set1_coordinates and set2 are just variables to keep the code less confusing but really they are front_right/front_left
                         if forward and self.front_left_current_coords[2] <=  172.0 or \
-                            (not forward and self.front_left_current_coords[2] >= self.set2_coordinates[2][2]):
+                            (not forward and self.front_left_current_coords[2] >= 142.0):
                             
                             #GET ALL SET2 INFO
-                            self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                            #self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_right(self.back_right_current_coords)
+                            back_right_arm_angle, back_right_wrist_angle = self.solve_ik_right(self.back_right_current_coords)
+                            self.back_right_arm.angle = back_right_arm_angle + self.back_right_hard_arm
+                            self.back_right_wrist.angle = back_right_wrist_angle + self.back_right_hard_wrist 
+                        
+                        
+                            
                             front_left_arm_angle, front_left_wrist_angle = self.solve_ik_left(self.front_left_current_coords)
                             self.front_left_arm.angle = front_left_arm_angle + self.front_left_hard_arm
                             self.front_left_wrist.angle = front_left_wrist_angle + self.front_left_hard_wrist
@@ -563,7 +631,11 @@ class ServoDriver(Node):
                             #fix value being calculated may have to change to individual
                            # self.get_logger().info(f'FRONT RIGHT COORDS: {self.front_right_current_coords}')
                             #self.get_logger().info(f'BACK LEFT COORDS: {self.back_left_current_coords}')
-                            self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                            #self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                            front_right_arm_angle, self.front_right_wrist.angle = self.solve_ik_right(self.front_right_current_coords)
+                            self.front_right_arm.angle = front_right_arm_angle + self.front_right_hard_arm
+                       
+                            
                             rear_left_arm_angle, rear_left_wrist_angle = self.solve_ik_left(self.back_left_current_coords)
                             self.back_left_arm.angle = rear_left_arm_angle + self.back_left_hard_arm
                             self.back_left_wrist.angle = rear_left_wrist_angle + self.back_left_hard_wrist
@@ -584,9 +656,32 @@ class ServoDriver(Node):
                                 self.set1_walk_index = 0
                                 self.set1_target_index = 1
 
+                            if self.back_left_current_coords[0] <= 0:
+                                self.back_left_current_coords[0] = self.back_left_prevent_err
+                                #self.get_logger().info(f"back lef tcool {self.coordinates_back_left[0][0]}")
                             # self.set2_walk_index = 3 if forward else 1
                             # self.set2_target_index = 0 if forward else 2
 
+    def reset_walk(self):
+        self.get_logger().info("reset hit")
+        self.set1_walk_index = 0
+        self.set2_walk_index = 0
+        self.set1_target_index = 1
+        self.set2_target_index = 1
+        #self.get_logger().info(f"set1 target {s}")
+
+        self.set1_current_coords = self.coordinates_front_right[0]
+        self.set2_current_coords = self.coordinates_front_left[0]
+
+
+        self.front_left_current_coords = self.coordinates_front_left[0]
+        self.front_right_current_coords = self.coordinates_front_right[0]
+        self.back_left_current_coords = self.coordinates_back_left[0]
+        self.back_right_current_coords = self.coordinates_back_right[0]
+        self.get_logger().info(f"{self.front_left_current_coords}")
+        self.set1_coordinates = self.coordinates_front_right
+        self.set2_coordinates = self.coordinates_front_left
+        sleep(2)
 
     def standing_pos(self):
         self.walk_mode = 0
@@ -703,6 +798,8 @@ class ServoDriver(Node):
             # These kinematics calculations will try to be as descripitional as possible but please refer
             # to sheet of calculations by Cameron Bauman. 
             #UNIT: RADIANS & mm
+            self.get_logger().info(f"LEG HAS FAILED AT {cords}")
+
             x_cord = cords[0] #x cord value
             y_cord = cords[1] #y cord value not really relevant rn.
             z_cord = cords[2] #z cord value
