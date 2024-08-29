@@ -99,64 +99,70 @@ class ServoDriver(Node):
         #INIT OUR SERVOS TO CORRECT POSITIONS
         #self.init_servos()
         self.front_left_shoulder.angle = 87
-        self.front_left_arm.angle = 85  #OFFSET
-        self.front_left_wrist.angle = 105  #OFFSET
+        # self.front_left_arm.angle = 85  #OFFSET
+        # self.front_left_wrist.angle = 105  #OFFSET
 
         self.back_right_shoulder.angle = 105
-        self.back_right_arm.angle = 100 #OFFSET
-        self.back_right_wrist.angle = 93  #OFFSET
+        # self.back_right_arm.angle = 100 #OFFSET
+        # self.back_right_wrist.angle = 93  #OFFSET
 
         self.back_left_shoulder.angle = 100
-        self.back_left_arm.angle = 77  #OFFSET
-        self.back_left_wrist.angle = 109  #OFFSET
+        #self.back_left_arm.angle = 77  #OFFSET
+        # self.back_left_wrist.angle = 109  #OFFSET
 
         self.front_right_shoulder.angle = 100
-        self.front_right_arm.angle = 102  #OFFSET
-        self.front_right_wrist.angle = 93  #OFFSET
+        # self.front_right_arm.angle = 102  #OFFSET
+        # self.front_right_wrist.angle = 93  #OFFSET
 
         self.universal_shoulder_len = 58.17
         self.universal_arm_len = 107.00
-        self.universal_wrist_len = 200.43
+        self.universal_wrist_len = 130.43
 
         #INIT OUR SERVO COORDINATE SYSTEM (TO DO)
-        self.front_right_current = [75.43,58.17,217.0]
-        self.front_left_current = [75.43,58.17,217.0]
-        self.back_right_current = [25.43,58.17,217.0]
-        self.back_left_current = [25.43,58.17,217.0]
+        self.front_right_current = [-30.43,58.17,157.0]
+        self.front_left_current =  [-30.43,58.17,165.0]
+        self.back_right_current = [-30.43,58.17,157.0]
+        self.back_left_current = [-30.43,58.17,165.0]
 
         self.front_right_target = [
-            [75.43,58.17,217.0],
-            [75.43,58.17,192.0],
-            [100.43,58.17,192.0],
-            [100.43,58.17,217.0],
+            [-30.43,58.17,157.0],
+            [-30.43,58.17,142.0],
+            [10.43,58.17,142.0],
+            [10.43,58.17,157.0]
         ]
 
         self.front_left_target = [
-            [75.43,58.17,217.0],
-            [50.43,58.17,217.0],
-            [50.43,58.17,192.0],
-            [75.43,58.17,192.0]
+            [-30.43,58.17,163.0],
+            [-60.43,58.17,163.0],
+            [-60.43,58.17,148.0],
+            [-30.43,58.17,148.0]
         ]
         
         self.back_left_target = [
-            [25.43,58.17,217.0],
-            [25.43,58.17,192.0],
-            [50.43,58.17,192.0],
-            [50.43,58.17,217.0]
+            [-30.43,58.17,163.0],
+            [-30.43, 58.17,148.0],
+            [10.43,58.17,148.0],
+            [10.43, 58.17,163.0]
+
         ]
 
         self.back_right_target = [
-            [25.43,58.17,217.0],
-            [0.43,58.17,217.0],
-            [0.43,58.17,192.0],
-            [25.43,58.17,192.0]
+            [-30.43,58.17,157.0],
+            [-60.43,58.17,157.0],
+            [-60.43,58.17,142.0],
+            [-30.43,58.17,142.0]
         ]
+
+
+
+
+        
         #FLAGS FOR CLIFFORD DIFFERENT MODES DIFFERENT MODES
         self.idle_mode = 0
         self.walk_mode = 1
        
         #TESTING VARIABLES FOR SINGLE LEG MOTION (07/24/24) / FRONT RIGHT
-        self.speed_param = 6.5
+        self.speed_param = 6.0
         self.gait_walk_index = 0
         self.target_index = 1
         
@@ -184,18 +190,7 @@ class ServoDriver(Node):
         elif data.buttons[1] == 1:
             self.walk_mode = 0
             self.get_logger().info("Circle Pressed...")
-            # x_cord = -5.0
-            # self.zero_coords[0] += x_cord
-
-            # self.front_left_arm.angle, self.front_left_wrist.angle = self.solve_ik_front_left(self.zero_coords)
-            # self.back_left_arm.angle, self.back_left_wrist.angle = self.solve_ik_back_left(self.zero_coords)
-
-            # self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_front_right(self.zero_coords)
-            # self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_back_right(self.zero_coords)
-            
-
-            # self.get_logger().info(f"CURRENT COORDS {self.zero_coords}")
-         
+            self.side_right_tilt()
         #Triangle button condition
         elif data.buttons[2] == 1:
             self.walk_mode = 0
@@ -204,29 +199,25 @@ class ServoDriver(Node):
         # Square button condition
         elif data.buttons[3] == 1:
             self.walk_mode = 0
-            # self.get_logger().info('Sqaure Pressed...')
-            # x_cord = 5.0
-            # self.zero_coords[0] += x_cord
-
-            # self.front_left_arm.angle, self.front_left_wrist.angle = self.solve_ik_front_left(self.zero_coords)
-            # self.back_left_arm.angle, self.back_left_wrist.angle = self.solve_ik_back_left(self.zero_coords)
-
-            # self.front_right_arm.angle, self.front_right_wrist.angle = self.solve_ik_front_right(self.zero_coords)
-            # self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_back_right(self.zero_coords)
-
+            self.side_left_tilt()
         # Left Trigger    
         elif data.buttons[4] == 1:
             self.reset_gait()
 
         elif data.buttons[6] == 1:
             self.get_logger().info("LEFT BUMPER")
+            self.walk_mode = 0
+            self.tilt_back()
 
         elif data.buttons[7] == 1:
             self.get_logger().info("RIGHT BUMPER")
+            self.walk_mode = 0
+            self.tilt_forward()
 
         if self.walk_mode == 1:     
             #CALCULATE SPEED VARIABLES
-            speed_factor = 3.0
+            
+            speed_factor = 2.0
             walk_speed = abs(data.axes[1] * self.speed_param) * 1.0
             forward = data.axes[1] >= 0
 
@@ -253,13 +244,20 @@ class ServoDriver(Node):
                             self.update_servos()
                     else:
                         if forward:
+                            self.front_right_current[2] = self.front_right_target[self.set1_target_index][2]
+                            self.back_left_current[2] = self.back_left_target[self.set1_target_index][2]
+
                             self.set1_target_index = 2 
                             self.set1_walk_index = 1
                         else:
+                            self.front_right_current[2] = self.front_right_target[self.set1_walk_index][2]
+                            self.back_left_current[2] = self.back_left_target[self.set1_walk_index][2]
                             self.set1_walk_index = 3
                             self.set1_target_index = 0
                        
                         if not forward:
+                            self.front_left_current[0] = self.front_left_target[self.set2_walk_index][0]
+                            self.back_right_current[0] = self.back_right_target[self.set2_walk_index][0]
                             self.set2_walk_index = 3
                             self.set2_target_index = 0
                             
@@ -283,9 +281,14 @@ class ServoDriver(Node):
                     else:
                         if forward:
                             self.get_logger().info("HIT")
+                            self.front_right_current[0] = self.front_right_target[self.set1_target_index][0]
+                            self.back_left_current[0] = self.back_left_target[self.set1_target_index][0]
+
                             self.set1_walk_index = 2
                             self.set1_target_index = 3
                         else:
+                            self.front_right_current[0] = self.front_right_target[self.set1_walk_index][0]
+                            self.back_left_current[0] = self.back_left_target[self.set1_walk_index][0]
                             self.set1_walk_index = 0
                             self.set1_target_index = 1
                 
@@ -305,22 +308,39 @@ class ServoDriver(Node):
 
                     if (forward and self.front_right_current[2] <= self.front_right_target[self.set1_target_index][2]) or \
                         (not forward and self.front_right_current[2] >= self.front_right_target[2][2]):
-                            self.check_fail_set2()
+                            #self.check_fail_set2()
                             self.update_servos()
                             
                     else:
                         self.get_logger().info('ELSE HIT')
-                        self.set1_walk_index = 3 if forward else 1
-                        self.set1_target_index = 0 if forward else 2
+                        
+                        if forward:
+                            self.front_right_current[2] = self.front_right_target[self.set1_target_index][2]
+                            self.back_left_current[2] = self.back_left_target[self.set1_target_index][2]
 
-                        self.check_fail_set2()
+                            self.set1_walk_index = 3
+                            self.set1_target_index = 0
+                        elif not forward:
+                            self.front_right_current[2] = self.front_right_target[self.set1_walk_index][2]
+                            self.back_left_current[2] = self.back_left_target[self.set1_walk_index][2]
+
+                            self.set1_walk_index = 1
+                            self.set1_target_index = 2
+                      
+
+                       # self.check_fail_set2()
 
                         if forward:
+
+                            self.front_left_current[0] = self.front_left_target[self.set2_target_index][0]
+                            self.back_right_current[0] = self.back_right_target[self.set2_target_index][0]
                             self.set2_walk_index = 1
                             self.set2_target_index = 2
 
-            elif self.set2_walk_index in (1,2,3):
 
+
+            elif self.set2_walk_index in (1,2,3):
+                speed_factor = 2.0
                 if self.set2_walk_index == 1:
                     #self.get_logger().info('set2 walk index = 1')
 
@@ -340,10 +360,22 @@ class ServoDriver(Node):
                         self.update_servos()
                     else:
                         self.get_logger().info('ELSE HIT')
-                        self.set2_walk_index = 2 if forward else 0
-                        self.set2_target_index = 3 if forward else 1
+                        if forward:
+                            self.front_left_current[2] = self.front_left_target[self.set2_target_index][2]
+                            self.back_right_current[2] = self.back_right_target[self.set2_target_index][2]
+
+                            self.set2_walk_index = 2
+                            self.set2_target_index = 3
+                        else:
+                            self.front_left_current[2] = self.front_left_target[self.set2_walk_index][2]
+                            self.back_right_current[2] = self.back_right_target[self.set2_walk_index][2]
+                            self.set2_walk_index = 0
+                            self.set2_target_index = 1
+
 
                         if not forward:
+                            self.front_right_current[0] = self.front_right_target[self.set1_walk_index][0]
+                            self.back_left_current[0] = self.back_left_target[self.set1_walk_index][0]
                             self.set1_walk_index = 2
                             self.set1_target_index = 3
                 
@@ -364,12 +396,25 @@ class ServoDriver(Node):
 
                     if (forward and self.front_left_current[0] <= self.front_left_target[self.set2_target_index][0]) or \
                         (not forward and self.front_left_current[0] >= self.front_left_target[2][0]):
-                            self.check_fail_set2()
+                            #self.check_fail_set2()
                             self.update_servos()
                     else:
-                        self.check_fail_set2()
+                        #self.check_fail_set2()
                         self.set2_walk_index = 3 if forward else 1
                         self.set2_target_index = 0 if forward else 2
+
+                        if forward:
+                            self.front_left_current[0] = self.front_left_target[self.set2_target_index][0]
+                            self.back_right_current[0] = self.back_right_target[self.set2_target_index][0]
+
+                            self.set2_walk_index = 3
+                            self.set2_target_index = 0
+                        else:
+                            self.front_left_current[0] = self.front_left_target[self.set2_walk_index][0]
+                            self.back_right_current[0] = self.back_right_target[self.set2_walk_index][0]
+
+                            self.set2_walk_index = 1
+                            self.set2_target_index = 2
 
                 elif self.set2_walk_index == 3:
                     self.get_logger().info('set2 walk index = 3')
@@ -388,17 +433,29 @@ class ServoDriver(Node):
 
                     if (forward and self.front_left_current[2] <= self.front_left_target[self.set2_target_index][2]) or \
                         (not forward and self.front_left_current[2] >= self.front_left_target[3][2]):
-                            self.check_fail_set1()
+                          #  self.check_fail_set1()
                             self.update_servos()
                     else:
                         self.get_logger().info('ELSE HIT')
-                        self.check_fail_set1()
+                      #  self.check_fail_set1()
                         # Update set2 indices
-                        self.set2_walk_index = 0 if forward else 2
-                        self.set2_target_index = 1 if forward else 3
+                       
+                        if forward:
+                            self.front_left_current[2] = self.front_left_target[self.set2_target_index][2]
+                            self.back_right_current[2] = self.back_right_target[self.set2_target_index][2]
+                            self.set2_walk_index = 0
+                            self.set2_target_index = 1
+                        else:
+                            self.front_left_current[2] = self.front_left_target[self.set2_walk_index][2]
+                            self.back_right_current[2] = self.back_right_target[self.set2_walk_index][2]
+                            self.set2_walk_index = 2
+                            self.set2_target_index = 3
 
                         # Update set1 indices if moving forward
                         if forward:
+                            self.front_right_current[0] = self.front_right_target[self.set1_target_index][0]
+                            self.back_left_current[0] = self.back_left_target[self.set1_target_index][0]
+
                             self.set1_walk_index = 0
                             self.set1_target_index = 1
 
@@ -410,11 +467,10 @@ class ServoDriver(Node):
         self.set2_walk_index = 0
         self.set1_target_index = 1
         self.set2_target_index = 1
-
-        self.front_right_current = [75.43,58.17,217.0]
-        self.front_left_current = [75.43,58.17,217.0]
-        self.back_right_current = [25.43,58.17,217.0]
-        self.back_left_current = [25.43,58.17,217.0]
+        self.front_right_current = [-30.43,58.17,157.0]
+        self.front_left_current =  [-30.43,58.17,165.0]
+        self.back_right_current = [-30.43,58.17,157.0]
+        self.back_left_current = [-30.43,58.17,165.0]
 
     def solve_ik_front_right(self,cords):
             # These kinematics calculations will try to be as descripitional as possible but please refer
@@ -441,7 +497,12 @@ class ServoDriver(Node):
                                     / (2 * self.universal_arm_len * self.universal_wrist_len) )
 
             #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = math.pi - (beta_2 + beta_1)
+           
+            if beta_1 < 0:
+                theta_2 = abs(beta_1 + beta_2)
+            else:
+                theta_2 = math.pi - (beta_1 + beta_2)
+
             theta_3 = math.pi - beta_3
 
             #FINAL VALUE FOR RVIZ
@@ -483,7 +544,11 @@ class ServoDriver(Node):
                                     / (2 * self.universal_arm_len * self.universal_wrist_len) )
             
             #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = beta_2 + beta_1
+            if beta_1 < 0:
+                theta_2 = math.pi + (beta_1 + beta_2)
+            else:
+                theta_2 = beta_1 + beta_2
+            
             theta_3 = beta_3
 
             arm_offset = -5 
@@ -510,6 +575,7 @@ class ServoDriver(Node):
             
             # Angle of B
             beta_1 = math.atan(z_cord/x_cord)
+            #self.get_logger().info(f"shit broke {beta_1 * (180/math.pi)}")
             
             #Calculations for 'right_arm' and 'right_wrist' applied through cosine law.
 
@@ -521,8 +587,17 @@ class ServoDriver(Node):
             beta_3 = math.acos( ( pow(self.universal_arm_len,2) + pow(self.universal_wrist_len,2) - pow(b_len,2) ) 
                                     / (2 * self.universal_arm_len * self.universal_wrist_len) )
 
+            #self.get_logger().info(f"beta_2 {beta_2 * (180/math.pi)}")
+            #self.get_logger().info(f"beta3 {beta_3 * (180/math.pi)}")
+
             #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = math.pi - (beta_2 + beta_1)
+
+            if beta_1 < 0:
+                theta_2 = abs(beta_1 + beta_2)
+            else:
+                theta_2 = math.pi - (beta_1 + beta_2)
+
+
             theta_3 = math.pi - beta_3
 
             #FINAL VALUE FOR RVIZ
@@ -533,8 +608,10 @@ class ServoDriver(Node):
             wrist_offset = 3
 
             theta_2 = (theta_2 * (180/math.pi)) + arm_offset
+            #self.get_logger().info(f"shit broke {theta_2}")
             theta_3 = (theta_3 * (180/math.pi)) + wrist_offset 
-
+            #self.get_logger().info(f"shit broke {theta_3}")
+            
             return [theta_2,theta_3]
 
     def solve_ik_back_left(self,cords):
@@ -557,7 +634,7 @@ class ServoDriver(Node):
             beta_1 = math.atan(z_cord/x_cord)
             
             #Calculations for 'right_arm' and 'right_wrist' applied through cosine law.
-
+        
             #This is the angle of which right_arm is set. This is necessary for calculating how the long will be SET
             beta_2 = math.acos( ( pow(self.universal_arm_len,2) + pow(b_len,2) - pow(self.universal_wrist_len,2) ) 
                                     / (2 * self.universal_arm_len * b_len) )
@@ -567,16 +644,22 @@ class ServoDriver(Node):
                                     / (2 * self.universal_arm_len * self.universal_wrist_len) )
             
             #Shouldn't be too relevant to calculations besides for RVIZ, but this is to make the calculations relative to their axes.
-            theta_2 = beta_2 + beta_1
+            theta_2 = math.pi + (beta_2 + beta_1)
+
+            if beta_1 < 0:
+                theta_2 = math.pi + (beta_1 + beta_2)
+            else:
+                theta_2 = beta_1 + beta_2
+
+           # self.get_logger().info(f"shit broke {theta_2 * (180/math.pi)}")
             theta_3 = beta_3
 
             arm_offset = -13
             wrist_offset = 19
 
             theta_2 = (theta_2 * (180/math.pi)) + arm_offset
+           
             theta_3 = (theta_3 * (180/math.pi)) + wrist_offset
-
-           # self.get_logger().info(f"THETA_3 before math corrects: {theta_3}")
             
             return [theta_2,theta_3]
 
@@ -616,13 +699,17 @@ class ServoDriver(Node):
         self.back_right_arm.angle, self.back_right_wrist.angle = self.solve_ik_back_right(self.back_right_current)
 
     def check_fail_set1 (self):
-        if self.front_left_current[0] <= self.front_right_target[0][0] or self.back_right_current[0] <= self.front_right_target[0][0]:
+        if self.front_left_current[0] <= self.front_right_target[0][0]:
             self.front_right_current[0] = self.front_right_target[0][0]
+
+        if self.back_left_current[0] <= self.back_left_target[0][0]:
             self.back_left_current[0] = self.back_left_target[0][0]
 
     def check_fail_set2(self):
-         if self.front_left_current[0] <= 0 or self.back_right_current[0] <= 0:
+        if self.front_left_current[0] <= self.front_left_target[1][0]:
             self.front_left_current[0] = self.front_left_target[1][0]
+
+        if self.back_right_current[0] <= 0:
             self.back_right_current[0] = self.back_right_target[1][0]
 
     def stand_up(self):
@@ -640,13 +727,23 @@ class ServoDriver(Node):
         self.update_servos()
     
     def tilt_back(self):
-        self.back_left_current[2] -= 2.5
-        self.back_right_current[2] -= 2.5
+        self.back_left_current[2] -= 0.5
+        self.back_right_current[2] -= 0.5
         self.update_servos()
         
     def tilt_forward(self):
-        self.front_right_current[2] -= 2.5
-        self.front_left_current[2] -= 2.5
+        self.front_right_current[2] -= 0.5
+        self.front_left_current[2] -= 0.5
+        self.update_servos()
+
+    def side_left_tilt(self):
+        self.front_left_current[2] -= 1.5
+        self.back_left_current[2] -= 1.5
+        self.update_servos()
+
+    def side_right_tilt(self):
+        self.front_right_current[2] -=1.5
+        self.back_right_current[2] -= 1.5
         self.update_servos()
 
 def main(args=None):
