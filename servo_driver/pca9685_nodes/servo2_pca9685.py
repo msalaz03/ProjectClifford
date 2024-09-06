@@ -5,6 +5,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
+import os
 
 #HARDWARE IMPORTS
 import board
@@ -17,6 +18,31 @@ import math as math
 
 #GENERAL IMPORTS
 from time import sleep as sleep
+import time
+
+# Define GPIO pins
+#TRIG = 6  # Pin connected to TRIG #20
+#ECHO = 5  # Pin connected to ECHO #21
+
+TRIG_RIGHT = 6
+ECHO_RIGHT = 5
+
+TRIG_LEFT = 20
+ECHO_LEFT = 21
+
+# Set up GPIO
+GPIO.setwarnings(False)
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(TRIG_RIGHT, GPIO.OUT)
+GPIO.setup(ECHO_RIGHT, GPIO.IN)
+GPIO.output(TRIG_RIGHT, False)
+
+GPIO.setup(TRIG_LEFT, GPIO.OUT)
+GPIO.setup(ECHO_LEFT, GPIO.IN)
+GPIO.output(TRIG_LEFT, False)
+
+
 
 class ServoDriver(Node):
     
@@ -153,13 +179,11 @@ class ServoDriver(Node):
             [-30.43,58.17,142.0]
         ]
 
-
-
-
-        
         #FLAGS FOR CLIFFORD DIFFERENT MODES DIFFERENT MODES
         self.idle_mode = 0
         self.walk_mode = 1
+        self.clifford_walk_back = 0
+        #self.prev_state = 0
        
         #TESTING VARIABLES FOR SINGLE LEG MOTION (07/24/24) / FRONT RIGHT
         self.speed_param = 6.0
@@ -194,8 +218,7 @@ class ServoDriver(Node):
         #Triangle button condition
         elif data.buttons[2] == 1:
             self.walk_mode = 0
-            self.stand_up()
-       
+            self.stand_up()  
         # Square button condition
         elif data.buttons[3] == 1:
             self.walk_mode = 0
@@ -214,12 +237,25 @@ class ServoDriver(Node):
             self.walk_mode = 0
             self.tilt_forward()
 
+        elif data.buttons[8] and data.buttons[9]:
+            self.get_logger().info('System Shutdown Executing ')
+            self.shutdown_rpi()
+
+        self.clifford_object()
+
         if self.walk_mode == 1:     
             #CALCULATE SPEED VARIABLES
-            
+           
+           
             speed_factor = 2.0
-            walk_speed = abs(data.axes[1] * self.speed_param) * 1.0
-            forward = data.axes[1] >= 0
+            if self.clifford_walk_back == 0:
+                #self.get_logger().info("CLIFF SHOULD STOP")
+                walk_speed = abs(data.axes[1] * self.speed_param)
+                forward = data.axes[1] >= 0
+            elif self.clifford_walk_back == 1:
+                #self.get_logger().info("CLIFF SHOULD GO")
+                walk_speed = abs(-.75 * self.speed_param)
+                forward = False
 
             #FRONT RIGHT & BACK LEFT TAKING CHARGE
             if self.set1_walk_index in (0,1,2):
@@ -280,7 +316,7 @@ class ServoDriver(Node):
 
                     else:
                         if forward:
-                            self.get_logger().info("HIT")
+                            #self.get_logger().info("HIT")
                             self.front_right_current[0] = self.front_right_target[self.set1_target_index][0]
                             self.back_left_current[0] = self.back_left_target[self.set1_target_index][0]
 
@@ -312,7 +348,7 @@ class ServoDriver(Node):
                             self.update_servos()
                             
                     else:
-                        self.get_logger().info('ELSE HIT')
+                        #self.get_logger().info('ELSE HIT')
                         
                         if forward:
                             self.front_right_current[2] = self.front_right_target[self.set1_target_index][2]
@@ -337,8 +373,6 @@ class ServoDriver(Node):
                             self.set2_walk_index = 1
                             self.set2_target_index = 2
 
-
-
             elif self.set2_walk_index in (1,2,3):
                 speed_factor = 2.0
                 if self.set2_walk_index == 1:
@@ -359,7 +393,7 @@ class ServoDriver(Node):
                     (not forward and self.front_left_current[2] <= self.front_left_target[1][2]):
                         self.update_servos()
                     else:
-                        self.get_logger().info('ELSE HIT')
+                        #self.get_logger().info('ELSE HIT')
                         if forward:
                             self.front_left_current[2] = self.front_left_target[self.set2_target_index][2]
                             self.back_right_current[2] = self.back_right_target[self.set2_target_index][2]
@@ -417,7 +451,7 @@ class ServoDriver(Node):
                             self.set2_target_index = 2
 
                 elif self.set2_walk_index == 3:
-                    self.get_logger().info('set2 walk index = 3')
+                    #self.get_logger().info('set2 walk index = 3')
 
                     # SET 2 COORDINATES
                     if forward:
@@ -436,7 +470,7 @@ class ServoDriver(Node):
                           #  self.check_fail_set1()
                             self.update_servos()
                     else:
-                        self.get_logger().info('ELSE HIT')
+                        #self.get_logger().info('ELSE HIT')
                       #  self.check_fail_set1()
                         # Update set2 indices
                        
@@ -459,7 +493,58 @@ class ServoDriver(Node):
                             self.set1_walk_index = 0
                             self.set1_target_index = 1
 
-                      
+    def clifford_object(self):
+        check_dist = self.measure_distance_right()
+        #self.get_logger().info(f"What is you doing {check_dist}")
+        if check_dist < 20.0 and self.walk_mode == 1:
+            # if self.prev_state == 0:
+            #     self.prev_state = 1
+            #     self.reset_gait()
+            #self.get_logger().info("Clifford is moving back")
+            self.clifford_walk_back = 1
+        else:
+            self.clifford_walk_back = 0 
+            # if self.prev_state == 1:
+            #     self.prev_state = 0
+            #     self.reset_gait()
+           # self.get_logger().info("Clifford is not moving back")
+
+    def measure_distance_right(self):
+        # Set the timeout threshold (in seconds)
+        timeout_threshold = 0.02  # Adjust the threshold to match your needs (20 milliseconds)
+
+        # Send a short pulse to trigger the ultrasonic burst
+        GPIO.output(TRIG_RIGHT, True)
+        time.sleep(0.00001)  # 10 microseconds
+        GPIO.output(TRIG_RIGHT, False)
+
+        # Wait for the echo response with timeout
+        pulse_start = time.time()
+        start_time = time.time()
+
+        # Wait for the echo signal to start (GPIO input goes HIGH)
+        while GPIO.input(ECHO_RIGHT) == 0:
+            pulse_start = time.time()
+            if time.time() - start_time > timeout_threshold:
+                self.get_logger().info("Ultrasonic sensor timeout: no response from ECHO_RIGHT (waiting for HIGH).")
+                return 30.0  # Return an error value or handle the timeout
+
+        # Wait for the echo signal to stop (GPIO input goes LOW)
+        pulse_end = time.time()
+        start_time = time.time()
+
+        while GPIO.input(ECHO_RIGHT) == 1:
+            pulse_end = time.time()
+            if time.time() - start_time > timeout_threshold:
+                self.get_logger().info("Ultrasonic sensor timeout: no response from ECHO_RIGHT (waiting for LOW).")
+                return 30.0  # Return an error value or handle the timeout
+
+        # Calculate the distance based on the time difference
+        pulse_duration = pulse_end - pulse_start
+        distance = pulse_duration * 17150  # Sound speed in air (34300 cm/s) divided by 2
+        distance = round(distance, 2)  # Round to two decimal places
+        
+        return distance
 
     def reset_gait (self):
         self.walk_mode = 1
@@ -745,6 +830,9 @@ class ServoDriver(Node):
         self.front_right_current[2] -=1.5
         self.back_right_current[2] -= 1.5
         self.update_servos()
+
+    def shutdown_rpi(self):
+        os.system('sudo shutdown -h now')
 
 def main(args=None):
     rclpy.init(args=args)

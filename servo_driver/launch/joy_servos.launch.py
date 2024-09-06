@@ -43,5 +43,6 @@ def generate_launch_description():
             joy_node,
             servo_node,
             #ultrasonic_node,
+            #os.system("sudo python3 /home/mcc/Desktop/lcd/lcd.py")
         ]
     )
