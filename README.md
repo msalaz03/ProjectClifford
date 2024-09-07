@@ -38,7 +38,9 @@ projectclifford_ws/
 │   └── ...
 ```
 
+#### For Using RVIZ With Clifford
 
+#### For Launching & Booting Clifford
 
 ## Hardware
 From researching similar projects to Clifford and doing our research we sourced components that we thought were optimal for this project. Consisting of two voltage regulators to isolate the power going into the servo driver and Raspberry Pi. ADC boards in order to measure different voltages levels into a relative percentage for battery life. A high-capacity battery in order to prolong battery life. LCD screen in order to demonstrate battery life real-time. 25 KG servos, a mixture between torque and speed in order to ensure smooth movements. 
@@ -116,10 +118,6 @@ After finalizing the project here our somethings that help improve production.
 ## Software
 
 ## Kinematics
-
-#### For Using RVIZ With Clifford
-
-#### For Launching & Booting Clifford
 
 ## Future Additions
 
