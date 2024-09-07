@@ -1,3 +1,0 @@
-[console_scripts]
-ultrasonic = ultrasonic.clifford_ultrasonic:main
-
