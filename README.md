@@ -3,10 +3,10 @@
 
 
 * [Overview](#overview)
+* [Setup](#setup)
 * [Hardware](#hardware)
 * [Software](#software)
 * [Kinematics](#kinematics)
-* [Setup](#setup)
 * [Future Additions](#future-additions)
 * [Conclusion](#conclusion)
 * [Bill of Materials](#bill-of-materials)
@@ -18,6 +18,27 @@ Over the past four months Cameron, Chase and I tried tackling our own version of
 Now then, running on Ubuntu 22.04 LTS using ROS-Humble we went through a series of processes in order to organizer this into a simple manner. Although, we will note that they're some poor practices as a result of time constraints and it being our first time working with the ROS framework. These will be noted and clarified furthermore in this document. Clifford is an entirely 3D printed project that uses inverse-kinematics in order simulate a dog walking.
 
 Please check the references, this would have not been possible without open-source projects. 
+
+## Setup
+The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so prior to programming the entire project.
+
+```
+Three most important folders for this project.
+
+projectclifford_ws/
+│
+├── src/
+│   ├── clifford_sim_1
+│   │   └── ...
+│   ├── servo_driver
+│   │   └── ...  
+│   └── ...
+│   ├── teleop_controller
+│   │   └── ...  
+│   └── ...
+```
+
+
 
 ## Hardware
 From researching similar projects to Clifford and doing our research we sourced components that we thought were optimal for this project. Consisting of two voltage regulators to isolate the power going into the servo driver and Raspberry Pi. ADC boards in order to measure different voltages levels into a relative percentage for battery life. A high-capacity battery in order to prolong battery life. LCD screen in order to demonstrate battery life real-time. 25 KG servos, a mixture between torque and speed in order to ensure smooth movements. 
@@ -95,25 +116,6 @@ After finalizing the project here our somethings that help improve production.
 ## Software
 
 ## Kinematics
-
-## Setup
-The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so prior to programming the entire project.
-
-```
-Three most important folders for this project.
-
-projectclifford_ws/
-│
-├── src/
-│   ├── clifford_sim_1
-│   │   └── ...
-│   ├── servo_driver
-│   │   └── ...  
-│   └── ...
-│   ├── teleop_controller
-│   │   └── ...  
-│   └── ...
-```
 
 #### For Using RVIZ With Clifford
 
