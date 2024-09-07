@@ -99,11 +99,21 @@ After finalizing the project here our somethings that help improve production.
 ## Setup
 The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so prior to programming the entire project.
 
-Project Root Directory
-├── clifford_sim_1
-├── servo_driver
-└── teleop_controller
+```
+Three most important folders for this project.
 
+projectclifford_ws/
+│
+├── src/
+│   ├── clifford_sim_1
+│   │   └── ...
+│   ├── servo_driver
+│   │   └── ...  
+│   └── ...
+│   ├── teleop_controller
+│   │   └── ...  
+│   └── ...
+```
 
 #### For Using RVIZ With Clifford
 
