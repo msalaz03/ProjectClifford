@@ -51,32 +51,32 @@ From researching similar projects to Clifford and doing our research we sourced 
 
  <tr>
     <td>LiPo Battery</td>
-    <td>Model Name</td>
+    <td>Zeee 2S LiPo 6200mAh @ 7.4V</td>
 </tr>
 
  <tr>
     <td>Servos</td>
-    <td>Model Name</td>
+    <td>DS3225MG</td>
 </tr>
 
  <tr>
     <td>Servo Driver</td>
-    <td>Model Name</td>
+    <td>PCA9685</td>
 </tr>
 
  <tr>
     <td>ADC Board</td>
-    <td>Model Name</td>
+    <td>ADS1115</td>
 </tr>
 
  <tr>
     <td>Gyroscope</td>
-    <td>Model Name</td>
+    <td>MPU-6050</td>
 </tr>
 
  <tr>
     <td>LCD 16x2</td>
-    <td>Model Name</td>
+    <td>No information rn</td>
 </tr>
  
 </table>
