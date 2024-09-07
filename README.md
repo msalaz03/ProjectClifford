@@ -22,10 +22,6 @@ Please check the references, this would have not been possible without open-sour
 ## Hardware
 From researching similar projects to Clifford and doing our research we sourced components that we thought were optimal for this project. Consisting of two voltage regulators to isolate the power going into the servo driver and Raspberry Pi. ADC boards in order to measure different voltages levels into a relative percentage for battery life. A high-capacity battery in order to prolong battery life. LCD screen in order to demonstrate battery life real-time. 25 KG servos, a mixture between torque and speed in order to ensure smooth movements. 
 
-#### Calculating Battery Life 
-
-#### Other Useful Components  
-
 <br>
   
 <table>
@@ -80,6 +76,18 @@ From researching similar projects to Clifford and doing our research we sourced 
 </tr>
  
 </table>
+
+#### Calculating Battery Life 
+Using the 5V pin provided to power the ADS1150, we needed to step down the balance charger voltage outputted from the LiPo. We created a small PCB board which included a voltage divider circuit such that the highest voltage read would be ~5V. Now with voltage being able to be read, we then determined the highest voltage ie @ 100% and at 0%. We then used the current voltage in order to calculate the current battery percentage.
+
+#### Other Useful Components  
+After finalizing the project here our somethings that help improve production. 
+  - Buy a dedicated LiPo Battery Balance Charger, these will guarantee the quality of battery being used and can charge relatively quick.
+  - Using a DC Power Supply, would prevent the need of constantly recharging the battery after testing.
+  - If possible maximize the hardware you use. We settled on the Raspberry Pi 4B, it was okay. I figured I would do most of my programming on the Pi anyway but there were times it was just so slow.
+  - Get a dedicated cooler for your controller, especially for Raspberry Pi. These things will heat up quickly.
+
+
 
 
 
