@@ -57,6 +57,11 @@ From researching similar projects to Clifford and doing our research we sourced 
     <td>Controller</td>
     <td>Raspberry Pi 4B</td>
   </tr>
+
+  <tr>
+    <td> Camera </td>
+    <td>  no information rn </td>
+  </tr>
   
    <tr>
     <td>Voltage Regulator for Pi</td>
