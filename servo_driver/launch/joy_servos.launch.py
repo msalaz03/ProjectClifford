@@ -24,8 +24,13 @@ def generate_launch_description():
 
     servo_node = Node(
         package='servo_driver',
-        executable='servo_pca9685',
+        executable='servo2_pca9685',
     )
+
+    # ultrasonic_node = Node(
+    #     package='ultrasonic',
+    #     executable='ultrasonic',
+    # )
 
 
     return LaunchDescription(
@@ -37,5 +42,7 @@ def generate_launch_description():
             ),
             joy_node,
             servo_node,
+            #ultrasonic_node,
+            #os.system("sudo python3 /home/mcc/Desktop/lcd/lcd.py")
         ]
     )

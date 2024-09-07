@@ -1,4 +1,0 @@
-[console_scripts]
-helloworld = pca9685_nodes.helloworld:main
-servo_pca9685 = pca9685_nodes.servo_pca9685:main
-

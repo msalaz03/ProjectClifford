@@ -27,6 +27,7 @@ setup(
         'console_scripts': [
             'servo_pca9685 = pca9685_nodes.servo_pca9685:main',
             'helloworld = pca9685_nodes.helloworld:main',
+            'servo2_pca9685 = pca9685_nodes.servo2_pca9685:main'
         ],
     },
 )
