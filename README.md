@@ -231,7 +231,7 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>DS3225MG 25 Kg Servos x2</td>
     <td>6</td>
-    <td><a href="https://amzn.to/3MCOd8t">Link</a></td>
+    <td><a href="https://amzn.to/4ej0M4R">Link</a></td>
     <td>$264</td>
   </tr>
   <tr>
