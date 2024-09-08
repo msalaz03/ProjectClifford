@@ -135,12 +135,26 @@ To set the config file for the motion service to work navigate to:
 ```
 sudo nano /etc/default/motion
 ```
-Make the following changes:
+Make the following changes to the config file:
 ```
-
+daemon on
+stream_localhost off
+webcontrol_localhost off
+framerate 1500
+stream_quality 100
+quality 100
+width 640
+height 480
+post_capture = 5
 ```
-
-
+After that navigate to the default file:
+```
+sudo nano /etc/default/motion
+```
+Make sure the file contains the following if you want live streaming to start when turning on the Pi.
+```
+start_motion_daemon=yes
+```
 #### Calculating Battery Life 
 Using the 5V pin provided to power the ADS1150, we needed to step down the balance charger voltage outputted from the LiPo. We created a small PCB board which included a voltage divider circuit such that the highest voltage read would be ~5V. Now with voltage being able to be read, we then determined the highest voltage ie @ 100% and at 0%. We then used the current voltage in order to calculate the current battery percentage.
 
