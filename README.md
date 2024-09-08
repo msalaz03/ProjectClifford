@@ -4,7 +4,7 @@
 * [Overview](#overview)
 * [Setup](#setup)
   * [RVIZ with Clifford](#For-Using-RVIZ-With-Clifford)
-  * [Launching Clifford] (#For-Launching-&-Booting-Clifford)
+  * [Launching Clifford](#For-Launching-and-Booting-Clifford)
 * [Hardware](#hardware)
 * [Software](#software)
 * [Kinematics](#kinematics)
@@ -50,7 +50,7 @@ In order to launch please do the following.
 ros2 launch clifford_sim_1 clifford_sim_1.launch.py
 ros2 launch teleop_controller Clifford_full_model.launch.py
 ```
-#### For Launching & Booting Clifford
+#### For Launching and Booting Clifford
 
 To physically launch clifford is pretty simple (as long as you have all required dependecies), simply run.
 
