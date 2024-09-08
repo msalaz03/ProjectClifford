@@ -219,171 +219,144 @@ Various buttons are configured for the following. During this time it changes a 
 ## Future Additions
 
 ## Bill of Materials
-
 <table>
   <tr>
     <th>Component</th>
     <th>Quantity</th>
-    <th>Link</th>
     <th>Total Cost</th>
   </tr>
   <tr>
-    <td>DS3225MG 25 Kg Servos x2</td>
+    <td><a href="https://amzn.to/4ej0M4R">DS3225MG 25 Kg Servos x2</a></td>
     <td>6</td>
-    <td><a href="https://amzn.to/4ej0M4R">Link</a></td>
     <td>$264</td>
   </tr>
   <tr>
-    <td>LiPo Battery Charger</td>
+    <td><a href="https://amzn.to/3TkDkMs">LiPo Battery Charger</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3TkDkMs">Link</a></td>
     <td>$51</td>
   </tr>
   <tr>
-    <td>T deans T branch (Parallel) x2</td>
+    <td><a href="https://amzn.to/3XDdNQ7">T deans T branch (Parallel) x2</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3XDdNQ7">Link</a></td>
     <td>$13</td>
   </tr>
   <tr>
-    <td>Wire Strippers</td>
+    <td><a href="https://amzn.to/3XigNB1">Wire Strippers</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3XigNB1">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
-    <td>18 Gauge Wire 70 ft</td>
+    <td><a href="https://amzn.to/3zb0m1m">18 Gauge Wire 70 ft</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3zb0m1m">Link</a></td>
     <td>$20</td>
   </tr>
   <tr>
-    <td>USB-C Charging cable x2</td>
+    <td><a href="https://amzn.to/3TlbYGa">USB-C Charging cable x2</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3TlbYGa">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
-    <td>7.4V 6200mAh Battery</td>
+    <td><a href="https://amzn.to/4dXxEQW">7.4V 6200mAh Battery</a></td>
     <td>2</td>
-    <td><a href="https://amzn.to/4dXxEQW">Link</a></td>
     <td>$60</td>
   </tr>
   <tr>
-    <td>RPI Heatsink</td>
+    <td><a href="https://amzn.to/4dSKi3j">RPI Heatsink</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/4dSKi3j">Link</a></td>
     <td>$16</td>
   </tr>
   <tr>
-    <td>HDMI to Micro HDMI</td>
+    <td><a href="https://amzn.to/4gsuaHM">HDMI to Micro HDMI</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/4gsuaHM">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
-    <td>DROK RPI Buck Converter (used as spare)</td>
+    <td><a href="https://amzn.to/3MFj6JD">DROK RPI Buck Converter (used as spare)</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3MFj6JD">Link</a></td>
-    <td>$26</td>
-  </tr>
-    <tr>
-    <td>PCA Servo Driver</td>
-    <td>2</td>
-    <td><a href="https://amzn.to/3B7LtgM">Link</a></td>
     <td>$26</td>
   </tr>
   <tr>
-    <td>RPI 4B</td>
+    <td><a href="https://amzn.to/3B7LtgM">PCA Servo Driver</a></td>
+    <td>2</td>
+    <td>$26</td>
+  </tr>
+  <tr>
+    <td><a href="https://amzn.to/3z0VImL">RPI 4B</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3z0VImL">Link</a></td>
     <td>$100</td>
   </tr>
   <tr>
-    <td>T Deans Female-Male Adapters</td>
+    <td><a href="https://amzn.to/3ZckQ4z">T Deans Female-Male Adapters</a></td>
     <td>5</td>
-    <td><a href="https://amzn.to/3ZckQ4z">Link</a></td>
     <td>$13</td>
   </tr>
   <tr>
-    <td>DROK Servo Buck Converter</td>
+    <td><a href="https://amzn.to/4e6M80A">DROK Servo Buck Converter</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/4e6M80A">Link</a></td>
     <td>$20</td>
   </tr>
   <tr>
-    <td>3D Print Filament</td>
+    <td><a href="https://amzn.to/3MDNZho">3D Print Filament</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3MDNZho">Link</a></td>
     <td>$25</td>
   </tr>
   <tr>
-    <td>Micro SD Card</td>
+    <td><a href="https://amzn.to/4gekQqP">Micro SD Card</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/4gekQqP">Link</a></td>
     <td>$13</td>
   </tr>
   <tr>
-    <td>ELEGOO 3D Printer</td>
+    <td><a href="https://amzn.to/4gdXHVp">ELEGOO 3D Printer</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/4gdXHVp">Link</a></td>
     <td>$339</td>
   </tr>
   <tr>
-    <td>F625zz Ball Bearings</td>
+    <td><a href="https://amzn.to/3Xpz67E">F625zz Ball Bearings</a></td>
     <td>10</td>
-    <td><a href="https://amzn.to/3Xpz67E">Link</a></td>
     <td>$18</td>
   </tr>
   <tr>
-    <td>3A Buck Converter (for RPI)</td>
+    <td><a href="https://amzn.to/3zmVWEC">3A Buck Converter (for RPI)</a></td>
     <td>5</td>
-    <td><a href="https://amzn.to/3zmVWEC">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
-    <td>USB-C to Wire</td>
+    <td><a href="https://amzn.to/3Xyqa0R">USB-C to Wire</a></td>
     <td>4</td>
-    <td><a href="https://amzn.to/3Xyqa0R">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
-    <td>Spray Paint (Red + Black)</td>
+    <td><a href="https://amzn.to/3TmEsz0">Spray Paint (Red + Black)</a></td>
     <td>2</td>
-    <td><a href="https://amzn.to/3TmEsz0">Link</a></td>
     <td>$28</td>
   </tr>
   <tr>
-    <td>ADC Board</td>
+    <td><a href="https://amzn.to/3Xjkma9">ADC Board</a></td>
     <td>1</td>
-    <td><a href="https://amzn.to/3Xjkma9">Link</a></td>
     <td>$11</td>
   </tr>
   <tr>
-    <td>M3 Square Nuts</td>
+    <td><a href="https://amzn.to/47iyh4N">M3 Square Nuts</a></td>
     <td>100</td>
-    <td><a href="https://amzn.to/47iyh4N">Link</a></td>
     <td>$11</td>
   </tr>
   <tr>
-    <td>M4x20mm Bolts</td>
+    <td><a href="https://amzn.to/4geTOzv">M4x20mm Bolts</a></td>
     <td>50</td>
-    <td><a href="https://amzn.to/4geTOzv">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
-    <td>M4 Square Nuts</td>
+    <td><a href="https://amzn.to/3TowMfU">M4 Square Nuts</a></td>
     <td>50</td>
-    <td><a href="https://amzn.to/3TowMfU">Link</a></td>
     <td>$15</td>
   </tr>
   <tr>
-    <td>M3x10mm Bolts</td>
+    <td><a href="https://amzn.to/3Tktzhg">M3x10mm Bolts</a></td>
     <td>100</td>
-    <td><a href="https://amzn.to/3Tktzhg">Link</a></td>
     <td>$15</td>
   </tr>
 </table>
+
 
 ## References
 Special thanks to all these Open-Source Projects!
