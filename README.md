@@ -386,3 +386,22 @@ Various buttons are configured for the following. During this time it changes a 
 </table>
 
 ## References
+Special thanks to all these Open-Source Projects!
+
+Other 'Spot' projects referenced.
+https://github.com/mike4192/spotMicro
+https://github.com/mangdangroboticsclub/mini_pupper_ros
+
+3D Modelling.
+https://www.thingiverse.com/thing:3445283
+
+Raspberry Pi Libraries for LCD
+https://github.com/the-raspberry-pi-guy/lcd
+
+Kinematic Equations
+https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s
+https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s
+
+Other Useful Videos
+https://www.youtube.com/@ArticulatedRobotics/videos (getting started with ROS)
+https://www.youtube.com/watch?v=Cr1ZshV-gqw&t=164s (Designing the walking gait)
