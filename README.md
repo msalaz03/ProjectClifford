@@ -9,7 +9,6 @@
 * [Software](#software)
 * [Kinematics](#kinematics)
 * [Future Additions](#future-additions)
-* [Conclusion](#conclusion)
 * [Bill of Materials](#bill-of-materials)
 * [References](#references)
 
