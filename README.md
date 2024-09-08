@@ -388,20 +388,20 @@ Various buttons are configured for the following. During this time it changes a 
 ## References
 Special thanks to all these Open-Source Projects!
 
-Other 'Spot' projects referenced.
-https://github.com/mike4192/spotMicro
-https://github.com/mangdangroboticsclub/mini_pupper_ros
+#### Other 'Spot' projects referenced
+https://github.com/mike4192/spotMicro <br>
+https://github.com/mangdangroboticsclub/mini_pupper_ros <br>
 
-3D Modelling.
-https://www.thingiverse.com/thing:3445283
+#### 3D Modelling. 
+https://www.thingiverse.com/thing:3445283 <br>
 
-Raspberry Pi Libraries for LCD
-https://github.com/the-raspberry-pi-guy/lcd
+#### Raspberry Pi Libraries for LCD 
+https://github.com/the-raspberry-pi-guy/lcd <br>
 
-Kinematic Equations
-https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s
-https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s
+#### Kinematic Equations
+https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s <br> 
+https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s <br>
 
-Other Useful Videos
-https://www.youtube.com/@ArticulatedRobotics/videos (getting started with ROS)
-https://www.youtube.com/watch?v=Cr1ZshV-gqw&t=164s (Designing the walking gait)
+#### Other Useful Videos
+https://www.youtube.com/@ArticulatedRobotics/videos (getting started with ROS) <br>
+https://www.youtube.com/watch?v=Cr1ZshV-gqw&t=164s (Designing the walking gait) <br>
