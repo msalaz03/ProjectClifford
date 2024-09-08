@@ -255,7 +255,7 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>18 Gauge Wire 70 ft</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/Conductors-Electrical-Extension-Automotive-Brightfour/dp/B08X2DNNF1/ref=sr_1_5?crid=3QZX9FKR0L7MV&dib=eyJ2IjoiMSJ9.T2486QD6ot2M2NcVgMkOfr9HzIj6rPRHyfTPVOoV6EIKhbgzO-Y8f67_hhlB2ez8va3b6iroWez75rv7Bh0EkASmriR-oEK3W_tWR5aoD4RLZJKkiGccSSf4U3zEwjI7EoizpFkhYcnfIQeKhQ0Mav82Z0TBkse3yRzrpEJ25SACnIPuD6DSNKS4C7UnSyuPfIkZe6Kp-8D753YId8vmOL3BrLe-BiiqFPA6jZio2oPi1zOggOJ_QaCd_S_LCyciYeza2hXVFfuQTob0EZ2qdJtW-qFh1ctP8s_zkX_uUkM.zycMdx9Cy3r3jtaS3xvPuFHwSb1ZJH81b_ZxwJ7ARGE&dib_tag=se&keywords=18+gauge+wire+70ft&qid=1719076022&sprefix=18+gage+wire+70%2Caps%2C123&sr=8-5">Link</a></td>
+    <td><a href="https://www.amazon.ca/Conductors-Electrical-Extension-Automotive-Brightfour/dp/B0DCJD82YV/ref=sr_1_12?dib=eyJ2IjoiMSJ9.YNFEW0vDz9PWf2gZQrs5YoMxAWM7BT62N07hV2nQXlFCDc43x0abdSDyTs31lZNeB5NDTRilHtqwRPaurMkJi3aB1J9fAkBuekEuDDBBphqdJC267v-8VLP8RgCr7z_JvOotBnE8u5ccnOMRBnODwiyjACeAMpNEV5r905ihAaT-0HUfW4rvj0HscCSpHXmB8cuuX992EkbVaWBx0vw3kqWq14-B0wdFmGX3D6PiPnlmyEAZnPvQhEWskjEnsDstx32-8mOeC9yflR-ZglgPq6RFQ_Q8LWARBKpO2RIpwJQ.OxXHIIyh4moT9v2qBdA7Y1Tq6zk2p41qQvnCOVJ3hOU&dib_tag=se&keywords=18+gauge+wire&qid=1725818809&sr=8-12">Link</a></td>
     <td>$20</td>
   </tr>
   <tr>
