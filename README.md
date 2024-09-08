@@ -221,4 +221,49 @@ Various buttons are configured for the following. During this time it changes a 
 
 ## Bill of Materials
 
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Quantity</th>
+    <th>Link</th>
+    <th>Total Cost</th>
+  </tr>
+  <tr>
+    <td>DS3225MG 25 Kg Servos x2</td>
+    <td>6</td>
+    <td><a href="https://www.amazon.ca/Update-DS3225-Digital-Servo-Waterproof/dp/B088GYGYTD/ref=sr_1_10?crid=1W2HKLQ133Q4G&dib=eyJ2IjoiMSJ9.iD0_EFuUb4kp6BDto_fPRkxwTieOBd4J3diSfN2BzB6XrhfJujOu3oI424mIKFUj99J3O4bIkaCEPAwryf6GQAg4EutdLRgPnX5CljwhegfH_YEMxmGn9kXbCg18ap8DB4jqbaw2CcdbIzZOA1KmRkBpTP1n9X-6Xoq8rPNnwPZACygeMBMCllf9oDZirtVPDZb0l8ey4MQJpK719nnfJDO53rDU7OgAA-OfQhXUWESM8m17quZzDUmMljoM8O8JcKZnBxiCSmDZ_6W0mRWluU4bjr5R-zYJIzKMNuYT2Nw.WbDHYoWf12PEpMEH6oEsh1qiwoioOLWiwl585z0Gkc8&dib_tag=se&keywords=25+kg+servos&qid=1719075508&sprefix=25+kg+servo%2Caps%2C122&sr=8-10">Link</a></td>
+    <td>$264</td>
+  </tr>
+  <tr>
+    <td>LiPo Battery Charger</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/Battery-Charger-Discharger-Chargers-Connectors/dp/B07V5CPYRS/ref=sr_1_1_sspa?crid=1EYJIMNWB33NZ&dib=eyJ2IjoiMSJ9.yDNC_werDQ6P9m5rEMVFvHdzkA-11F7YLQoYPKifJKLB8oa5ueoW8C4229q-3il24xClJwzSmXXQ19HYy9wa0kcph84mJKtVGDrNdJAa7B-p3yht6qUF8Evm3lwzVxRGphIk9SHcQfFHkRcyke0npJ_JOuownarx0uVLAy_CYA5dyDoNV-5iA6AS84xJ9rabMEu1XUqTrm_Jno9V4QZueJUAXyA8hP2B7MKkc7CzqKarLS0IDgfHYuY4fEtpjF1KPWe3wrCpAmDQ-jku7ACmNF4KtgadlHF_ZuZtvOJ-8Gs.zkcYOaq_8yxJoa3nIh3x7jCNvcIQHwsABnEKFqx5uA0&dib_tag=se&keywords=2+lipo+battery+charger&qid=1719075556&sprefix=2lipo+battery+charger%2Caps%2C97&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Link</a></td>
+    <td>$51</td>
+  </tr>
+  <tr>
+    <td>T deans T branch (Parallel) x2</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/FLY-RC-Parallel-Connector-Battery/dp/B073ZHRMDN/ref=sr_1_5?crid=1UQGIBQRNAGI0&dib=eyJ2IjoiMSJ9.oc4NqgtWW2Ye0n-nTWSaBnXpdzLZxeVVvkab0LxgBXNcV29AeVvRyzBOLEV6kRg58f4ZiGmw2gOGIdIL2JCLQugTLoVxNvVuuVggxNNewu9iuiNBjxjMo8i57jBsa-pt4SqDkvAzDVGBOqev0SVvX2xWP1vzvCBW-o4VSBIH3D5xCCzgWTQfpadLC3lVVBS9FbXYS5bDy6uPLYHo6OyVZIOleSP__t-1F2dd6Bs89-45BK0iXBHwKou163vNM2QvwdLhwahjZHniWu2h3vVEEfUz7tSBLDUkIrDL51lGry8.C95kH5QQnQPCJfMLTXt3dgfDJItTejdW_xG2Jy8zNU0&dib_tag=se&keywords=t+deans+parallel+connecter&qid=1719075638&sprefix=t+deans+parallel+connecter%2Caps%2C103&sr=8-5">Link</a></td>
+    <td>$13</td>
+  </tr>
+  <tr>
+    <td>Wire Strippers</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/Professional-crimping-Multi-Tool-Stripper-Multi-Function/dp/B073YG65N2/ref=sr_1_3?crid=NB5L1WXGXQK9&dib=eyJ2IjoiMSJ9.XY3AmkgQSzHWKiEj9k4TPF3Z1e1drWVEVX4ndomGGeGQDYaRI5TvmZgZY7xM9jrZHaun5hZTg3_lPqPi6zE0Pl1psr3f02XXV7YaDifluDSWDRRV6N8mKjWUSkJ1Rrr_YlkX-9qqCMJUs5hx7ArdEsMF-Wh8w-Aci_ys-UcFXXRrcyQGlhoyFDKG_a-obPAcAjg_Vfy8NmZ92ZG6KonQk1gGGkrlYWdGwjSTB9GqcLvO5ANuieCkMnjObNcoBAci5HoKyLJTiRU7qFGuPtKBI3NVoIuAUHjeLmgXCg-ZnMA.EKeZqqLIbtpqNVeadCENN-Rrlg9vTYTAgoXehBaoHW4&dib_tag=se&keywords=wgge+wg-015+professional+8-inch+wire+stripper%2Fwire+crimping+tool&qid=1719075983&sprefix=WGGE+wire+strippers%2Caps%2C126&sr=8-3">Link</a></td>
+    <td>$14</td>
+  </tr>
+  <tr>
+    <td>18 Gauge Wire 70 ft</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/Conductors-Electrical-Extension-Automotive-Brightfour/dp/B08X2DNNF1/ref=sr_1_5?crid=3QZX9FKR0L7MV&dib=eyJ2IjoiMSJ9.T2486QD6ot2M2NcVgMkOfr9HzIj6rPRHyfTPVOoV6EIKhbgzO-Y8f67_hhlB2ez8va3b6iroWez75rv7Bh0EkASmriR-oEK3W_tWR5aoD4RLZJKkiGccSSf4U3zEwjI7EoizpFkhYcnfIQeKhQ0Mav82Z0TBkse3yRzrpEJ25SACnIPuD6DSNKS4C7UnSyuPfIkZe6Kp-8D753YId8vmOL3BrLe-BiiqFPA6jZio2oPi1zOggOJ_QaCd_S_LCyciYeza2hXVFfuQTob0EZ2qdJtW-qFh1ctP8s_zkX_uUkM.zycMdx9Cy3r3jtaS3xvPuFHwSb1ZJH81b_ZxwJ7ARGE&dib_tag=se&keywords=18+gauge+wire+70ft&qid=1719076022&sprefix=18+gage+wire+70%2Caps%2C123&sr=8-5">Link</a></td>
+    <td>$20</td>
+  </tr>
+  <tr>
+    <td>USB-C Charging cable x2</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/UGREEN-Braided-Charging-Nintendo-Motorola/dp/B077Z7XLJF/ref=sr_1_6?crid=33JQ877JH81K6&dib=eyJ2IjoiMSJ9.CmEEIzhmfYv64NvWZLL2y2zwzoCZBKYcqghf11gsDqxUzQz0JHJcE6PJ9Q9EX287pIGAALcXgyLJQaKp3dwH3rwtSxJ8">Link</a></td>
+    <td>$14</td>
+  </tr>
+</table>
+
 ## References
