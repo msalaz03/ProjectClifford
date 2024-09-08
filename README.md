@@ -3,7 +3,8 @@
 
 * [Overview](#overview)
 * [Setup](#setup)
-  * [RVIZ](#For-Using-RVIZ-With-Clifford)
+  * [RVIZ with Clifford](#For-Using-RVIZ-With-Clifford)
+  * [Launching Clifford] (#For-Launching-&-Booting-Clifford)
 * [Hardware](#hardware)
 * [Software](#software)
 * [Kinematics](#kinematics)
