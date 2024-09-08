@@ -243,13 +243,13 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>T deans T branch (Parallel) x2</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/FLY-RC-Parallel-Connector-Battery/dp/B073ZHRMDN/ref=sr_1_5?crid=1UQGIBQRNAGI0&dib=eyJ2IjoiMSJ9.oc4NqgtWW2Ye0n-nTWSaBnXpdzLZxeVVvkab0LxgBXNcV29AeVvRyzBOLEV6kRg58f4ZiGmw2gOGIdIL2JCLQugTLoVxNvVuuVggxNNewu9iuiNBjxjMo8i57jBsa-pt4SqDkvAzDVGBOqev0SVvX2xWP1vzvCBW-o4VSBIH3D5xCCzgWTQfpadLC3lVVBS9FbXYS5bDy6uPLYHo6OyVZIOleSP__t-1F2dd6Bs89-45BK0iXBHwKou163vNM2QvwdLhwahjZHniWu2h3vVEEfUz7tSBLDUkIrDL51lGry8.C95kH5QQnQPCJfMLTXt3dgfDJItTejdW_xG2Jy8zNU0&dib_tag=se&keywords=t+deans+parallel+connecter&qid=1719075638&sprefix=t+deans+parallel+connecter%2Caps%2C103&sr=8-5">Link</a></td>
+    <td><a href="https://amzn.to/3XDdNQ7">Link</a></td>
     <td>$13</td>
   </tr>
   <tr>
     <td>Wire Strippers</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/Professional-crimping-Multi-Tool-Stripper-Multi-Function/dp/B073YG65N2/ref=sr_1_3?crid=NB5L1WXGXQK9&dib=eyJ2IjoiMSJ9.XY3AmkgQSzHWKiEj9k4TPF3Z1e1drWVEVX4ndomGGeGQDYaRI5TvmZgZY7xM9jrZHaun5hZTg3_lPqPi6zE0Pl1psr3f02XXV7YaDifluDSWDRRV6N8mKjWUSkJ1Rrr_YlkX-9qqCMJUs5hx7ArdEsMF-Wh8w-Aci_ys-UcFXXRrcyQGlhoyFDKG_a-obPAcAjg_Vfy8NmZ92ZG6KonQk1gGGkrlYWdGwjSTB9GqcLvO5ANuieCkMnjObNcoBAci5HoKyLJTiRU7qFGuPtKBI3NVoIuAUHjeLmgXCg-ZnMA.EKeZqqLIbtpqNVeadCENN-Rrlg9vTYTAgoXehBaoHW4&dib_tag=se&keywords=wgge+wg-015+professional+8-inch+wire+stripper%2Fwire+crimping+tool&qid=1719075983&sprefix=WGGE+wire+strippers%2Caps%2C126&sr=8-3">Link</a></td>
+    <td><a href="https://amzn.to/3XigNB1">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
