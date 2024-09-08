@@ -53,6 +53,7 @@ ros2 launch teleop_controller Clifford_full_model.launch.py
 
 To physically launch clifford is pretty simple (as long as you have all required dependecies), simply run.
 
+**Note:** At this point Clifford cannot physically turn as the turning motion was not programmed, however the kinematic equations needed to do are solved and within the software.
 ```
 ros2 launch servo_driver joy_servos.launch.py
 ```
