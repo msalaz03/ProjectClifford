@@ -3,6 +3,7 @@
 
 * [Overview](#overview)
 * [Setup](#setup)
+  * [RVIZ](#For-Using-RVIZ-With-Clifford)
 * [Hardware](#hardware)
 * [Software](#software)
 * [Kinematics](#kinematics)
