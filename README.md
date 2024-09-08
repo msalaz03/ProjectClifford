@@ -125,6 +125,8 @@ From researching similar projects to Clifford and doing our research we sourced 
  
 </table>
 
+#### FPV Camera 
+
 #### Calculating Battery Life 
 Using the 5V pin provided to power the ADS1150, we needed to step down the balance charger voltage outputted from the LiPo. We created a small PCB board which included a voltage divider circuit such that the highest voltage read would be ~5V. Now with voltage being able to be read, we then determined the highest voltage ie @ 100% and at 0%. We then used the current voltage in order to calculate the current battery percentage.
 
@@ -136,11 +138,9 @@ After finalizing the project here our somethings that help improve production.
   - Get a dedicated cooler for your controller, especially for Raspberry Pi. These things will heat up quickly.
 
 
-
-
-
-
 ## Software
+  The software went through many revisions, currently all software is under a single node, 'servo2_pca9685' within the directory 'servo_driver'. 
+
 
 ## Kinematics
 
