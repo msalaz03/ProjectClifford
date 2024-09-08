@@ -264,30 +264,7 @@ Various buttons are configured for the following. During this time it changes a 
     <td><a href="https://amzn.to/3TlbYGa">Link</a></td>
     <td>$14</td>
   </tr>
-  <tr>
-    <td>7.4V 6200mAh Battery x2</td>
-    <td>1</td>
-    <td><a href="https://www.amazon.ca/Zeee-Battery-6200mAh-Connector-Vehicles/dp/B0868FM5S4/ref=sxin_15_pa_sp_search_thematic_sspa?content-id=amzn1.sym.ea4b7f00-c440-4d65-bd3f-caa76cb13654%3Aamzn1.sym.ea4b7f00-c440-4d65-bd3f-caa76cb13654&crid=33LM2212JB495&cv_ct_cx=7.4+v+battery&dib=eyJ2IjoiMSJ9.u1_mUXoAXQUkLqwlo6JmZ_JasDNoLpM2zjLmHqhT1SXFAS3gFbbyExDEEVSfDnU-VrqQrmxrPprw-hwRv47i2g.X91cB13EpN38YKRBIQq6b7JR4TpyyQxxQAy_Xtx-7m4&dib_tag=se&keywords=7.4+v+battery&pd_rd_i=B0868FM5S4&pd_rd_r=e0d6c371-ae9a-44c2-9644-28ec4dc6a87b&pd_rd_w=YCerP&pd_rd_wg=LZZ1P&pf_rd_p=ea4b7f00-c440-4d65-bd3f-caa76cb13654&pf_rd_r=CW9N2R8GTMZPJEF1FTYW&qid=1719076154&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=7+4v+battery%2Caps%2C114&sr=1-4-acb80629-ce74-4cc5-9423-11e8801573fb-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&psc=1">Link</a></td>
-    <td>$60</td>
-  </tr>
-  <tr>
-    <td>RPI Heatsink</td>
-    <td>GeeekPi Aluminum Heatsink</td>
-    <td><a href="https://www.amazon.ca/GeeekPi-Raspberry-Aluminum-Heatsink-Controllable/dp/B091L1XKL6/ref=sr_1_3?crid=2AU85VCUAN29T&dib=eyJ2IjoiMSJ9.GSSZFPpAj7yoqb1p7UurtBXisj_cTUKNFNwfdtqQhAs7eLEE4wIwg9kaVFt_mQtI88CDidB4luhWGcJYOWUP3vQkWmHwf6Lm3UQyMUJ2S4Raf2kk1-71W9Par1XX9xk7eskqMudFeE5TvZPQjz-4Hh8c3_L62yVVhQhdh1XC5J7oQiWjDbT-WMkVdq_k4nep6Lelzx84Aveqi0-g-h-qHyqxcRksAwqkT3E1nMwnhU8bKAZKNiGL6u8Ec3CQXdxwMO7dPURM9rW1WKRBBWZwdwpzPx_7MoLBuVO4Q1OV98E.srppl_jugzK74knNIOraYc91CJ87GKbXOUnzMmdSt1k&dib_tag=se&keywords=geeekpi+aluminum+heatsink&qid=1719076248&s=electronics&sprefix=geekpi+alunimum+heatskink%2Celectronics%2C94&sr=1-3">Link</a></td>
-    <td>$16</td>
-  </tr>
-  <tr>
-    <td>HDMI to Micro HDMI</td>
-    <td>UGREEN HDMI to Micro HDMI</td>
-    <td><a href="https://www.amazon.ca/UGREEN-Ethernet-Support-Resolution-Tablets/dp/B015GR44CG/ref=sr_1_8?crid=2US4JRVXB2XJL&dib=eyJ2IjoiMSJ9.Ig1BvlBz5seDeJ9TbfZz76HgAzLr2H-icf_hnmTC53lbnN0U-Wv4zdTopehEV6tVPIpiTY2NZown5N_c_UYPGIvgsPSvyl6K7SDVnxQnUdIsWPTOg27hYpUNsEdoyuncVyDdxWUhu_HDA-9OZRqeI9k851N65tNgyFzW7y9iT4uMTnWFqmNsyhTaGMEfPD0zSTaH8V3dfTYO05_7G7pwMA7zRSgODW55_cqLs2XdAcZ7EzwwIwT2LvqgkCWsYQl55p_LZAkOn8b5IJJocVXCpME2otCzZOJGXFDeY_bkmWU.rX9-deHLJNbmFjh6hfL7E101zCSXccWak7PFnlbqdhI&dib_tag=se&keywords=hdmi%2Bto%2Bmicro%2Bhdmi&qid=1719076299&s=electronics&sprefix=hdmi%2Bto%2Bmicro%2B%2Celectronics%2C102&sr=1-8&th=1">Link</a></td>
-    <td>$14</td>
-  </tr>
-  <tr>
-    <td>DROK RPI Buck Converter (used as spare)</td>
-    <td>DROK DC-DC Buck Converter</td>
-    <td><a href="https://www.amazon.ca/Adjustable-Converter-Stabilizer-Regulator-Protective/dp/B01FQH4M82/ref=sr_1_11?crid=193IE8HBH2QIO&dib=eyJ2IjoiMSJ9.OuMyHn-AXkWX_SJ8wNQ3KsNMUkccBZv-3vmMqrYAxBZkc2aemW4gGhTsm8FsMP3MYWimZZ8_PZLsgNsrE68hsA08zK6xp_7XVNRDFajHkE67wsNJcUAORz0ArAgjDYNNiNi5VH5MzsYs_-RXWghFsm7eK_NqHsz6g0mBtgReWpRby6fVx1T7TIOYOjm1Je-KiO-aP1LMmRcPDec4AXYiEYJwF_lmAaC2vzZB7_f8Qt_hFaUpt_m-xSFTiC2kOuOurgJgy4cf84xQaMFdCIK4zmrz8brqNi0iek-huNiTVoQ.uX2nvFimUALNmQGE042Ku_06VOQqFYEWmWTGQFyX_9U&dib_tag=se&keywords=drok+dc+to+dc+buck+converter&qid=1719076360&s=electronics&sprefix=drok+dc+to+dc+buck+converter+%2Celectronics%2C88&sr=1-11">Link</a></td>
-    <td>$26</td>
-  </tr>
+  
 </table>
 
 ## References
