@@ -237,7 +237,7 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>LiPo Battery Charger</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/Battery-Charger-Discharger-Chargers-Connectors/dp/B07V5CPYRS/ref=sr_1_1_sspa?crid=1EYJIMNWB33NZ&dib=eyJ2IjoiMSJ9.yDNC_werDQ6P9m5rEMVFvHdzkA-11F7YLQoYPKifJKLB8oa5ueoW8C4229q-3il24xClJwzSmXXQ19HYy9wa0kcph84mJKtVGDrNdJAa7B-p3yht6qUF8Evm3lwzVxRGphIk9SHcQfFHkRcyke0npJ_JOuownarx0uVLAy_CYA5dyDoNV-5iA6AS84xJ9rabMEu1XUqTrm_Jno9V4QZueJUAXyA8hP2B7MKkc7CzqKarLS0IDgfHYuY4fEtpjF1KPWe3wrCpAmDQ-jku7ACmNF4KtgadlHF_ZuZtvOJ-8Gs.zkcYOaq_8yxJoa3nIh3x7jCNvcIQHwsABnEKFqx5uA0&dib_tag=se&keywords=2+lipo+battery+charger&qid=1719075556&sprefix=2lipo+battery+charger%2Caps%2C97&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Link</a></td>
+    <td><a href="https://amzn.to/3TkDkMs">Link</a></td>
     <td>$51</td>
   </tr>
   <tr>
