@@ -9,7 +9,7 @@
   * [Communication between Devices](#Communication-Protocol)
   * [FPV Camera](#FPV-Camera)
   * [Displaying Live Battery %](#Calculating-Battery-Life)
-  * [Other Hardware][#Other-Useful-Components)
+  * [Other Hardware](#Other-Useful-Components)
 * [Software](#software)
 * [Kinematics](#kinematics)
 * [Future Additions](#future-additions)
