@@ -39,8 +39,23 @@ projectclifford_ws/
 ```
 
 #### For Using RVIZ With Clifford
+In order to test our kinematic equations more efficiently we used RVIZ to visualize what is happening when there is a controller input. 'clifford_sim_1' contains a URDF file for the final version of Clifford, exported through SolidWorks URDF exporter. The launch file within this directory only launches the URDF file into RVIZ and does not contain RobotStatePublisher by default. You can enable joint-state-publisher-gui by uncommenting the related lines within the launch file or can use additional launch file that waits for joy (controller input) and joint-state-publisher topic. The second directory relative to running RVIZ is 'teleop_controller' which creates topic for joint-state-publisher.
 
+**NOTE:** This totally could have been organized into a single launch file but wasn't due to circumstances at the time.
+
+In order to launch please do the following.
+
+```
+ros2 launch clifford_sim_1 clifford_sim_1.launch.py
+ros2 launch teleop_controller Clifford_full_model.launch.py
+```
 #### For Launching & Booting Clifford
+
+To physically launch clifford is pretty simple (as long as you have all required dependecies), simply run.
+
+```
+ros2 launch servo_driver joy_servos.launch.py
+```
 
 ## Hardware
 From researching similar projects to Clifford and doing our research we sourced components that we thought were optimal for this project. Consisting of two voltage regulators to isolate the power going into the servo driver and Raspberry Pi. ADC boards in order to measure different voltages levels into a relative percentage for battery life. A high-capacity battery in order to prolong battery life. LCD screen in order to demonstrate battery life real-time. 25 KG servos, a mixture between torque and speed in order to ensure smooth movements. 
