@@ -211,6 +211,8 @@ Various buttons are configured for the following. During this time it changes a 
   - Reset to default stance.
   - Shutdown Clifford.
 
+#### LCD Node
+We were unable to access the libraries outside their installation location, so creating a node with the LCD running via the launch file didn’t work. Instead, we created a separate Python script to run in parallel with the Clifford launch. Ideally, we would import the libraries into a dedicated node.
 
 ## Kinematics
 - Pictures would be nice
