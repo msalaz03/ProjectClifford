@@ -2,10 +2,6 @@
 
 
 # Project Clifford
-
- <img src="assets/clifford angled for github.JPG" height = "700" width = "540">
-
-
 * [Overview](#overview)
 * [Setup](#setup)
   * [RVIZ with Clifford](#For-Using-RVIZ-With-Clifford)
@@ -27,6 +23,8 @@ Over the past four months Cameron, Chase and I tried tackling our own version of
 Now then, running on Ubuntu 22.04 LTS using ROS-Humble we went through a series of processes in order to organizer this into a simple manner. Although, we will note that they're some poor practices as a result of time constraints and it being our first time working with the ROS framework. These will be noted and clarified furthermore in this document. Clifford is an entirely 3D printed project that uses inverse-kinematics in order simulate a dog walking. Clifford also has FPV camera mounted which can be accessed through any web browser provided you're on the same network as him.
 
 Please check the references, this would have not been possible without open-source projects. 
+
+<img src="assets/clifford angled for github.JPG" height = "700" width = "540">
 
 ## Setup
 The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so prior to programming the entire project.
