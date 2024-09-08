@@ -1,7 +1,6 @@
 
 # Project Clifford
 
-
 * [Overview](#overview)
 * [Setup](#setup)
 * [Hardware](#hardware)
