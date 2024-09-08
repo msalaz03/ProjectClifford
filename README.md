@@ -231,7 +231,7 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>DS3225MG 25 Kg Servos x2</td>
     <td>6</td>
-    <td><a href="https://www.amazon.ca/Update-DS3225-Digital-Servo-Waterproof/dp/B088GYGYTD/ref=sr_1_10?crid=1W2HKLQ133Q4G&dib=eyJ2IjoiMSJ9.iD0_EFuUb4kp6BDto_fPRkxwTieOBd4J3diSfN2BzB6XrhfJujOu3oI424mIKFUj99J3O4bIkaCEPAwryf6GQAg4EutdLRgPnX5CljwhegfH_YEMxmGn9kXbCg18ap8DB4jqbaw2CcdbIzZOA1KmRkBpTP1n9X-6Xoq8rPNnwPZACygeMBMCllf9oDZirtVPDZb0l8ey4MQJpK719nnfJDO53rDU7OgAA-OfQhXUWESM8m17quZzDUmMljoM8O8JcKZnBxiCSmDZ_6W0mRWluU4bjr5R-zYJIzKMNuYT2Nw.WbDHYoWf12PEpMEH6oEsh1qiwoioOLWiwl585z0Gkc8&dib_tag=se&keywords=25+kg+servos&qid=1719075508&sprefix=25+kg+servo%2Caps%2C122&sr=8-10">Link</a></td>
+    <td><a href="https://amzn.to/3MCOd8t">Link</a></td>
     <td>$264</td>
   </tr>
   <tr>
