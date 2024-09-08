@@ -264,7 +264,102 @@ Various buttons are configured for the following. During this time it changes a 
     <td><a href="https://amzn.to/3TlbYGa">Link</a></td>
     <td>$14</td>
   </tr>
-  
+    <tr>
+    <td>PCA Servo Driver</td>
+    <td>2</td>
+    <td><a href="https://www.amazon.ca/Newhail-PCA9685-Channel-Arduino-Raspberry/dp/B08YD8PDLS/ref=sr_1_3?crid=WD2W65OLO58A&dib=eyJ2IjoiMSJ9.iml3_jg1-nXCQ9HRz9unsBpXcF7DqoDCN2E2RAEuGtCadnVE49M0YFFRtB4lOjlD7LJiPw1yxVBN-qbNvFqa8SeRzTW_8ehWHkp_PtoVbAGRTUxl5-mtORoP4xAugBYbCE9JZ53TMthxd05T6qTMix3yq2U9Abj5yi233YlQA_vUGg0n3rioTFJs57lD7IUTUv9qwTAscTgtXBtlcfjrjwuLporAGVKd5DDNlW9b_rW8AA1KV0JUAnoB1dGAGoCkX2lpQeMBFcXwQXjphEzOXgYQy-XQnO2AmJ4ykH61Fs4.G2YjTnKXSPhx-v3icqM9iL18-LeHYIpWtIpbAE3w8UY&dib_tag=se&keywords=jzk+pca9685+servo+driver&qid=1719076506&s=electronics&sprefix=jzk+pca9685+servo+driver%2Celectronics%2C78&sr=1-3">Link</a></td>
+    <td>$26</td>
+  </tr>
+  <tr>
+    <td>RPI 4B</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/dp/B07TC2BK1X?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>T Deans Female-Male Adapters</td>
+    <td>5</td>
+    <td><a href="https://www.amazon.ca/Pairs-Connector-Female-Silicon-Battery/dp/B07WHPD4KD/ref=sr_1_1_sspa?crid=205933WPVCNT9&dib=eyJ2IjoiMSJ9.zYsSDSxEgkr0AsLMd8NRnhQIgx-jnN3-whDErIbaPIJ5lkfEXkSaSxvX6m5tErl_wG8MTKli79TPbv_HgdHsz5wcj1NzyXChXQJGBJOtejmuqaslC7jSF2dEqouwcvwm1gugxhwXQko4v1KbkLV9A9OpxDp8q1bY0wiEU-5e0F8Xpd6A88kw7BlNnKkr7yWnFFUAchcyNtsOkXl7QYHOmeFWB3PL-h5BFUHKXtbXVl13X8rxkkmFfJOSFXk1vgEQghlCf9dUh23-8yjGQfKIvmbELfV8Q7KiVKgZ9nbTpjU.gCEscGKea37_VFlEfGBYg4iTSrypLax8yjygo9I_HK8&dib_tag=se&keywords=5+pair+t+deans+t+plug+connector&qid=1719076682&s=electronics&sprefix=5+pair+t+deans+t+plug+connector%2Celectronics%2C107&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Link</a></td>
+    <td>$13</td>
+  </tr>
+  <tr>
+    <td>DROK Servo Buck Converter</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/dp/B00C4QVTNU?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$20</td>
+  </tr>
+  <tr>
+    <td>3D Print Filament</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/dp/B0BM4QWPK9?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$25</td>
+  </tr>
+  <tr>
+    <td>Micro SD Card</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/dp/B08XV6B76G?ref=ppx_yo2ov_dt_b_product_details&th=1">Link</a></td>
+    <td>$13</td>
+  </tr>
+  <tr>
+    <td>ELEGOO 3D Printer</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/dp/B0BJCQ993L?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$339</td>
+  </tr>
+  <tr>
+    <td>F625zz Ball Bearings</td>
+    <td>10</td>
+    <td><a href="https://www.amazon.ca/dp/B07Z3DXF14?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$18</td>
+  </tr>
+  <tr>
+    <td>3A Buck Converter (for RPI)</td>
+    <td>5</td>
+    <td><a href="https://www.amazon.ca/dp/B08Q2YKJ6Q?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$14</td>
+  </tr>
+  <tr>
+    <td>USB-C to Wire</td>
+    <td>4</td>
+    <td><a href="https://www.amazon.ca/dp/B0CMQ42P9Q?ref=ppx_yo2ov_dt_b_product_details&th=1">Link</a></td>
+    <td>$14</td>
+  </tr>
+  <tr>
+    <td>Spray Paint (Red + Black)</td>
+    <td>2</td>
+    <td><a href="https://www.amazon.ca/gp/product/B081FM5FXC/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1">Link</a></td>
+    <td>$28</td>
+  </tr>
+  <tr>
+    <td>ADC Board</td>
+    <td>1</td>
+    <td><a href="https://www.amazon.ca/dp/B07G85HMLV?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$11</td>
+  </tr>
+  <tr>
+    <td>M3 Square Nuts</td>
+    <td>100</td>
+    <td><a href="https://www.amazon.ca/dp/B07SDMC9L9?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$11</td>
+  </tr>
+  <tr>
+    <td>M4x20mm Bolts</td>
+    <td>50</td>
+    <td><a href="https://www.amazon.ca/dp/B089N8MVQB?ref=ppx_yo2ov_dt_b_product_details&th=1">Link</a></td>
+    <td>$14</td>
+  </tr>
+  <tr>
+    <td>M4 Square Nuts</td>
+    <td>50</td>
+    <td><a href="https://www.amazon.ca/dp/B07RR3H2FT?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$15</td>
+  </tr>
+  <tr>
+    <td>M3x10mm Bolts</td>
+    <td>100</td>
+    <td><a href="https://www.amazon.ca/dp/B07CMSBQ11?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td>$15</td>
+  </tr>
 </table>
 
 ## References
