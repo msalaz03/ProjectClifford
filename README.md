@@ -1,5 +1,8 @@
 
+
+
 # Project Clifford
+<img src="assets/clifford angled for github.JPG">
 
 * [Overview](#overview)
 * [Setup](#setup)
