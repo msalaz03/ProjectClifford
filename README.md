@@ -132,7 +132,13 @@ As we were using multiple third-party modules such as servo driver we utilized I
 #### FPV Camera 
 Using motion libraries we were able to set up a first-person live-streaming feed on a local network. By dedicating a specified port to live-streaming (8081) simply use the IPV4 address followed by the port like so xxx.xxx.xxx.xxx:8081 to access from any device on the same network. 
 To set the config file for the motion service to work navigate to:
-'''
+```
+sudo nano /etc/default/motion
+```
+Make the following changes:
+```
+
+```
 
 
 #### Calculating Battery Life 
