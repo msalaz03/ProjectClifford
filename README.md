@@ -81,7 +81,7 @@ From researching similar projects to Clifford and doing our research we sourced 
 
   <tr>
     <td> Camera </td>
-    <td>  no information rn </td>
+    <td> Arducam 16MP Wide Angle USB Camera </td>
   </tr>
   
    <tr>
@@ -121,7 +121,7 @@ From researching similar projects to Clifford and doing our research we sourced 
 
  <tr>
     <td>LCD 16x2</td>
-    <td>No information rn</td>
+    <td>Sunfounder LCD1602 16x2 </td>
 </tr>
  
 </table>
