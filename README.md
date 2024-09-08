@@ -157,6 +157,30 @@ Using the left joystick, you can determine the direction of movement (forward or
 
 The leg motion follows a square pattern, making the programming straightforward. At each position, the program checks whether the leg is moving forward or backward and its current relative position (x, y, z). Only one coordinate (either x or y) changes at a time. Multiple conditions verify if the leg has passed or reached its target coordinate, then update the target and current indices. While most of the programming remains consistent, the conditions for each leg differ slightly.
 
+#### Sample Code
+```
+     if forward and self.front_right_current[2] >= self.front_right_target[self.set1_target_index][2] or \
+                        (not forward and self.front_right_current[2] <= self.front_right_target[3][2]):
+                            self.update_servos()
+                    else:
+                        if forward:
+                            self.front_right_current[2] = self.front_right_target[self.set1_target_index][2]
+                            self.back_left_current[2] = self.back_left_target[self.set1_target_index][2]
+
+                            self.set1_target_index = 2 
+                            self.set1_walk_index = 1
+                        else:
+                            self.front_right_current[2] = self.front_right_target[self.set1_walk_index][2]
+                            self.back_left_current[2] = self.back_left_target[self.set1_walk_index][2]
+                            self.set1_walk_index = 3
+                            self.set1_target_index = 0
+                       
+                        if not forward:
+                            self.front_left_current[0] = self.front_left_target[self.set2_walk_index][0]
+                            self.back_right_current[0] = self.back_right_target[self.set2_walk_index][0]
+                            self.set2_walk_index = 3
+                            self.set2_target_index = 0
+```
 
 #### PS4 Buttons
 
