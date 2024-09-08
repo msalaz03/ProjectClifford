@@ -126,6 +126,9 @@ From researching similar projects to Clifford and doing our research we sourced 
  
 </table>
 
+#### Communication Protocol 
+As we were using multiple third-party modules such as servo driver we utilized I2C bus provided on the Raspberry Pi 4B. This worked perfectly but didn't allow us to have multiple devices using I2C, as we had a few more. Creating a simple PCB using header pins we created an I2C bus expander that allowed all devices to meet at a single point in order to communicate with the Pi.
+
 #### FPV Camera 
 
 #### Calculating Battery Life 
@@ -140,14 +143,28 @@ After finalizing the project here our somethings that help improve production.
 
 
 ## Software
-  The software went through many revisions, currently all software is under a single node, 'servo2_pca9685' within the directory 'servo_driver'. 
+The software went through many revisions, currently all software is under a single node, 'servo2_pca9685' within the directory 'servo_driver'. This includes the various kinematic equations needed in order to move each leg. The ultrasonic sensor can also be found within this file to override a controller input if Clifford detects he is too close to an object.
+
+#### PS4 Joystick
+Using the left joystick, you can determine direction of movement (forward or backward). This is handled through flags that check the joy topic axes sign (-/+). Using the Joy topic callback we are able constantly update Clifford his relative position. Cliffords walking consist of 4-point leg motion. However the legs move in 2's, meaning front left and back right move together and then front right and back left move together. 
+
+
+#### PS4 Buttons
+
+Various buttons are configured for the following. During this time it changes a flag so that clifford knows that he is no longer waiting for 'walk' commands. Additionally, for any third party expanders 
+  - Lay down or stand tall.
+  - Lean side to side.
+  - Lean forward and backward.
+  - Reset to default stance.
+  - Shutdown Clifford.
 
 
 ## Kinematics
+- Pictures would be nice
+- Include design of gait.
+- include references here and also in references.
 
 ## Future Additions
-
-## Conclusion
 
 ## Bill of Materials
 
