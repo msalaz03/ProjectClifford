@@ -267,121 +267,121 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>7.4V 6200mAh Battery</td>
     <td>2</td>
-    <td><a href="https://www.amazon.ca/Zeee-Battery-6200mAh-Connector-Vehicles/dp/B0868FM5S4/ref=sxin_15_pa_sp_search_thematic_sspa?content-id=amzn1.sym.ea4b7f00-c440-4d65-bd3f-caa76cb13654%3Aamzn1.sym.ea4b7f00-c440-4d65-bd3f-caa76cb13654&crid=33LM2212JB495&cv_ct_cx=7.4+v+battery&dib=eyJ2IjoiMSJ9.u1_mUXoAXQUkLqwlo6JmZ_JasDNoLpM2zjLmHqhT1SXFAS3gFbbyExDEEVSfDnU-VrqQrmxrPprw-hwRv47i2g.X91cB13EpN38YKRBIQq6b7JR4TpyyQxxQAy_Xtx-7m4&dib_tag=se&keywords=7.4+v+battery&pd_rd_i=B0868FM5S4&pd_rd_r=e0d6c371-ae9a-44c2-9644-28ec4dc6a87b&pd_rd_w=YCerP&pd_rd_wg=LZZ1P&pf_rd_p=ea4b7f00-c440-4d65-bd3f-caa76cb13654&pf_rd_r=CW9N2R8GTMZPJEF1FTYW&qid=1719076154&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=7+4v+battery%2Caps%2C114&sr=1-4-acb80629-ce74-4cc5-9423-11e8801573fb-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&psc=1">Link</a></td>
+    <td><a href="https://amzn.to/4dXxEQW">Link</a></td>
     <td>$60</td>
   </tr>
   <tr>
     <td>RPI Heatsink</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/GeeekPi-Raspberry-Aluminum-Heatsink-Controllable/dp/B091L1XKL6/ref=sr_1_3?crid=2AU85VCUAN29T&dib=eyJ2IjoiMSJ9.GSSZFPpAj7yoqb1p7UurtBXisj_cTUKNFNwfdtqQhAs7eLEE4wIwg9kaVFt_mQtI88CDidB4luhWGcJYOWUP3vQkWmHwf6Lm3UQyMUJ2S4Raf2kk1-71W9Par1XX9xk7eskqMudFeE5TvZPQjz-4Hh8c3_L62yVVhQhdh1XC5J7oQiWjDbT-WMkVdq_k4nep6Lelzx84Aveqi0-g-h-qHyqxcRksAwqkT3E1nMwnhU8bKAZKNiGL6u8Ec3CQXdxwMO7dPURM9rW1WKRBBWZwdwpzPx_7MoLBuVO4Q1OV98E.srppl_jugzK74knNIOraYc91CJ87GKbXOUnzMmdSt1k&dib_tag=se&keywords=geeekpi+aluminum+heatsink&qid=1719076248&s=electronics&sprefix=geekpi+alunimum+heatskink%2Celectronics%2C94&sr=1-3">Link</a></td>
+    <td><a href="https://amzn.to/4dSKi3j">Link</a></td>
     <td>$16</td>
   </tr>
   <tr>
     <td>HDMI to Micro HDMI</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/UGREEN-Ethernet-Support-Resolution-Tablets/dp/B015GR44CG/ref=sr_1_8?crid=2US4JRVXB2XJL&dib=eyJ2IjoiMSJ9.Ig1BvlBz5seDeJ9TbfZz76HgAzLr2H-icf_hnmTC53lbnN0U-Wv4zdTopehEV6tVPIpiTY2NZown5N_c_UYPGIvgsPSvyl6K7SDVnxQnUdIsWPTOg27hYpUNsEdoyuncVyDdxWUhu_HDA-9OZRqeI9k851N65tNgyFzW7y9iT4uMTnWFqmNsyhTaGMEfPD0zSTaH8V3dfTYO05_7G7pwMA7zRSgODW55_cqLs2XdAcZ7EzwwIwT2LvqgkCWsYQl55p_LZAkOn8b5IJJocVXCpME2otCzZOJGXFDeY_bkmWU.rX9-deHLJNbmFjh6hfL7E101zCSXccWak7PFnlbqdhI&dib_tag=se&keywords=hdmi%2Bto%2Bmicro%2Bhdmi&qid=1719076299&s=electronics&sprefix=hdmi%2Bto%2Bmicro%2B%2Celectronics%2C102&sr=1-8&th=1">Link</a></td>
+    <td><a href="https://amzn.to/4gsuaHM">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
     <td>DROK RPI Buck Converter (used as spare)</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/Adjustable-Converter-Stabilizer-Regulator-Protective/dp/B01FQH4M82/ref=sr_1_11?crid=193IE8HBH2QIO&dib=eyJ2IjoiMSJ9.OuMyHn-AXkWX_SJ8wNQ3KsNMUkccBZv-3vmMqrYAxBZkc2aemW4gGhTsm8FsMP3MYWimZZ8_PZLsgNsrE68hsA08zK6xp_7XVNRDFajHkE67wsNJcUAORz0ArAgjDYNNiNi5VH5MzsYs_-RXWghFsm7eK_NqHsz6g0mBtgReWpRby6fVx1T7TIOYOjm1Je-KiO-aP1LMmRcPDec4AXYiEYJwF_lmAaC2vzZB7_f8Qt_hFaUpt_m-xSFTiC2kOuOurgJgy4cf84xQaMFdCIK4zmrz8brqNi0iek-huNiTVoQ.uX2nvFimUALNmQGE042Ku_06VOQqFYEWmWTGQFyX_9U&dib_tag=se&keywords=drok+dc+to+dc+buck+converter&qid=1719076360&s=electronics&sprefix=drok+dc+to+dc+buck+converter+%2Celectronics%2C88&sr=1-11">Link</a></td>
+    <td><a href="https://amzn.to/3MFj6JD">Link</a></td>
     <td>$26</td>
   </tr>
     <tr>
     <td>PCA Servo Driver</td>
     <td>2</td>
-    <td><a href="https://www.amazon.ca/Newhail-PCA9685-Channel-Arduino-Raspberry/dp/B08YD8PDLS/ref=sr_1_3?crid=WD2W65OLO58A&dib=eyJ2IjoiMSJ9.iml3_jg1-nXCQ9HRz9unsBpXcF7DqoDCN2E2RAEuGtCadnVE49M0YFFRtB4lOjlD7LJiPw1yxVBN-qbNvFqa8SeRzTW_8ehWHkp_PtoVbAGRTUxl5-mtORoP4xAugBYbCE9JZ53TMthxd05T6qTMix3yq2U9Abj5yi233YlQA_vUGg0n3rioTFJs57lD7IUTUv9qwTAscTgtXBtlcfjrjwuLporAGVKd5DDNlW9b_rW8AA1KV0JUAnoB1dGAGoCkX2lpQeMBFcXwQXjphEzOXgYQy-XQnO2AmJ4ykH61Fs4.G2YjTnKXSPhx-v3icqM9iL18-LeHYIpWtIpbAE3w8UY&dib_tag=se&keywords=jzk+pca9685+servo+driver&qid=1719076506&s=electronics&sprefix=jzk+pca9685+servo+driver%2Celectronics%2C78&sr=1-3">Link</a></td>
+    <td><a href="https://amzn.to/3B7LtgM">Link</a></td>
     <td>$26</td>
   </tr>
   <tr>
     <td>RPI 4B</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/dp/B07TC2BK1X?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3z0VImL">Link</a></td>
     <td>$100</td>
   </tr>
   <tr>
     <td>T Deans Female-Male Adapters</td>
     <td>5</td>
-    <td><a href="https://www.amazon.ca/Pairs-Connector-Female-Silicon-Battery/dp/B07WHPD4KD/ref=sr_1_1_sspa?crid=205933WPVCNT9&dib=eyJ2IjoiMSJ9.zYsSDSxEgkr0AsLMd8NRnhQIgx-jnN3-whDErIbaPIJ5lkfEXkSaSxvX6m5tErl_wG8MTKli79TPbv_HgdHsz5wcj1NzyXChXQJGBJOtejmuqaslC7jSF2dEqouwcvwm1gugxhwXQko4v1KbkLV9A9OpxDp8q1bY0wiEU-5e0F8Xpd6A88kw7BlNnKkr7yWnFFUAchcyNtsOkXl7QYHOmeFWB3PL-h5BFUHKXtbXVl13X8rxkkmFfJOSFXk1vgEQghlCf9dUh23-8yjGQfKIvmbELfV8Q7KiVKgZ9nbTpjU.gCEscGKea37_VFlEfGBYg4iTSrypLax8yjygo9I_HK8&dib_tag=se&keywords=5+pair+t+deans+t+plug+connector&qid=1719076682&s=electronics&sprefix=5+pair+t+deans+t+plug+connector%2Celectronics%2C107&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">Link</a></td>
+    <td><a href="https://amzn.to/3ZckQ4z">Link</a></td>
     <td>$13</td>
   </tr>
   <tr>
     <td>DROK Servo Buck Converter</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/dp/B00C4QVTNU?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/4e6M80A">Link</a></td>
     <td>$20</td>
   </tr>
   <tr>
     <td>3D Print Filament</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/dp/B0BM4QWPK9?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3MDNZho">Link</a></td>
     <td>$25</td>
   </tr>
   <tr>
     <td>Micro SD Card</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/dp/B08XV6B76G?ref=ppx_yo2ov_dt_b_product_details&th=1">Link</a></td>
+    <td><a href="https://amzn.to/4gekQqP">Link</a></td>
     <td>$13</td>
   </tr>
   <tr>
     <td>ELEGOO 3D Printer</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/dp/B0BJCQ993L?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/4gdXHVp">Link</a></td>
     <td>$339</td>
   </tr>
   <tr>
     <td>F625zz Ball Bearings</td>
     <td>10</td>
-    <td><a href="https://www.amazon.ca/dp/B07Z3DXF14?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3Xpz67E">Link</a></td>
     <td>$18</td>
   </tr>
   <tr>
     <td>3A Buck Converter (for RPI)</td>
     <td>5</td>
-    <td><a href="https://www.amazon.ca/dp/B08Q2YKJ6Q?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3zmVWEC">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
     <td>USB-C to Wire</td>
     <td>4</td>
-    <td><a href="https://www.amazon.ca/dp/B0CMQ42P9Q?ref=ppx_yo2ov_dt_b_product_details&th=1">Link</a></td>
+    <td><a href="https://amzn.to/3Xyqa0R">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
     <td>Spray Paint (Red + Black)</td>
     <td>2</td>
-    <td><a href="https://www.amazon.ca/gp/product/B081FM5FXC/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&th=1">Link</a></td>
+    <td><a href="https://amzn.to/3TmEsz0">Link</a></td>
     <td>$28</td>
   </tr>
   <tr>
     <td>ADC Board</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/dp/B07G85HMLV?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3Xjkma9">Link</a></td>
     <td>$11</td>
   </tr>
   <tr>
     <td>M3 Square Nuts</td>
     <td>100</td>
-    <td><a href="https://www.amazon.ca/dp/B07SDMC9L9?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/47iyh4N">Link</a></td>
     <td>$11</td>
   </tr>
   <tr>
     <td>M4x20mm Bolts</td>
     <td>50</td>
-    <td><a href="https://www.amazon.ca/dp/B089N8MVQB?ref=ppx_yo2ov_dt_b_product_details&th=1">Link</a></td>
+    <td><a href="https://amzn.to/4geTOzv">Link</a></td>
     <td>$14</td>
   </tr>
   <tr>
     <td>M4 Square Nuts</td>
     <td>50</td>
-    <td><a href="https://www.amazon.ca/dp/B07RR3H2FT?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3TowMfU">Link</a></td>
     <td>$15</td>
   </tr>
   <tr>
     <td>M3x10mm Bolts</td>
     <td>100</td>
-    <td><a href="https://www.amazon.ca/dp/B07CMSBQ11?psc=1&ref=ppx_yo2ov_dt_b_product_details">Link</a></td>
+    <td><a href="https://amzn.to/3Tktzhg">Link</a></td>
     <td>$15</td>
   </tr>
 </table>
