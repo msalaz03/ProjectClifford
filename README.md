@@ -255,13 +255,13 @@ Various buttons are configured for the following. During this time it changes a 
   <tr>
     <td>18 Gauge Wire 70 ft</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/Conductors-Electrical-Extension-Automotive-Brightfour/dp/B0DCJD82YV/ref=sr_1_12?dib=eyJ2IjoiMSJ9.YNFEW0vDz9PWf2gZQrs5YoMxAWM7BT62N07hV2nQXlFCDc43x0abdSDyTs31lZNeB5NDTRilHtqwRPaurMkJi3aB1J9fAkBuekEuDDBBphqdJC267v-8VLP8RgCr7z_JvOotBnE8u5ccnOMRBnODwiyjACeAMpNEV5r905ihAaT-0HUfW4rvj0HscCSpHXmB8cuuX992EkbVaWBx0vw3kqWq14-B0wdFmGX3D6PiPnlmyEAZnPvQhEWskjEnsDstx32-8mOeC9yflR-ZglgPq6RFQ_Q8LWARBKpO2RIpwJQ.OxXHIIyh4moT9v2qBdA7Y1Tq6zk2p41qQvnCOVJ3hOU&dib_tag=se&keywords=18+gauge+wire&qid=1725818809&sr=8-12">Link</a></td>
+    <td><a href="https://amzn.to/3zb0m1m">Link</a></td>
     <td>$20</td>
   </tr>
   <tr>
     <td>USB-C Charging cable x2</td>
     <td>1</td>
-    <td><a href="https://www.amazon.ca/UGREEN-Braided-Charging-Nintendo-Motorola/dp/B077Z7XLJF/ref=sr_1_6?crid=33JQ877JH81K6&dib=eyJ2IjoiMSJ9.CmEEIzhmfYv64NvWZLL2y2zwzoCZBKYcqghf11gsDqxUzQz0JHJcE6PJ9Q9EX287pIGAALcXgyLJQaKp3dwH3rwtSxJ8">Link</a></td>
+    <td><a href="https://amzn.to/3TlbYGa">Link</a></td>
     <td>$14</td>
   </tr>
 </table>
