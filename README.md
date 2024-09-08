@@ -2,7 +2,9 @@
 
 
 # Project Clifford
-<img src="assets/clifford angled for github.JPG">
+
+ <img src="assets/clifford angled for github.JPG" height = "700" width = "540">
+
 
 * [Overview](#overview)
 * [Setup](#setup)
