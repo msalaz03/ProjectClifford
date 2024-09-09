@@ -18,16 +18,16 @@
 * [References](#references)
 
 ## Overview (Please Read)
-Over the past four months Cameron, Chase and I tried tackling our own version of Boston Dynamic's Spot. This repository contains the source code that interfaces all hardware interactions between our small red friend. The software includes prebuilt libraries designed for the Raspberry Pi and also references other projects similar to ours. 
+Over the past four months Cameron, Chase and I tried tackling our version of Boston Dynamic's Spot. This repository contains the source code that interfaces all hardware interactions between our small red friend. The software includes prebuilt libraries designed for the Raspberry Pi and also references other projects similar to ours. 
 
-Now then, running on Ubuntu 22.04 LTS using ROS-Humble we went through a series of processes in order to organizer this into a simple manner. Although, we will note that they're some poor practices as a result of time constraints and it being our first time working with the ROS framework. These will be noted and clarified furthermore in this document. Clifford is an entirely 3D printed project that uses inverse-kinematics in order simulate a dog walking. Clifford also has FPV camera mounted which can be accessed through any web browser provided you're on the same network as him.
+Now then, running on Ubuntu 22.04 LTS using ROS-Humble we went through a series of processes to organize this into a simple manner. However, we will note that they're some poor practices as a result of time constraints and it is our first time working with the ROS framework. These will be noted and clarified further in this document. Clifford is an entirely 3D-printed project that uses inverse kinematics to simulate a dog walking. Clifford also has an FPV camera mounted which can be accessed through any web browser provided you're on the same network as him.
 
 Please check the references, this would have not been possible without open-source projects. 
 
 <img src="assets/clifford angled for github.JPG" height = "700" width = "540">
 
 ## Setup
-The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so prior to programming the entire project.
+The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently, we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so before programming the entire project.
 
 ```
 Three most important folders for this project.
@@ -46,7 +46,7 @@ projectclifford_ws/
 ```
 
 #### For Using RVIZ With Clifford
-In order to test our kinematic equations more efficiently we used RVIZ to visualize what is happening when there is a controller input. 'clifford_sim_1' contains a URDF file for the final version of Clifford, exported through SolidWorks URDF exporter. The launch file within this directory only launches the URDF file into RVIZ and does not contain RobotStatePublisher by default. You can enable joint-state-publisher-gui by uncommenting the related lines within the launch file or can use additional launch file that waits for joy (controller input) and joint-state-publisher topic. The second directory relative to running RVIZ is 'teleop_controller' which creates topic for joint-state-publisher.
+To test our kinematic equations more efficiently we used RVIZ to visualize what is happening when there is a controller input. 'clifford_sim_1' contains a URDF file for the final version of Clifford, exported through SolidWorks URDF exporter. The launch file within this directory only launches the URDF file into RVIZ and does not contain RobotStatePublisher by default. You can enable joint-state-publisher-gui by uncommenting the related lines within the launch file or can use an additional launch file that waits for joy (controller input) and joint-state-publisher topic. The second directory relative to running RVIZ is 'teleop_controller' which creates a topic for joint-state-publisher.
 
 **NOTE:** This totally could have been organized into a single launch file but wasn't due to circumstances at the time.
 
@@ -58,7 +58,7 @@ ros2 launch teleop_controller Clifford_full_model.launch.py
 ```
 #### For Launching and Booting Clifford
 
-To physically launch clifford is pretty simple (as long as you have all required dependecies), simply run.
+To physically launch Clifford is pretty simple (as long as you have all required dependecies), simply run the following command.
 
 **Note:** At this point Clifford cannot physically turn as the turning motion was not programmed, however the kinematic equations needed to do are solved and within the software.
 ```
@@ -71,7 +71,7 @@ xxx.xxx.xxx.xxx:8081
 ```
 
 ## Hardware
-From researching similar projects to Clifford and doing our research we sourced components that we thought were optimal for this project. Consisting of two voltage regulators to isolate the power going into the servo driver and Raspberry Pi. ADC boards in order to measure different voltages levels into a relative percentage for battery life. A high-capacity battery in order to prolong battery life. LCD screen in order to demonstrate battery life real-time. 25 KG servos, a mixture between torque and speed in order to ensure smooth movements. 
+From researching similar projects to Clifford and our testing we sourced components that we thought were optimal for this project, consisting of two voltage regulators to isolate the power going into the servo driver and Raspberry Pi. An ADC board to measure different voltage levels into a relative percentage for battery life. A high-capacity battery to prolong battery life. LCD screen to demonstrate battery life in real time. 25 KG servos, a mixture of torque and speed to ensure smooth movements. 
 
 <br>
   
@@ -134,7 +134,7 @@ From researching similar projects to Clifford and doing our research we sourced 
 </table>
 
 #### Communication Protocol 
-As we were using multiple third-party modules such as servo driver we utilized I2C bus provided on the Raspberry Pi 4B. This worked perfectly but didn't allow us to have multiple devices using I2C, as we had a few more. Creating a simple PCB using header pins we created an I2C bus expander that allowed all devices to meet at a single point in order to communicate with the Pi.
+As we were using multiple third-party modules such as servo driver we utilized the I2C bus provided on the Raspberry Pi 4B. This worked perfectly but didn't allow us to have multiple devices using I2C, as we had a few more. Creating a simple PCB using header pins we created an I2C bus expander that allowed all devices to meet at a single point to communicate with the Pi.
 
 #### FPV Camera 
 Using motion libraries we were able to set up a first-person live-streaming feed on a local network. By dedicating a specified port to live-streaming (8081) simply use the IPV4 address followed by the port like so xxx.xxx.xxx.xxx:8081 to access from any device on the same network. 
@@ -163,7 +163,7 @@ Make sure the file contains the following if you want live streaming to start wh
 start_motion_daemon=yes
 ```
 #### Calculating Battery Life 
-Using the 5V pin provided to power the ADS1150, we needed to step down the balance charger voltage outputted from the LiPo. We created a small PCB board which included a voltage divider circuit such that the highest voltage read would be ~5V. Now with voltage being able to be read, we then determined the highest voltage ie @ 100% and at 0%. We then used the current voltage in order to calculate the current battery percentage.
+Using the 5V pin provided to power the ADS1150, we needed to step down the balance charger voltage outputted from the LiPo. We created a small PCB board that included a voltage divider circuit such that the highest voltage read would be ~5V. Now with voltage being able to be read, we then determined the highest voltage ie @ 100% and at 0%. We then used the current voltage to calculate the current battery percentage.
 
 #### Other Useful Components  
 After finalizing the project here our somethings that help improve production. 
@@ -174,11 +174,10 @@ After finalizing the project here our somethings that help improve production.
 
 
 ## Software
-The software went through many revisions, currently all software is under a single node, 'servo2_pca9685' within the directory 'servo_driver'. This includes the various kinematic equations needed in order to move each leg. The ultrasonic sensor can also be found within this file to override a controller input if Clifford detects he is too close to an object.
+The software went through many revisions, currently, all software is under a single node, 'servo2_pca9685' within the directory 'servo_driver'. This includes the various kinematic equations needed to move each leg. The ultrasonic sensor can also be found within this file to override a controller input if Clifford detects he is too close to an object.
 
 #### PS4 Joystick
-
-Using the left joystick, you can determine the direction of movement (forward or backward). This is handled through flags that check the joy topic axes sign (-/+). Using the Joy topic callback we are able to constantly update Clifford's relative position. Clifford's walking consists of 4-point leg motion. However, the legs move in pairs, meaning the front left and back right move together, and the front right and back left move together. The overall structure of the walking gait was as follows, a single set will take 'charge' meaning they're the legs moving forward while the others are dragging backwards creating the ability to go forward. The speed at which the legs drag backward is based on the input of the user, and timing so that a pair of legs complete a single point (the ones dragging backwards) while the other completes three 3 (the other set). This allows us to constantly have two points of contact with the ground at all times.
+Using the left joystick, you can determine the direction of movement (forward or backward). This is handled through flags that check the joy topic axes sign (-/+). Using the Joy topic callback we can constantly update Clifford's relative position. Clifford's walking consists of a 4-point leg motion. However, the legs move in pairs, meaning the front left and back right move together, and the front right and back left move together. The overall structure of the walking gait was as follows, a single set will take 'charge' meaning they're the legs move forward while the others are dragging backward creating the ability to go forward. The speed at which the legs drag backward is based on the input of the user, and timing so that a pair of legs complete a single point (the ones dragging backward) while the other completes three 3 (the other set). This allows us to constantly have two points of contact with the ground at all times.
 
 
 
