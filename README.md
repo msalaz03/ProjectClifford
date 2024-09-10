@@ -220,7 +220,7 @@ Various buttons are configured for the following. During this time it changes a 
 #### LCD Node
 We were unable to access the libraries outside their installation location, so creating a node with the LCD running via the launch file didn’t work. Instead, we created a separate Python script to run in parallel with the Clifford launch. Ideally, we would import the libraries into a dedicated node.
 
-## Kinematics
+## Inverse Kinematics
 We researched various walking gait patterns and quadruped motion analyses before attempting to model our robot's movements. The Inverse Kinematics for our robot consists of 2 main analyses - Forward/Backward and Lateral motions. We successfully implemented the Forward/Backward and Lateral inverse kinematics into RViz to help visualize and verify our math without any mechanical or electrical limitations. After verifying the calculations with RViz we slightly modified the inverse kinematics based on the servo rotation limits and how they were physically installed on the robot. For this reason, the calculations for the left and right sides of the robot are mirrored regarding the "arm" and "wrist" servo bounds. 
 
 Due to time limitations, we were only able to implement the forward-backward motions onto the physical robot but solved the inverse kinematics for the lateral motions as well and will apply these in the future. 
@@ -234,6 +234,11 @@ Below are the inverse kinematic models we utilized:
 <img src="assets\Inverse Kinematics-4.jpg" height = "350" width = "270">
 <img src="assets\Inverse Kinematics-5.jpg" height = "350" width = "270">
 <img src="assets\64019C31-1EB6-4C09-A2AE-42A0C3EA9866.jpeg" height = "350" width = "270">
+
+References for Inverse Kinematics:
+https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s <br> 
+https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s <be>
+
 
 ## Future Additions
 
@@ -390,7 +395,7 @@ https://www.thingiverse.com/thing:3445283 <br>
 #### Raspberry Pi Libraries for LCD 
 https://github.com/the-raspberry-pi-guy/lcd <br>
 
-#### Kinematic Equations
+#### Inverse Kinematic Equations
 https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s <br> 
 https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s <br>
 
