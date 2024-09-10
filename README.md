@@ -237,7 +237,7 @@ Below are the inverse kinematic models we utilized:
 
 References for Inverse Kinematics:
 https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s <br> 
-https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s <be>
+https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s <br>
 
 
 ## Future Additions
