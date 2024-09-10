@@ -229,8 +229,11 @@ After we programmed the inverse kinematics, we tested different gait designs and
 
 Below are the inverse kinematic models we utilized:
 
-<img src="assets\Inverse Kinematics-2.jpg" height = "700" width = "540">
-
+<img src="assets\Inverse Kinematics-2.jpg" height = "350" width = "270">
+<img src="assets\Inverse Kinematics-3.jpg" height = "350" width = "270">
+<img src="assets\Inverse Kinematics-4.jpg" height = "350" width = "270">
+<img src="assets\Inverse Kinematics-5.jpg" height = "350" width = "270">
+<img src="assets\64019C31-1EB6-4C09-A2AE-42A0C3EA9866.jpeg" height = "350" width = "270">
 
 ## Future Additions
 
