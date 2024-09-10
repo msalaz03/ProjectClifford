@@ -221,9 +221,16 @@ Various buttons are configured for the following. During this time it changes a 
 We were unable to access the libraries outside their installation location, so creating a node with the LCD running via the launch file didn’t work. Instead, we created a separate Python script to run in parallel with the Clifford launch. Ideally, we would import the libraries into a dedicated node.
 
 ## Kinematics
-- Pictures would be nice
-- Include design of gait.
-- include references here and also in references.
+We researched various walking gait patterns and quadruped motion analyses before attempting to model our robot's movements. The Inverse Kinematics for our robot consists of 2 main analyses - Forward/Backward and Lateral motions. We successfully implemented the Forward/Backward and Lateral inverse kinematics into RViz to help visualize and verify our math without any mechanical or electrical limitations. After verifying the calculations with RViz we slightly modified the inverse kinematics based on the servo rotation limits and how they were physically installed on the robot. For this reason, the calculations for the left and right sides of the robot are mirrored regarding the "arm" and "wrist" servo bounds. 
+
+Due to time limitations, we were only able to implement the forward-backward motions onto the physical robot but solved the inverse kinematics for the lateral motions as well and will apply these in the future. 
+
+After we programmed the inverse kinematics, we tested different gait designs and optimized the robots foot coordinate positions based its weight distribution. After extensive testing we were able to develop an effective forward and backward walking gait - however improvements can always be made.
+
+Below are the inverse kinematic models we utilized:
+
+<img src="assets\Inverse Kinematics-2.jpg" height = "700" width = "540">
+
 
 ## Future Additions
 
