@@ -235,12 +235,16 @@ Below are the inverse kinematic models we utilized:
 <img src="assets\Inverse Kinematics-5.jpg" height = "350" width = "270">
 <img src="assets\64019C31-1EB6-4C09-A2AE-42A0C3EA9866.jpeg" height = "350" width = "270">
 
-References for Inverse Kinematics:
-https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s <br> 
-https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s <br>
-
+References for Inverse Kinematics: <br>
+<a href="https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s">https://www.youtube.com/watch?v=qFE-zuD6jok&t=464s</a> <br>
+<a href="https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s">https://www.youtube.com/watch?v=4rc8N1xuWvc&t=253s</a>
 
 ## Future Additions
+We have several features and functionalities we hope to add in future revisions of Clifford. Our main constraint for this project was a small timeline and for this reason, we were not able to achieve all the features we initially planned.
+
+The main feature we plan to develop is autonomous self-balancing with the gyroscope we already integrated into the system. We planned to implement self balancing in the x and y axis but due to time limitations we were unable to do so. This would improve walking stability and further the real-world application scope of the project.
+
+Another future addition we would like to implement is additional status indicators. We would like to properly develop a ROS node for the LCD and add other status displays the user would be able to toggle between. We would also like to add LED status indicators based on the current mode of the robot.
 
 ## Bill of Materials
 <table>
