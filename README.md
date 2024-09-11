@@ -12,7 +12,7 @@
   * [Displaying Live Battery %](#Calculating-Battery-Life)
   * [Other Hardware](#Other-Useful-Components)
 * [Software](#software)
-* [Kinematics](#kinematics)
+* [Kinematics](#Inverse-Kinematics)
 * [Future Additions](#future-additions)
 * [Bill of Materials](#bill-of-materials)
 * [References](#references)
