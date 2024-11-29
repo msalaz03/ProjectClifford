@@ -170,7 +170,7 @@ After finalizing the project here our somethings that help improve production.
   - Buy a dedicated LiPo Battery Balance Charger, these will guarantee the quality of battery being used and can charge relatively quick.
   - Using a DC Power Supply, would prevent the need of constantly recharging the battery after testing.
   - If possible maximize the hardware you use. We settled on the Raspberry Pi 4B, it was okay. I figured I would do most of my programming on the Pi anyway but there were times it was just so slow.
-  - Get a dedicated cooler for your controller, especially for Raspberry Pi. These things will heat up quickly.
+  - Get a dedicated cooler for your controller, especially for the Raspberry Pi. These things will heat up quickly.
 
 
 ## Software
