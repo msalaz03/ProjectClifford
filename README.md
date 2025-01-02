@@ -26,6 +26,9 @@ Please check the references, this would have not been possible without open-sour
 
 <img src="assets/clifford angled for github.JPG" height = "700" width = "540">
 
+## Video Demo:
+https://youtube.com/shorts/WbrB4VmLomk?feature=share
+
 ## Setup
 The organization of nodes is not ideal. However, with time it can be reorganized neatly. Currently, we have mostly everything inside a single node. For anyone attempting to recreate anything similar please take the time to do so before programming the entire project.
 
